@@ -1,72 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,0">
+	<!-- link style -->
+	<link rel="stylesheet" type="text/css" href="./dist/css/style.css">
+	<!-- tittle -->
 	<title>Captain Order</title>
 </head>
 <body>
-<div class="wrapper">
-	<nav class="main-header">
+<aside>	
+	<nav>
 		<ul>
 			<li>
-				<a href="index.php">
-					<b>Captain Order</b>
+				<a href="#">
+					<i>a</i>
+					<p>Stores</p>
 				</a>
 			</li>
-		</ul>
-		<ul>
 			<li>
-				<a href="index.php">
-					<b>Hello, Big Bos</b>
+				<a href="#">
+					<i>a</i>
+					<p>Client-Request</p>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i>a</i>
+					<p>End-User List</p>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i>a</i>
+					<p>Settings</p>
 				</a>
 			</li>
 		</ul>
 	</nav>
-	<aside class="main-sidebar">
-		<!-- sidebar -->
-		<div class="sidebar">
-			<nav class="a">
-				<ul>
-					<li class="nav-item">
-						<a href="#">
-							<i class="nav-icon"></i>
-							<p>Stores</p>
-						</a>
-					</li>
-					<li class="nav-item">
-						<a href="#">
-							<i class="nav-icon"></i>
-							<p>Client-Request</p>
-						</a>
-					</li>
-					<li class="nav-item">
-						<a href="#">
-							<i class="nav-icon"></i>
-							<p>End-User List</p>
-						</a>
-					</li>
-					<li class="nav-item">
-						<a href="#">
-							<i class="nav-icon"></i>
-							<p>Settings</p>
-						</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
-		<!-- end sidebar -->
-	</aside>
-	<!-- content-wrapper -->
-	<div class="content-wrapper">
-		<section class="content">
-			<div class="container-fluid">
-				
-			</div>
-		</section>
+	<div class="logout">
+		<ul>
+			<li>
+				<a onclick="return confirm('Apakah Anda yakin akan keluar?')" href="logout.php">
+					<i>a</i>
+					<p>Logout</p>
+				</a>
+			</li>
+		</ul>
 	</div>
-	<!-- end content-wrapper -->
-	<footer class="main-footer">
-		Dibuat 2021
-	</footer>
-</div>
+</aside>
 </body>
 </html>
