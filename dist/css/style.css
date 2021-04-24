@@ -7,9 +7,16 @@
 body{
 	height: 100vh;
 	display: flex;
+	flex-direction: column;
 }
-
-aside{
+header{
+	flex: 1;
+}
+.container {
+	flex: 10;
+	display: flex;
+}
+.container aside{
 	width: 320px;
 	display: flex;
 	flex-direction: column;
@@ -17,26 +24,14 @@ aside{
 	overflow: auto;
 }
 
-aside nav{
-	flex: 1;
+.container aside nav{
+	flex: 5;
 	text-align: left;
-	display: flex;
-}
-aside nav{
-	align-items: center;
-}
-aside nav ul li{
-	display: flex;
+	flex-direction: column;
+	margin-left: 20px;
 	flex-wrap: wrap;
 }
-aside nav ul li a{
-
-}
-aside nav ul li a i{
-	width: 28px;
-	height: 28px;
-}
-aside nav ul li a{
+.container aside nav a{
 	font-size: 18px;
 	font-style: normal;
 	font-weight: 400;
@@ -47,15 +42,34 @@ aside nav ul li a{
 	display: block;
 	color: black;
 }
-aside nav a:hover{
+.container aside nav a:hover{
 	border-bottom: 1px solid #047B6D;
 }
-aside 
-
-
-aside .logout{
+.container aside nav a i{
+	width: 28px;
+	height: 28px;
+	margin-right: 20px;
+}
+.container aside .logout{
+	flex: 1;
+	text-align: left;
+	flex-direction: column;
+	margin-left: 20px;
+	flex-wrap: wrap;
+}
+.container aside .logout a{
 	font-size: 22px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 27px;
+	letter-spacing: 0em;
+	text-align: left;
 	text-decoration: none;
-	padding: 4px 32px;
+	display: block;
 	color: #D4021D;
+}
+.container aside .logout a i{
+	width: 28px;
+	height: 28px;
+	margin-right: 20px;
 }
