@@ -1,10 +1,10 @@
 body{
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 /*  padding: 0px;*/
 margin: 0;
   width: 100vw;
+  height: 100vh;
   align-items: stretch;
 }
 
@@ -49,6 +49,20 @@ padding: 0px 0px 0px 20px;
 background: #FFFFFF;
 
 }
+
+.header .brand .image{
+  display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+
+position: static;
+width: 60px;
+height: 60px;
+left: 20px;
+top: 5px;
+}
+
 .header .brand .text{
   display: flex;
   flex-direction: row;
@@ -69,4 +83,96 @@ line-height: 54px;
 
 
 color: #000000;
+}
+
+.container{
+  /* Auto Layout */
+  display: flex;
+  flex-direction: row;
+/*  align-items: stretch;*/
+  padding: 0px;
+}
+.container .aside{
+  display: flex;
+  flex-direction: column;
+/*  justify-content: space-between;*/
+  align-items: stretch;
+  padding: 0px;
+/*  height: 100vh;*/
+}
+.container .aside .navbar{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 52px 67px 52px 52px;
+}
+.container .aside .navbar .nav{
+  /* Auto Layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+}
+.container .aside .navbar .nav .image{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.container .aside .navbar .nav a{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 27px;
+  /* identical to box height */
+
+
+  color: #047B6D;
+  text-decoration: none;
+}
+.container .aside .logout{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 52px 67px 52px 52px;
+}
+.container .aside .logout .log{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+}
+.container .aside .logout .log .image{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 10px;
+}
+.container .aside .logout .log a{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 33px;
+  /* identical to box height */
+
+
+  color: #D4021D;
+  text-decoration: none;
 }

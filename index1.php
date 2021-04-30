@@ -8,6 +8,9 @@
 <body>
 	<div class="header">
 		<div class="brand">
+			<div class="image">
+
+			</div>
 			<div class="text">
 				<p>Captain Order</p>
 			</div>
@@ -17,7 +20,35 @@
 		</div>
 	</div>
 	<div class="container">
-		
+		<div class="aside">
+			<div class="navbar">
+				<div class="nav">
+					<div class="image"></div>
+					<a href="#">Store</a>
+				</div>
+				<div class="nav">
+					<div class="image"></div>
+					<a href="#">Request</a>
+				</div>
+				<div class="nav">
+					<div class="image"></div>
+					<a href="#">List End-User</a>
+				</div>
+				<div class="nav">
+					<div class="image"></div>
+					<a href="#">User Setting</a>
+				</div>
+			</div>
+			<div class="logout">
+				<div class="log">
+					<div class="image"></div>
+					<a href="#">Logout</a>
+				</div>
+			</div>
+		</div>
+		<div class="content">
+			
+		</div>
 	</div>
 </body>
 </html>
