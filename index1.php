@@ -47,7 +47,15 @@
 			</div>
 		</div>
 		<div class="content">
-			
+			<div class="head">
+				<div class="tittle">
+					<p>Stores</p>
+				</div>
+				<div class="button">
+					<a href="#">Add Stores</a>
+				</div>
+			</div>
+			<div class="cont"></div>
 		</div>
 	</div>
 </body>
