@@ -55,7 +55,10 @@
 					<a href="#">Add Stores</a>
 				</div>
 			</div>
-			<div class="cont"></div>
+			<div class="cont">
+				<div class="store">
+					
+				</div>
 		</div>
 	</div>
 </body>

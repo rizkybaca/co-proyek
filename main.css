@@ -89,16 +89,15 @@ color: #000000;
   /* Auto Layout */
   display: flex;
   flex-direction: row;
-/*  align-items: stretch;*/
-  padding: 0px;
   height: 100vh;
+  align-items: stretch;
 }
 .container .aside{
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  padding: 0px;
   justify-content: space-between;
+  min-width: 275px;
 }
 .container .aside .navbar{
   display: flex;
@@ -181,18 +180,17 @@ color: #000000;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  flex-grow: 0;
-  align-items: center;
-  padding: 0px 20px 0px 0px;
+  align-items: stretch;
+  width: 100vw;
 }
 .container .content .head{
   /* Auto Layout */
 
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding: 20px 0px 0px;
+  padding: 20px 10px 0px 0px;
 }
 .container .content .head .tittle{
   /* Auto Layout */
@@ -236,4 +234,27 @@ color: #000000;
 
   color: #FAF9F9;
   text-decoration: none;
+}
+.container .content .cont{
+  /* Auto Layout */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 10px;
+  flex-wrap: wrap;
+  overflow: auto;
+}
+.container .content .cont .store{
+  /* Auto Layout */
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 10px;
+  background: #B7E4C7;
+  box-sizing: border-box;
 }
