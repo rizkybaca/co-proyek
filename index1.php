@@ -48,7 +48,7 @@
 		</div>
 		<!-- start content -->
 		<div class="content">
-			<?php include './super/stores.php'; ?>
+			<?php include './super/stores/stores.php'; ?>
 		</div>
 		<!-- end of content -->
 	</div>
