@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="./super/stores/stores.css">
 <div class="head">
 	<div class="tittle">
 		<p>Stores</p>

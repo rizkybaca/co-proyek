@@ -1,0 +1,56 @@
+.container .content .head{
+  /* Auto Layout */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10px 0px 0px;
+}
+.container .content .head .tittle{
+  /* Auto Layout */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+}
+.container .content .head .tittle p{
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 36px;
+  /* identical to box height */
+
+
+  color: #047B6D;
+}
+.container .content .cont{
+  /* Auto Layout */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+/*  overflow: auto;*/
+}
+.container .content .cont form .input{
+  /* Auto Layout */
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-end;
+padding: 0px;
+}
+.container .content .cont form .input .col{
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+width: 400px;
+justify-content: space-between;
+}
