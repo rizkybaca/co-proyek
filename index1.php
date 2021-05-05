@@ -49,7 +49,7 @@
 		<!-- start content -->
 		<div class="content">
 			<?php
-				include './super/stores/add.php'; 
+				include './super/client/add.php'; 
 			?>
 		</div>
 		<!-- end of content -->
