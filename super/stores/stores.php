@@ -1,4 +1,3 @@
-<link rel="stylesheet" type="text/css" href="./super/stores/stores.css">
 <div class="head">
 	<div class="tittle">
 		<p>Stores</p>
@@ -7,7 +6,7 @@
 		<a href="#">Add Stores</a>
 	</div>
 </div>
-<div class="cont">
+<div class="cont-show-store">
 	<a href="">
 		<div class="store">
 			<div class="image"></div>

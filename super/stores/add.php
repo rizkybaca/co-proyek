@@ -3,7 +3,7 @@
 		<p>Add New Store</p>
 	</div>
 </div>
-<div class="cont">
+<div class="cont-add-store">
 	<form>
 		<div class="input">
 			<div class="col">
@@ -23,10 +23,17 @@
 				<input type="text" name="client_name" id="client_name" placeholder="type client name here" required>
 			</div>
 			<div class="col2">
-				<input type="radio" name="status" value="active" id="active">
-				<label for="active">Active</label><br>
-				<input type="radio" name="status" value="deactive" id="deactive">
-				<label for="deactive">Deactive</label>
+				<div class="tittle">
+					<p>choose store status here</p>
+				</div>
+				<div class="radio">
+					<input type="radio" name="status" value="active" id="active">
+					<label for="active">Active</label>
+				</div>
+				<div class="radio">
+					<input type="radio" name="status" value="deactive" id="deactive">
+					<label for="deactive">Deactive</label>
+				</div>
 			</div>
 		</div>
 		<div class="button">
