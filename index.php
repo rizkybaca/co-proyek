@@ -1,46 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- link style -->
-	<link rel="stylesheet" type="text/css" href="./dist/css/style.css">
-	<!-- tittle -->
-	<title>Captain Order</title>
+	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+	<link href="./main.css" rel="stylesheet" />
+	<title>Capt. Order</title>
 </head>
-
 <body>
+	<div class="header">
+		<div class="brand">
+			<div class="image">
 
-<header>
-	Captain Order
-</header>
-
-<div class="container">
-	<aside>	
-		<nav>
-			<a href="#">
-				<i>a</i>Stores
-			</a>
-			<a href="#">
-				<i>a</i>Client-Request
-			</a>
-			<a href="#">
-				<i>a</i>End-User List
-			</a>
-			<a href="#">
-				<i>a</i>Settings
-			</a>
-		</nav>
-		<div class="logout">
-			<a onclick="return confirm('Apakah Anda yakin akan keluar?')" href="logout.php">
-				<i>a</i>Logout
-			</a>
+			</div>
+			<div class="text">
+				<p>Captain Order</p>
+			</div>
 		</div>
-	</aside>
-	<div class="content">
-		di sini kontennya
+		<div class="greet">
+			<p>Hello, Admin</p>
+		</div>
 	</div>
-</div>
-
+	<div class="container">
+		<div class="aside">
+			<div class="navbar">
+				<div class="nav">
+					<div class="image"></div>
+					<a href="#">Store</a>
+				</div>
+				<div class="nav">
+					<div class="image"></div>
+					<a href="#">Request</a>
+				</div>
+				<div class="nav">
+					<div class="image"></div>
+					<a href="#">List End-User</a>
+				</div>
+				<div class="nav">
+					<div class="image"></div>
+					<a href="#">User Setting</a>
+				</div>
+			</div>
+			<div class="logout">
+				<div class="log">
+					<div class="image"></div>
+					<a href="#">Logout</a>
+				</div>
+			</div>
+		</div>
+		<!-- start content -->
+		<div class="content">
+			<?php
+				include './super/customer/customers.php'; 
+			?>
+		</div>
+		<!-- end of content -->
+	</div>
 </body>
 </html>
