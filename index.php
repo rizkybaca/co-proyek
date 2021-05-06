@@ -1,3 +1,7 @@
+<?php 
+// koneksi db
+include './inc/koneksi.php';
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,15 +28,15 @@
 			<div class="navbar">
 				<div class="nav">
 					<div class="image"></div>
-					<a href="#">Store</a>
+					<a href="?page=data-store">Stores</a>
 				</div>
 				<div class="nav">
 					<div class="image"></div>
-					<a href="#">Request</a>
+					<a href="?page=data-client">Clients</a>
 				</div>
 				<div class="nav">
 					<div class="image"></div>
-					<a href="#">List End-User</a>
+					<a href="?page=data-customer">Customers</a>
 				</div>
 				<div class="nav">
 					<div class="image"></div>
@@ -49,7 +53,53 @@
 		<!-- start content -->
 		<div class="content">
 			<?php
-				include './super/customer/customers.php'; 
+				if (isset($_GET['page'])) {
+				 	$hal=$_GET['page'];
+				 	switch ($hal) {
+				 		case 'data-store':
+				 			include './super/store/stores.php';
+				 			break;
+				 		case 'add-store':
+				 			include './super/store/add.php';
+				 			break;
+				 		case 'edit-store':
+				 			include './super/store/update.php';
+				 			break;
+				 		case 'del-store':
+				 			include './super/store/delete.php';
+				 			break;
+
+				 		case 'data-client':
+				 			include './super/client/clients.php';
+				 			break;
+				 		case 'add-client':
+				 			include './super/client/add.php';
+				 			break;
+				 		case 'edit-client':
+				 			include './super/client/update.php';
+				 			break;
+				 		case 'del-client':
+				 			include './super/client/delete.php';
+				 			break;
+
+				 		case 'data-customer':
+				 			include './super/customer/customers.php';
+				 			break;
+				 		case 'add-customer':
+				 			include './super/customer/add.php';
+				 			break;
+				 		case 'edit-customer':
+				 			include './super/customer/update.php';
+				 			break;
+				 		case 'del-customer':
+				 			include './super/customer/delete.php';
+				 			break;	
+
+				 		default:
+				 			echo "<center><h1> ERROR !</h1></center>";
+				 			break;
+				 	}
+				 } 
 			?>
 		</div>
 		<!-- end of content -->

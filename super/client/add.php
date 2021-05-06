@@ -4,7 +4,7 @@
 	</div>
 </div>
 <div class="cont-add-client">
-	<form>
+	<form action="" method="POST">
 		<div class="input">
 			<div class="col">
 				<label for="username">Username</label>
@@ -20,7 +20,7 @@
 			</div>
 			<div class="col">
 				<label for="address">Address</label>
-				<textarea id="address" placeholder="type address here"></textarea>
+				<textarea id="address" placeholder="type address here" name="address"></textarea>
 			</div>
 			<div class="col">
 				<label for="contact">Phone Number</label>
@@ -64,3 +64,42 @@
 		</div>
 	</form>
 </div>
+
+<?php 
+
+if (isset ($_POST['save'])){
+//mulai proses simpan data
+	// if ($_POST['ini_level']=='Administrator'){
+	// 	$jenis="ADM";
+	// } else{
+	// 	$jenis="PAN";
+	// }
+  $sql_simpan = "INSERT INTO client (username,password,name,address,phone_number,email,id_card,profile_picture,business_license) VALUES (
+  '".$_POST['username']."',
+  '".$_POST['password']."',
+  '".$_POST['name']."',
+  '".$_POST['address']."',
+  '".$_POST['phone_number']."',
+  '".$_POST['email']."',
+  '".$_POST['id_card']."',
+  '".$_POST['profile_picture']."',
+  '".$_POST['business_license']."')";
+  $query_simpan = mysqli_query($koneksi, $sql_simpan);
+  mysqli_close($koneksi);
+
+  if ($query_simpan) {
+  	echo "
+  		<script>
+				alert('Tambah Data Berhasil!');
+				document.location.href = 'index.php?page=data-client';
+			</script>
+		";
+  } else{
+  	echo "
+  		<script>
+				alert('Tambah Data Gagal!');
+				document.location.href = 'index.php?page=add-client';
+			</script>
+		";
+  }
+}

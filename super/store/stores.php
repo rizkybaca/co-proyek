@@ -3,7 +3,7 @@
 		<p>Stores</p>
 	</div>
 	<div class="button">
-		<a href="#">Add Stores</a>
+		<a href="?page=add-store">Add Stores</a>
 	</div>
 </div>
 <div class="cont-show-store">
