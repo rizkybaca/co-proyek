@@ -30,7 +30,8 @@
 				<label for="email">E-Mail</label>
 				<input type="text" name="email" id="email" placeholder="type email here" required>
 			</div>
-			<div class="col2">
+
+			<!-- <div class="col2">
 				<label for="id_card">Id Card</label>
 				<input type="file" name="id_card" id="id_card" required>
 			</div>
@@ -41,7 +42,21 @@
 			<div class="col2">
 				<label for="business_license">Business License</label>
 				<input type="file" name="business_license" id="business_license" required>
+			</div> -->
+
+			<div class="col">
+				<label for="id_card">Id Card</label>
+				<input type="text" name="id_card" id="id_card" required>
 			</div>
+			<div class="col">
+				<label for="profile_picture">Profile Picture</label>
+				<input type="text" name="profile_picture" id="profile_picture" required>
+			</div>
+			<div class="col">
+				<label for="business_license">Business License</label>
+				<input type="text" name="business_license" id="business_license" required>
+			</div>
+
 		</div>
 		<div class="button">
 			<a href="">Cancel</a>

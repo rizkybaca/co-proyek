@@ -20,7 +20,7 @@
 			</div>
 			<div class="col">
 				<label for="address">Address</label>
-				<textarea id="address" placeholder="type address here"></textarea>
+				<textarea id="address" placeholder="type address here">asd</textarea>
 			</div>
 			<div class="col">
 				<label for="contact">Phone Number</label>
@@ -30,7 +30,7 @@
 				<label for="email">E-Mail</label>
 				<input type="text" name="email" id="email" placeholder="type email here" value="asd">
 			</div>
-			<div class="col2">
+<!-- 			<div class="col2">
 				<label for="id_card">Id Card</label>
 				<input type="file" name="id_card" id="id_card">
 			</div>
@@ -41,7 +41,21 @@
 			<div class="col2">
 				<label for="business_license">Business License</label>
 				<input type="file" name="business_license" id="business_license">
+			</div> -->
+
+			<div class="col">
+				<label for="id_card">Id Card</label>
+				<input type="text" name="id_card" id="id_card" placeholder="type id card here" value="asd">
 			</div>
+			<div class="col">
+				<label for="profile_picture">Profile Picture</label>
+				<input type="text" name="profile_picture" id="profile_picture" placeholder="type profile picture here" value="asd">
+			</div>
+			<div class="col">
+				<label for="business_license">Business License</label>
+				<input type="text" name="business_license" id="business_license" placeholder="type business lisence here" value="asd">
+			</div>
+
 		</div>
 		<div class="button">
 			<a href="">Cancel</a>
