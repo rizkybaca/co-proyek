@@ -3,7 +3,7 @@
 <head>
 	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
 	<link href="./main.css" rel="stylesheet" />
-	<title>Document</title>
+	<title>Capt. Order</title>
 </head>
 <body>
 	<div class="header">
@@ -49,7 +49,7 @@
 		<!-- start content -->
 		<div class="content">
 			<?php
-				include './super/client/clients.php'; 
+				include './super/customer/customers.php'; 
 			?>
 		</div>
 		<!-- end of content -->
