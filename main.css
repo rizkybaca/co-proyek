@@ -83,24 +83,21 @@ font-weight: normal;
 font-size: 36px;
 line-height: 54px;
 /* identical to box height */
-
-
 color: #000000;
 }
-
 .container{
   /* Auto Layout */
   display: flex;
   flex-direction: row;
-  height: 100vh;
   align-items: stretch;
+  align-content: stretch;
   overflow: auto;
 }
 .container .aside{
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  justify-content: flex-start;
+  justify-content: space-between;
   min-width: 275px;
 }
 .container .aside .navbar{
@@ -660,7 +657,7 @@ line-height: 27px;
 
 text-transform: lowercase;
 
-color: rgba(0, 0, 0, 0.5);
+color: #000000;
 }
 .container .content .cont-add-client form .input .col textarea{
     /* Auto Layout */
@@ -681,7 +678,7 @@ line-height: 27px;
 
 text-transform: lowercase;
 
-color: rgba(0, 0, 0, 0.5);
+color: #000000;
 }
 
 .container .content .cont-add-client form .input .col2{
