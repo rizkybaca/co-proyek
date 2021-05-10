@@ -28,7 +28,7 @@
 			</div>
 		</div>
 		<div class="button">
-			<a href="">Cancel</a>
+			<a href="?page">Cancel</a>
 			<input type="submit" name="save" value="Save">
 		</div>
 	</form>

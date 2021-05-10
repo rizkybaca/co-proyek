@@ -37,7 +37,7 @@
 			</div>
 		</div>
 		<div class="button">
-			<a href="">Cancel</a>
+			<a href="?page=data-store">Cancel</a>
 			<input type="submit" name="save" value="Save">
 		</div>
 	</form>

@@ -40,7 +40,7 @@ if (isset($_GET['kode'])) {
 			</div>
 			<div class="col">
 				<label for="email">E-Mail</label>
-				<input type="text" name="email" id="email" placeholder="type email here" value="<?= $data_cek['email']; ?>">
+				<input type="email" name="email" id="email" placeholder="type email here" value="<?= $data_cek['email']; ?>">
 			</div>
 <!-- 			<div class="col2">
 				<label for="id_card">Id Card</label>
@@ -70,7 +70,7 @@ if (isset($_GET['kode'])) {
 
 		</div>
 		<div class="button">
-			<a href="">Cancel</a>
+			<a href="?page=data-client">Cancel</a>
 			<input type="submit" name="save" value="Save">
 		</div>
 	</form>

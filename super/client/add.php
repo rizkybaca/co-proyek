@@ -28,7 +28,7 @@
 			</div>
 			<div class="col">
 				<label for="email">E-Mail</label>
-				<input type="text" name="email" id="email" placeholder="type email here" required>
+				<input type="email" name="email" id="email" placeholder="type email here" required>
 			</div>
 
 			<!-- <div class="col2">
@@ -59,7 +59,7 @@
 
 		</div>
 		<div class="button">
-			<a href="">Cancel</a>
+			<a href="?page=data-client">Cancel</a>
 			<input type="submit" name="save" value="Save">
 		</div>
 	</form>
