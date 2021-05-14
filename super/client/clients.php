@@ -11,7 +11,7 @@ $a=1;
 	</div>
 </div>
 <div class="cont-show-client">
-	<table>
+	<table border="1">
 		<tr>
 			<th>No.</th>
 			<th>Name</th>
