@@ -1,9 +1,12 @@
+<?php 
+$a=1;
+ ?>
 <div class="head">
 	<div class="tittle">
-		<p>Clients</p>
+		<p>Customers</p>
 	</div>
 	<div class="button">
-		<a href="#">Add Customer</a>
+		<a href="?page=add-customer">Add Customer</a>
 	</div>
 </div>
 <div class="cont-show-customer">
@@ -12,14 +15,19 @@
 			<th>No.</th>
 			<th>Name</th>
 			<th>Actions</th>
+		</tr>
+		<?php 
+		$sql=$koneksi->query("SELECT * FROM customer");
+		while($data=$sql->fetch_assoc()): ?>
 		<tr>
-			<td>1</td>
-			<td>Samuel</td>
+			<td><?= $a++; ?></td>
+			<td><?= $data['name']; ?></td>
 			<td>
 				<a href="">Detail</a>
-				<a href="">Edit</a>
+				<a href="?page=edit-customer&kode=<?=$data['id']; ?>">Edit</a>
 				<a href="">Delete</a>
 			</td>
-		</td>
+		</tr>
+	<?php endwhile ?>
 	</table>
 </div>

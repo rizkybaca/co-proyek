@@ -827,7 +827,7 @@ line-height: 27px;
 
 text-transform: lowercase;
 
-color: rgba(0, 0, 0, 0.5);
+color: #000000;
 }
 .container .content .cont-add-customer form .button{
   /* Auto Layout */
