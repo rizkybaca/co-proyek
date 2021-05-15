@@ -2,7 +2,7 @@
 if (isset($_GET['kode'])) {
 	$sql_cek="SELECT *FROM client WHERE id='".$_GET['kode']."'";
 	$query_cek = mysqli_query($koneksi, $sql_cek);
-  $data_cek = mysqli_fetch_array($query_cek,MYSQLI_BOTH);
+  $data_cek = mysqli_fetch_array($query_cek,MYSQLI_ASSOC);
 }
  ?>
 <div class="head">
@@ -105,7 +105,8 @@ if (isset ($_POST['save'])){
    email='".$_POST['email']."',
    id_card='".$_POST['id_card']."',
    profile_picture='".$_POST['profile_picture']."',
-   business_license='".$_POST['business_license']."'";
+   business_license='".$_POST['business_license']."'
+   WHERE id='".$_POST['id']."'";
   $query_ubah = mysqli_query($koneksi, $sql_ubah);
   mysqli_close($koneksi);
 

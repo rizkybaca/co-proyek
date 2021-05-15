@@ -7,7 +7,7 @@ $a=1;
 		<p>Clients</p>
 	</div>
 	<div class="button">
-		<a href="?page=add-client">Add Clients</a>
+		<a href="?page=add-client">Add Client</a>
 	</div>
 </div>
 <div class="cont-show-client">
@@ -15,17 +15,18 @@ $a=1;
 		<tr>
 			<th>No.</th>
 			<th>Name</th>
-			<th>Action</th>
+			<th>Actions</th>
 		</tr>
 		<?php 
-		$sql=$koneksi->query("SELECT * FROM client");
-		while($data=$sql->fetch_assoc()): ?>
+		$sql_cek="SELECT *FROM client";
+		$query_cek = mysqli_query($koneksi, $sql_cek);
+	  while($data_cek= mysqli_fetch_array($query_cek,MYSQLI_ASSOC)) :?>
 		<tr>
 			<td><?= $a++; ?></td>
-			<td><?= $data['name']; ?></td>
+			<td><?= $data_cek['name']; ?></td>
 			<td>
 				<a href="">Detail</a>
-				<a href="?page=edit-client&kode=<?=$data['id']; ?>">Edit</a>
+				<a href="?page=edit-client&kode=<?=$data_cek['id']; ?>">Edit</a>
 				<a href="">Delete</a>
 			</td>
 		</tr>

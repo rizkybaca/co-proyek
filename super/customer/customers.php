@@ -17,14 +17,15 @@ $a=1;
 			<th>Actions</th>
 		</tr>
 		<?php 
-		$sql=$koneksi->query("SELECT * FROM customer");
-		while($data=$sql->fetch_assoc()): ?>
+		$sql_cek="SELECT *FROM customer";
+		$query_cek = mysqli_query($koneksi, $sql_cek);
+	  while($data_cek= mysqli_fetch_array($query_cek)) :?>
 		<tr>
 			<td><?= $a++; ?></td>
-			<td><?= $data['name']; ?></td>
+			<td><?= $data_cek['name']; ?></td>
 			<td>
 				<a href="">Detail</a>
-				<a href="?page=edit-customer&kode=<?=$data['id']; ?>">Edit</a>
+				<a href="?page=edit-customer&kode=<?=$data_cek['id']; ?>">Edit</a>
 				<a href="">Delete</a>
 			</td>
 		</tr>
