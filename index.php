@@ -46,7 +46,7 @@ include './inc/koneksi.php';
 			<div class="logout">
 				<div class="log">
 					<div class="image"></div>
-					<a href="#">Logout</a>
+					<a href="./logout.php">Logout</a>
 				</div>
 			</div>
 		</div>
