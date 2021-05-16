@@ -1,3 +1,8 @@
+<?php 
+	$sql_cek="SELECT * FROM store"; //andi lau, anaaa
+	$query_cek=mysqli_query($koneksi, $sql_cek);
+
+ ?>
 <div class="head">
 	<div class="tittle">
 		<p>Stores</p>
@@ -7,74 +12,20 @@
 	</div>
 </div>
 <div class="cont-show-store">
-	<a href="">
+	<?php while($a=mysqli_fetch_array($query_cek, MYSQLI_ASSOC)): ?>
+	<a href="?page=edit-store&kode=<?=$a['id']; ?>">
 		<div class="store">
 			<div class="image"></div>
 			<div class="desc">
 				<div class="tittle">
-					<p>Yamie Panda Chapter Monjali</p>
+					<p><?= $a['name']; ?></p>
 				</div>
 				<div class="sub">
-					<p>Jl. Diponegoro No. 12, Mlati, Sleman</p>
+					<p><?= $a['address']; ?></p>
 				</div>
 				<div class="button"></div>
 			</div>
 		</div>
 	</a>
-<!-- 	<a href="">
-		<div class="store">
-			<div class="image"></div>
-			<div class="desc">
-				<div class="tittle">
-					<p>Chingu Cafe Jogja</p>
-				</div>
-				<div class="sub">
-					<p>Jl. Mulawarman, Umbulharjo, Yogyakarta</p>
-				</div>
-				<div class="button"></div>
-			</div>
-		</div>
-	</a>
-	<a href="">
-		<div class="store">
-			<div class="image"></div>
-			<div class="desc">
-				<div class="tittle">
-					<p>Chingu Cafe Jogja</p>
-				</div>
-				<div class="sub">
-					<p>Jl. Mulawarman, Umbulharjo, Yogyakarta</p>
-				</div>
-				<div class="button"></div>
-			</div>
-		</div>
-	</a>
-	<a href="">
-		<div class="store">
-			<div class="image"></div>
-			<div class="desc">
-				<div class="tittle">
-					<p>Chingu Cafe Jogja</p>
-				</div>
-				<div class="sub">
-					<p>Jl. Mulawarman, Umbulharjo, Yogyakarta</p>
-				</div>
-				<div class="button"></div>
-			</div>
-		</div>
-	</a>
-	<a href="">
-		<div class="store">
-			<div class="image"></div>
-			<div class="desc">
-				<div class="tittle">
-					<p>Chingu Cafe Jogja</p>
-				</div>
-				<div class="sub">
-					<p>Jl. Mulawarman, Umbulharjo, Yogyakarta</p>
-				</div>
-				<div class="button"></div>
-			</div>
-		</div>
-	</a> -->
+	<?php endwhile ?>
 </div>

@@ -28,11 +28,11 @@ include './inc/koneksi.php';
 			<div class="navbar">
 				<div class="nav">
 					<div class="image"></div>
-					<a href="?page=data-store">Stores</a>
+					<a href="?page=data-client">Clients</a>
 				</div>
 				<div class="nav">
 					<div class="image"></div>
-					<a href="?page=data-client">Clients</a>
+					<a href="?page=data-store">Stores</a>
 				</div>
 				<div class="nav">
 					<div class="image"></div>

@@ -1,10 +1,15 @@
+<?php 
+$sql_cek="SELECT name FROM client"; //andi lau, anaaa
+$query_cek=mysqli_query($koneksi, $sql_cek);
+
+?>
 <div class="head">
 	<div class="tittle">
 		<p>Add New Store</p>
 	</div>
 </div>
 <div class="cont-add-store">
-	<form>
+	<form action="" method="POST">
 		<div class="input">
 			<div class="col">
 				<label for="name">Name</label>
@@ -12,15 +17,23 @@
 			</div>
 			<div class="col">
 				<label for="address">Address</label>
-				<textarea id="address" placeholder="type address here" required></textarea>
+				<textarea name="address" id="address" placeholder="type address here" required></textarea>
 			</div>
 			<div class="col">
-				<label for="contact">Number Phone</label>
-				<input type="text" name="number_phone" id="contact" placeholder="type number phone here" required>
+				<label for="contact">Phone Number</label>
+				<input type="text" name="phone_number" id="contact" placeholder="type number phone here" required>
 			</div>
 			<div class="col">
-				<label for="client_name">Client Name</label>
-				<input type="text" name="client_name" id="client_name" placeholder="type client name here" required>
+				<label for="name_client">Client Name</label>
+				<select name="name_client" id="name_client" required>
+					<option>--pilih client dibawah ini--</option>
+					<?php while ($a=mysqli_fetch_array($query_cek, MYSQLI_ASSOC)): ?>
+						<option value="<?= $a['name']; ?>">
+							<?= $a['name']; ?>
+						</option>						
+					<?php endwhile ?>
+
+				</select>
 			</div>
 			<div class="col2">
 				<div class="tittle">
@@ -43,3 +56,32 @@
 	</form>
 </div>
 
+ 
+<?php 
+if (isset ($_POST['save'])){
+
+  $sql_simpan = "INSERT INTO store (name,address,phone_number,status,name_client) VALUES (
+  '".$_POST['name']."',
+  '".$_POST['address']."',
+  '".$_POST['phone_number']."',
+  '".$_POST['status']."',
+  '".$_POST['name_client']."')";
+  $query_simpan = mysqli_query($koneksi, $sql_simpan);
+  mysqli_close($koneksi);
+
+  if ($query_simpan) {
+  	echo "
+  		<script>
+				alert('Tambah Data Berhasil!');
+				document.location.href = 'index.php?page=data-store';
+			</script>
+		";
+  } else{
+  	echo "
+  		<script>
+				alert('Tambah Data Gagal!');
+				document.location.href = 'index.php?page=add-store';
+			</script>
+		";
+  }
+}

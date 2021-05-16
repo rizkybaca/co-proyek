@@ -413,6 +413,25 @@ margin: 10px;
 
   text-transform: lowercase;
 }
+.container .content .cont-add-store form .input .col select{
+  /* Auto Layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 27px;
+  /* identical to box height */
+
+  text-transform: lowercase;
+}
 .container .content .cont-add-store form .input .col2{
 display: flex;
 flex-direction: column;

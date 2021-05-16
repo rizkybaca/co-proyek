@@ -26,7 +26,7 @@ $a=1;
 			<td>
 				<a href="">Detail</a>
 				<a href="?page=edit-customer&kode=<?=$data_cek['id']; ?>">Edit</a>
-				<a href="">Delete</a>
+				<a href="?page=del-customer&kode=<?=$data_cek['id']; ?>">Delete</a>
 			</td>
 		</tr>
 	<?php endwhile ?>
