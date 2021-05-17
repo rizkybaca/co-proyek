@@ -74,7 +74,7 @@ if (isset ($_POST['save'])){
 	// } else{
 	// 	$jenis="PAN";
 	// }
-  $sql_simpan = "INSERT INTO client (username,password,name,address,phone_number,email,id_card,profile_picture,business_license) VALUES (
+  $sql_simpan = "INSERT INTO client (username,password,name_c,address,phone_number,email,id_card,profile_picture,business_license) VALUES (
   '".$_POST['username']."',
   '".$_POST['password']."',
   '".$_POST['name']."',

@@ -27,7 +27,7 @@ $a=1;
 			<td>
 				<a href="">Detail</a>
 				<a href="?page=edit-client&kode=<?=$data_cek['id']; ?>">Edit</a>
-				<a href="?page=del-client&kode=<?=$data_cek['id']; ?>">Delete</a>
+				<a href="?page=del-client&kode=<?=$data_cek['id']; ?>" onclick="return confirm('Apakah anda yakin hapus data ini ?')">Delete</a>
 			</td>
 		</tr>
 	<?php endwhile ?>

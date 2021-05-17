@@ -1,5 +1,5 @@
 <?php 
-$sql_cek="SELECT name FROM client"; //andi lau, anaaa
+$sql_cek="SELECT * FROM client"; //andi lau, anaaa
 $query_cek=mysqli_query($koneksi, $sql_cek);
 
 ?>
@@ -24,16 +24,19 @@ $query_cek=mysqli_query($koneksi, $sql_cek);
 				<input type="text" name="phone_number" id="contact" placeholder="type number phone here" required>
 			</div>
 			<div class="col">
-				<label for="name_client">Client Name</label>
-				<select name="name_client" id="name_client" required>
+				<label for="id_client">Client Name</label>
+				<select name="id_client" id="id_client" required>
 					<option>--pilih client dibawah ini--</option>
-					<?php while ($a=mysqli_fetch_array($query_cek, MYSQLI_ASSOC)): ?>
-						<option value="<?= $a['name']; ?>">
-							<?= $a['name']; ?>
+					<?php while ($a=mysqli_fetch_array($query_cek)): ?>
+						<option value="<?= $a['id']; ?>">
+							<?= $a['name_c']; ?>
 						</option>						
 					<?php endwhile ?>
-
 				</select>
+			</div>
+			<div class="col">
+				<label for="image">Profile Image</label>
+				<input type="text" name="image" id="image" required>
 			</div>
 			<div class="col2">
 				<div class="tittle">
@@ -60,12 +63,13 @@ $query_cek=mysqli_query($koneksi, $sql_cek);
 <?php 
 if (isset ($_POST['save'])){
 
-  $sql_simpan = "INSERT INTO store (name,address,phone_number,status,name_client) VALUES (
+  $sql_simpan = "INSERT INTO store (name,address,phone_number,status,id_client,image) VALUES (
   '".$_POST['name']."',
   '".$_POST['address']."',
   '".$_POST['phone_number']."',
   '".$_POST['status']."',
-  '".$_POST['name_client']."')";
+  '".$_POST['id_client']."',
+	'".$_POST['image']."')";
   $query_simpan = mysqli_query($koneksi, $sql_simpan);
   mysqli_close($koneksi);
 
