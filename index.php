@@ -6,7 +6,7 @@ include './inc/koneksi.php';
 <html>
 <head>
 	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
-	<link href="./main.css" rel="stylesheet" />
+	<link href="./dist/css/main.css" rel="stylesheet" />
 	<title>Capt. Order</title>
 </head>
 <body>

@@ -28,7 +28,7 @@ if (isset($_GET['kode'])) {
 			</div>
 			<div class="col">
 				<label for="name">Name</label>
-				<input type="text" name="name" id="name" placeholder="type name here" value="<?= $data_cek['name']; ?>">
+				<input type="text" name="name" id="name" placeholder="type name here" value="<?= $data_cek['name_c']; ?>">
 			</div>
 			<div class="col">
 				<label for="address">Address</label>

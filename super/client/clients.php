@@ -23,7 +23,7 @@ $a=1;
 	  while($data_cek= mysqli_fetch_array($query_cek,MYSQLI_ASSOC)) :?>
 		<tr>
 			<td><?= $a++; ?></td>
-			<td><?= $data_cek['name']; ?></td>
+			<td><?= $data_cek['name_c']; ?></td>
 			<td>
 				<a href="">Detail</a>
 				<a href="?page=edit-client&kode=<?=$data_cek['id']; ?>">Edit</a>

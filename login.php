@@ -5,7 +5,7 @@ include './inc/koneksi.php';
 <html>
 <head>
 	<title>login</title>
-	<link href="./login.css" rel="stylesheet" />
+	<link href="./dist/css/login.css" rel="stylesheet" />
 </head>
 <body>
 	<div class="container">
