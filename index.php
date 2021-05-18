@@ -1,7 +1,18 @@
 <?php 
+// mulai session
+session_start();
+if (!isset($_SESSION["ses_username"])) {
+	header("location: login.php");
+} else{
+	$data_id=$_SESSION["ses_id"];
+	$data_username=$_SESSION["ses_username"];
+	$data_password=$_SESSION["ses_password"];
+	$data_name=$_SESSION["ses_name"];
+}
 // koneksi db
 include './inc/koneksi.php';
  ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,7 +51,7 @@ include './inc/koneksi.php';
 				</div>
 				<div class="nav">
 					<div class="image"></div>
-					<a href="#">User Setting</a>
+					<a href="?page=edit-user">User Setting</a>
 				</div>
 			</div>
 			<div class="logout">
@@ -94,6 +105,10 @@ include './inc/koneksi.php';
 				 		case 'del-customer':
 				 			include './super/customer/delete.php';
 				 			break;	
+
+			 			case 'edit-user':
+				 			include './super/user/setting.php';
+				 			break;
 
 				 		default:
 				 			echo "<center><h1> ERROR !</h1></center>";

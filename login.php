@@ -44,7 +44,7 @@ if (isset($_POST['login'])) {
 
 	$sql_login="SELECT * FROM super_user WHERE BINARY username='$username' AND password='$password'";
 	$query_login=mysqli_query($koneksi, $sql_login);
-	$data_login=mysqli_fetch_array($query_logn, MYSQLI_ASSOC);
+	$data_login=mysqli_fetch_array($query_login, MYSQLI_ASSOC);
 	$jumlah_login=mysqli_num_rows($query_login);
 
 	if ($jumlah_login==1) {
