@@ -11,7 +11,7 @@ $a=1;
 	</div>
 </div>
 <div class="cont-show-store">
-	<table border="1" width="100%">
+	<table border="1" width="100%" style="border-collapse: collapse;">
 		<tr>
 			<th>No.</th>
 			<th>Profile Image</th>
@@ -23,7 +23,7 @@ $a=1;
 			<th>Actions</th>
 		</tr>
 		<?php 
-		$sql_cek="SELECT * FROM store LEFT JOIN client as c ON store.id_client=c.id";
+		$sql_cek="SELECT s.id, s.id_client, s.image, s.name, s.address, s.phone_number, s.status, c.name_c FROM store as s LEFT JOIN client as c ON s.id_client=c.id";
 		$query_cek = mysqli_query($koneksi, $sql_cek);
 	  while($data_cek= mysqli_fetch_array($query_cek)) :?>
 		<tr>

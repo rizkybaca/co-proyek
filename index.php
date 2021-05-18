@@ -57,7 +57,7 @@ include './inc/koneksi.php';
 			<div class="logout">
 				<div class="log">
 					<div class="image"></div>
-					<a href="./logout.php">Logout</a>
+					<a href="./logout.php" onclick="return confirm('Apakah anda yakin ingin keluar?')">Logout</a>
 				</div>
 			</div>
 		</div>
@@ -69,6 +69,9 @@ include './inc/koneksi.php';
 				 	switch ($hal) {
 				 		case 'data-store':
 				 			include './super/store/stores.php';
+				 			break;
+			 			case 'detail-store':
+				 			include './super/store/detail.php';
 				 			break;
 				 		case 'add-store':
 				 			include './super/store/add.php';
@@ -83,6 +86,9 @@ include './inc/koneksi.php';
 				 		case 'data-client':
 				 			include './super/client/clients.php';
 				 			break;
+			 			case 'detail-client':
+				 			include './super/client/detail.php';
+				 			break;
 				 		case 'add-client':
 				 			include './super/client/add.php';
 				 			break;
@@ -95,6 +101,9 @@ include './inc/koneksi.php';
 
 				 		case 'data-customer':
 				 			include './super/customer/customers.php';
+				 			break;
+			 			case 'detail-customer':
+				 			include './super/customer/detail.php';
 				 			break;
 				 		case 'add-customer':
 				 			include './super/customer/add.php';

@@ -9,7 +9,7 @@
 		<p>User Setting</p>
 	</div>
 </div>
-<div class="cont-add-client">
+<div class="cont-setting">
 	<form action="" method="POST">
 		<input type="hidden" name="id" readonly value="<?= $data_cek['id']; ?>">
 		<div class="input">
@@ -22,7 +22,7 @@
 				<input type="password" name="password" id="password" placeholder="type password here" value="<?= $data_cek['password']; ?>">
 				<div class="checkbox">
 				  <input type="checkbox" name="look-password" id="mybutton" onclick="change()">
-				  <label for="look-password">lihat password</label>
+				  <label for="mybutton">lihat password</label>
 				</div>
 			</div>
 			<div class="col">

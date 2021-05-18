@@ -21,10 +21,10 @@ if (isset($_GET['kode'])) {
 			<div class="col">
 				<label for="password">Password</label>
 				<input type="password" name="password" id="password" placeholder="type password here" value="<?= $data_cek['password']; ?>">
-				<!-- <div class="checkbox">
+				<div class="checkbox">
 				  <input type="checkbox" name="look-password" id="mybutton" onclick="change()">
-				  <label for="look-password">lihat password</label>
-				</div> -->
+				  <label for="mybutton">lihat password</label>
+				</div>
 			</div>
 			<div class="col">
 				<label for="name">Name</label>
@@ -75,18 +75,20 @@ if (isset($_GET['kode'])) {
 		</div>
 	</form>
 </div>
-<!-- <script type="text/javascript">
+
+<script type="text/javascript">
 	function change(){
-	  var x = document.getElementById('pass').type;
+	  var x = document.getElementById('password').type;
 	  if (x == 'password') {
-      document.getElementById('pass').type = 'text';
+      document.getElementById('password').type = 'text';
       document.getElementById('mybutton').innerHTML;
 	  } else{
-      document.getElementById('pass').type = 'password';
+      document.getElementById('password').type = 'password';
       document.getElementById('mybutton').innerHTML;
 	  }
 	}
-</script> -->
+</script>
+
 <?php 
 
 if (isset ($_POST['save'])){

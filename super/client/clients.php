@@ -11,7 +11,7 @@ $a=1;
 	</div>
 </div>
 <div class="cont-show-client">
-	<table border="1">
+	<table border="1" width="100%" style="border-collapse: collapse;">
 		<tr>
 			<th>No.</th>
 			<th>Name</th>
@@ -25,7 +25,7 @@ $a=1;
 			<td><?= $a++; ?></td>
 			<td><?= $data_cek['name_c']; ?></td>
 			<td>
-				<a href="">Detail</a>
+				<a href="?page=detail-client&kode=<?=$data_cek['id']; ?>">Detail</a>
 				<a href="?page=edit-client&kode=<?=$data_cek['id']; ?>">Edit</a>
 				<a href="?page=del-client&kode=<?=$data_cek['id']; ?>" onclick="return confirm('Apakah anda yakin hapus data ini ?')">Delete</a>
 			</td>

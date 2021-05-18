@@ -12,19 +12,19 @@ include './inc/koneksi.php';
 		<div class="brand">
 			<div class="image"></div>
 			<div class="tittle">
-				<p>captain order</p>
+				<p>Captain Order</p>
 			</div>
 		</div>
 		<div class="content">
 			<form action="" method="POST">
 				<div class="input">
 					<div class="col">
-						<label>username</label>
-						<input type="text" name="username" required>
+						<label for="u">username</label>
+						<input id="u" type="text" name="username" placeholder="type username here" required>
 					</div>
 					<div class="col">
-						<label>password</label>
-						<input type="password" name="password" required>
+						<label for="p">password</label>
+						<input id="p" type="password" name="password" placeholder="type password here" required>
 					</div>
 				</div>
 				<div class="button">
