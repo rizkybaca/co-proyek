@@ -1,5 +1,25 @@
 <?php 
 
+if (isset($_GET['alert'])) {
+	if ($_GET['alert']=="ext") {
+		echo "
+			  		<script>
+							alert('Ekstensi foto salah!');
+							document.location.href = 'index.php?page=data-store'
+						</script>
+					"
+		;
+	} elseif ($_GET['alert']=="size") {
+		echo "
+			  		<script>
+							alert('Ukuran foto terlalu besar!');
+							document.location.href = 'index.php?page=data-store'
+						</script>
+					"
+		;
+	}
+}
+$target='dist/img/store/';
 $a=1;
  ?>
 <div class="head">
@@ -28,7 +48,9 @@ $a=1;
 	  while($data_cek= mysqli_fetch_array($query_cek)) :?>
 		<tr>
 			<td style="width: 50px;"><?= $a++; ?></td>
-			<td><?= $data_cek['image']; ?></td>
+			<td>
+				<img width="100px" src="<?= $target.$data_cek['image']; ?>">
+			</td>
 			<td><?= $data_cek['name']; ?></td>
 			<td><?= $data_cek['address']; ?></td>
 			<td><?= $data_cek['phone_number']; ?></td>

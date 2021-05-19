@@ -9,7 +9,7 @@ function active_radio_button($value,$input){
 	$result=$value==$input?'checked':'';
 	return $result;
 }
-
+$target='dist/img/store/';
 $cek_sql="SELECT * FROM client";
 $cek_query=mysqli_query($koneksi, $cek_sql);
 
@@ -48,7 +48,8 @@ $cek_query=mysqli_query($koneksi, $cek_sql);
 			</div>
 			<div class="col">
 				<label for="image">Profile Image</label>
-				<input type="file" name="image" id="image" value="<?=$data_cek['image']; ?>">
+				<input type="file" name="image" id="image">
+				<img width="100px" src="<?= $target.$data_cek['image']; ?>">
 			</div>
 			<div class="col2">
 				<div class="tittle">
@@ -74,30 +75,85 @@ $cek_query=mysqli_query($koneksi, $cek_sql);
 <?php 
 
 if (isset ($_POST['save'])){
-	$sql_ubah = "UPDATE store SET
-   name='".$_POST['name']."',
-   address='".$_POST['address']."',
-   phone_number='".$_POST['phone_number']."',
-   status='".$_POST['status']."',
-   id_client='".$_POST['id_client']."'   
-   WHERE id='".$_POST['id']."'"
-   ;
-  $query_ubah = mysqli_query($koneksi, $sql_ubah);
-  mysqli_close($koneksi);
 
-  if ($query_ubah) {
-  	echo "
-  		<script>
-				alert('Edit Data Berhasil!');
-				document.location.href = 'index.php?page=data-store';
-			</script>
-		";
-  } else{
-  	echo "
-  		<script>
-				alert('Edit Data Gagal!');
-				document.location.href = 'index.php?page=edit-store';
-			</script>
-		";
-  }
+	$rand=rand();
+	$ekstensi=array('png', 'jpg', 'jpeg');
+	$file_name=$_FILES['image']['name'];
+	$ukuran=$_FILES['image']['size'];
+	$temp=$_FILES['image']['tmp_name'];
+	$ext=pathinfo($file_name, PATHINFO_EXTENSION);
+	$target='dist/img/store/';
+
+	if (!empty($temp)) {
+		if (!in_array($ext, $ekstensi)) {
+			header("location:index.php?page=data-store&alert=ext");
+		} elseif (in_array($ext, $ekstensi)) {
+			if ($ukuran<=5000000) {
+				
+				$foto=$data_cek['image'];
+				if (file_exists($target.$foto)) {
+					unlink($target.$foto);
+				}
+
+				$image=$image=$rand.'_'.$file_name;
+				move_uploaded_file($temp, $target.$image);
+
+				$sql_ubah = "UPDATE store SET
+			   name='".$_POST['name']."',
+			   address='".$_POST['address']."',
+			   phone_number='".$_POST['phone_number']."',
+			   status='".$_POST['status']."',
+			   id_client='".$_POST['id_client']."',
+			   image='$image'   
+			   WHERE id='".$_POST['id']."'"
+				;
+			  $query_ubah = mysqli_query($koneksi, $sql_ubah);
+			  mysqli_close($koneksi);
+			  if ($query_ubah) {
+			  	echo "
+			  		<script>
+							alert('Edit Data Berhasil!');
+							document.location.href = 'index.php?page=data-store';
+						</script>
+					";
+			  } else {
+			  	echo "
+			  		<script>
+							alert('Edit Data Gagal!');
+							document.location.href = 'index.php?page=data-store';
+						</script>
+					";
+			  }
+			} elseif ($ukuran>5000000) {
+				header("location:index.php?page=data-store&alert=size");
+			}
+		}
+	} elseif (empty($temp)){
+		$sql_ubah = "UPDATE store SET
+	   name='".$_POST['name']."',
+	   address='".$_POST['address']."',
+	   phone_number='".$_POST['phone_number']."',
+	   status='".$_POST['status']."',
+	   id_client='".$_POST['id_client']."'   
+	   WHERE id='".$_POST['id']."'"
+   ;
+	  $query_ubah = mysqli_query($koneksi, $sql_ubah);
+	  mysqli_close($koneksi);
+
+	  if ($query_ubah) {
+	  	echo "
+	  		<script>
+					alert('Edit Data Berhasil!');
+					document.location.href = 'index.php?page=data-store';
+				</script>
+			";
+	  } else {
+	  	echo "
+	  		<script>
+					alert('Edit Data Gagal!');
+					document.location.href = 'index.php?page=data-store';
+				</script>
+			";
+	  }
+	}
 }
