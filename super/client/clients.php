@@ -13,7 +13,7 @@ $a=1;
 <div class="cont-show-client">
 	<table border="1" width="100%" style="border-collapse: collapse;">
 		<tr>
-			<th>No.</th>
+			<th style="width: 50px;">No.</th>
 			<th>Name</th>
 			<th>Actions</th>
 		</tr>
@@ -22,7 +22,7 @@ $a=1;
 		$query_cek = mysqli_query($koneksi, $sql_cek);
 	  while($data_cek= mysqli_fetch_array($query_cek,MYSQLI_ASSOC)) :?>
 		<tr>
-			<td><?= $a++; ?></td>
+			<td style="width: 50px;"><?= $a++; ?></td>
 			<td><?= $data_cek['name_c']; ?></td>
 			<td>
 				<a href="?page=detail-client&kode=<?=$data_cek['id']; ?>">Detail</a>

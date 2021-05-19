@@ -4,7 +4,7 @@ $a=1;
  ?>
 <div class="head">
 	<div class="tittle">
-		<p>Customers</p>
+		<p>Stores</p>
 	</div>
 	<div class="button">
 		<a href="?page=add-store">Add Store</a>
@@ -13,7 +13,7 @@ $a=1;
 <div class="cont-show-store">
 	<table border="1" width="100%" style="border-collapse: collapse;">
 		<tr>
-			<th>No.</th>
+			<th style="width: 50px;">No.</th>
 			<th>Profile Image</th>
 			<th>Name</th>
 			<th>Address</th>
@@ -27,7 +27,7 @@ $a=1;
 		$query_cek = mysqli_query($koneksi, $sql_cek);
 	  while($data_cek= mysqli_fetch_array($query_cek)) :?>
 		<tr>
-			<td><?= $a++; ?></td>
+			<td style="width: 50px;"><?= $a++; ?></td>
 			<td><?= $data_cek['image']; ?></td>
 			<td><?= $data_cek['name']; ?></td>
 			<td><?= $data_cek['address']; ?></td>

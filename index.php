@@ -31,7 +31,7 @@ include './inc/koneksi.php';
 			</div>
 		</div>
 		<div class="greet">
-			<p>Hello, Admin</p>
+			<p>Hello, <?= $data_name; ?></p>
 		</div>
 	</div>
 	<div class="container">

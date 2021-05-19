@@ -20,7 +20,7 @@ $cek_query=mysqli_query($koneksi, $cek_sql);
 	</div>
 </div>
 <div class="cont-add-store">
-	<form action="" method="POST">
+	<form action="" method="POST" enctype="multipart/form-data">
 		<input type="hidden" name="id" readonly value="<?= $data_cek['id']; ?>">
 		<div class="input">
 			<div class="col">
@@ -37,7 +37,7 @@ $cek_query=mysqli_query($koneksi, $cek_sql);
 			</div>
 			<div class="col">
 				<label for="id_client">Client Name</label>
-				<select name="id_client" id="id_client" required>
+				<select name="id_client" id="id_client">
 					<option>--pilih client dibawah ini--</option>
 					<?php while ($a=mysqli_fetch_array($cek_query)): ?>
 						<option value="<?= $a['id']; ?>" <?= $data_cek['id_client']==$a['id']?'selected':''?>>
@@ -46,12 +46,16 @@ $cek_query=mysqli_query($koneksi, $cek_sql);
 					<?php endwhile ?>
 				</select>
 			</div>
+			<div class="col">
+				<label for="image">Profile Image</label>
+				<input type="file" name="image" id="image" value="<?=$data_cek['image']; ?>">
+			</div>
 			<div class="col2">
 				<div class="tittle">
 					<p>choose store status here</p>
 				</div>
 				<div class="radio">
-					<input type="radio" name="status" value="active" id="active" required <?= active_radio_button("active", $b) ?>>
+					<input type="radio" name="status" value="active" id="active" <?= active_radio_button("active", $b) ?>>
 					<label for="active">Active</label>
 				</div>
 				<div class="radio">

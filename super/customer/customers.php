@@ -12,7 +12,7 @@ $a=1;
 <div class="cont-show-customer">
 	<table border="1" width="100%" style="border-collapse: collapse;">
 		<tr>
-			<th>No.</th>
+			<th style="width: 50px;">No.</th>
 			<th>Name</th>
 			<th>Join Date</th>
 			<th>Email</th>
@@ -24,7 +24,7 @@ $a=1;
 		$query_cek = mysqli_query($koneksi, $sql_cek);
 	  while($data_cek= mysqli_fetch_array($query_cek)) :?>
 		<tr>
-			<td><?= $a++; ?></td>
+			<td style="width: 50px;"><?= $a++; ?></td>
 			<td><?= $data_cek['name']; ?></td>
 			<td><?= $data_cek['join_date']; ?></td>
 			<td><?= $data_cek['email']; ?></td>
