@@ -11,7 +11,7 @@ $target_bl='dist/img/client/bl/';
  ?>
 <div class="head">
 	<div class="tittle">
-		<p>Update Client</p>
+		<p>Client Details</p>
 	</div>
 </div>
 <div class="cont-add-client">

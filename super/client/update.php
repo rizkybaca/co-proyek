@@ -5,8 +5,27 @@ if (isset($_GET['kode'])) {
   $data_cek = mysqli_fetch_array($query_cek,MYSQLI_ASSOC);
 }
 
-$target_ic='dist/img/client/ic/';
-$target_pp='dist/img/client/pp/';
+if (isset($_GET['alert'])) {
+	$alert=$_GET['alert'];
+	switch ($alert) {
+		case 'bl_sz':
+				echo "
+		  		<script>
+						alert('Gagal, silakan unggah business lisence dengan ukuran sesuai ketentuan!');
+						document.location.href = 'index.php?page=data-client';
+					</script>
+				";
+			break;
+		case 'bl_xt':
+				echo "
+		  		<script>
+						alert('Gagal, silakan unggah business lisence sesuai ekstensi!');
+						document.location.href = 'index.php?page=data-client';
+					</script>
+				";
+			break;
+	}
+}
 $target_bl='dist/img/client/bl/';
  ?>
 <div class="head">
@@ -15,7 +34,7 @@ $target_bl='dist/img/client/bl/';
 	</div>
 </div>
 <div class="cont-add-client">
-	<form action="" method="POST">
+	<form action="" method="POST" enctype="multipart/form-data">
 		<input type="hidden" name="id" readonly value="<?= $data_cek['id']; ?>">
 		<div class="input">
 			<div class="col">
@@ -36,7 +55,7 @@ $target_bl='dist/img/client/bl/';
 			</div>
 			<div class="col">
 				<label for="address">Address</label>
-				<textarea id="address" placeholder="type address here"><?= $data_cek['address']; ?></textarea>
+				<textarea id="address" name="address" placeholder="type address here"><?= $data_cek['address']; ?></textarea>
 			</div>
 			<div class="col">
 				<label for="contact">Phone Number</label>
@@ -47,19 +66,9 @@ $target_bl='dist/img/client/bl/';
 				<input type="email" name="email" id="email" placeholder="type email here" value="<?= $data_cek['email']; ?>">
 			</div>
 			<div class="col">
-				<label for="id_card">Id Card</label>
-				<input type="file" name="ic" id="id_card">
-				<img width="100px" src="<?= $target_ic.$data_cek['id_card']; ?>">
-			</div>
-			<div class="col">
-				<label for="profile_picture">Profile Picture</label>
-				<input type="file" name="pp" id="profile_picture">
-				<img width="100px" src="<?= $target_ic.$data_cek['profile_picture']; ?>">
-			</div>
-			<div class="col">
 				<label for="business_license">Business License</label>
 				<input type="file" name="bl" id="business_license">
-				<img width="100px" src="<?= $target_ic.$data_cek['business_license']; ?>">
+				<img width="100px" src="<?= $target_bl.$data_cek['business_license']; ?>">
 			</div>
 
 		</div>
@@ -86,33 +95,85 @@ $target_bl='dist/img/client/bl/';
 <?php 
 
 if (isset ($_POST['save'])){
-  $sql_ubah = "UPDATE client SET
-   username='".$_POST['username']."',
-   password='".$_POST['password']."',
-   name='".$_POST['name']."',
-   address='".$_POST['address']."',
-   phone_number='".$_POST['phone_number']."',
-   email='".$_POST['email']."',
-   id_card='".$_POST['id_card']."',
-   profile_picture='".$_POST['profile_picture']."',
-   business_license='".$_POST['business_license']."'
-   WHERE id='".$_POST['id']."'";
-  $query_ubah = mysqli_query($koneksi, $sql_ubah);
-  mysqli_close($koneksi);
 
-  if ($query_ubah) {
-  	echo "
-  		<script>
-				alert('Tambah Data Berhasil!');
-				document.location.href = 'index.php?page=data-client';
-			</script>
-		";
-  } else{
-  	echo "
-  		<script>
-				alert('Tambah Data Gagal!');
-				document.location.href = 'index.php?page=edit-client';
-			</script>
-		";
-  }
+	$rand=rand();
+	$ekstensi=array('png', 'PNG', 'jpg', 'JPG', 'jpeg', 'JPEG');
+	$file_name=$_FILES['bl']['name'];
+	$ukuran=$_FILES['bl']['size'];
+	$temp=$_FILES['bl']['tmp_name'];
+	$ext=pathinfo($file_name, PATHINFO_EXTENSION);
+	$target='dist/img/client/bl/';
+
+	if (!empty($temp)) {
+		if (!in_array($ext, $ekstensi)) {
+			header("location:index.php?page=edit-client&alert=bl_xt");
+		} elseif (in_array($ext, $ekstensi)) {
+			if ($ukuran<=5000000) {
+				
+				$foto=$data_cek['business_license'];
+				if (file_exists($target.$foto)) {
+					unlink($target.$foto);
+				}
+
+				$image=$rand.'_'.$file_name;
+				move_uploaded_file($temp, $target.$image);
+
+				$sql_ubah = "UPDATE client SET
+			   username='".$_POST['username']."',
+			   password='".$_POST['password']."',
+			   name_c='".$_POST['name']."',
+			   address='".$_POST['address']."',
+			   phone_number='".$_POST['phone_number']."',
+			   email='".$_POST['email']."',
+			   business_license='$image'
+			   WHERE id='".$_POST['id']."'";
+			  $query_ubah = mysqli_query($koneksi, $sql_ubah);
+			  mysqli_close($koneksi);
+			  if ($query_ubah) {
+			  	echo "
+			  		<script>
+							alert('Edit Data Berhasil!');
+							document.location.href = 'index.php?page=data-client';
+						</script>
+					";
+			  } else {
+			  	echo "
+			  		<script>
+							alert('Edit Data Gagaaaaaaaal!');
+							document.location.href = 'index.php?page=data-client';
+						</script>
+					";
+			  }
+			} elseif ($ukuran>5000000) {
+				header("location:index.php?page=edit-client&alert=bl_sz");
+			}
+		}
+	} elseif (empty($temp)){
+		$sql_ubah = "UPDATE client SET
+	   username='".$_POST['username']."',
+	   password='".$_POST['password']."',
+	   name_c='".$_POST['name']."',
+	   address='".$_POST['address']."',
+	   phone_number='".$_POST['phone_number']."',
+	   email='".$_POST['email']."'
+	   WHERE id='".$_POST['id']."'";
+	  $query_ubah = mysqli_query($koneksi, $sql_ubah);
+	  mysqli_close($koneksi);
+
+	  if ($query_ubah) {
+	  	echo "
+	  		<script>
+					alert('Edit Data Berhasil!');
+					document.location.href = 'index.php?page=data-client';
+				</script>
+			";
+	  } else {
+	  	echo "
+	  		<script>
+					alert('Edit Data Gagal bro!');
+					document.location.href = 'index.php?page=data-client';
+				</script>
+			";
+	  }
+	}
 }

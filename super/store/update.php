@@ -95,7 +95,7 @@ if (isset ($_POST['save'])){
 					unlink($target.$foto);
 				}
 
-				$image=$image=$rand.'_'.$file_name;
+				$image=$rand.'_'.$file_name;
 				move_uploaded_file($temp, $target.$image);
 
 				$sql_ubah = "UPDATE store SET

@@ -7,7 +7,7 @@ if (isset($_GET['kode'])) {
  ?>
 <div class="head">
 	<div class="tittle">
-		<p>Add New Customer</p>
+		<p>Customer Details</p>
 	</div>
 </div>
 <div class="cont-add-customer">
