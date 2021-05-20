@@ -1,3 +1,85 @@
+<?php 
+
+if (isset($_GET['alert'])) {
+	$alert=$_GET['alert'];
+	switch ($alert) {
+		case 'ic_mt':
+				echo "
+					<script>
+						alert('Gagal, id card wajib diisi!');
+						document.location.href = 'index.php?page=add-client';
+					</script>
+				";
+			break;
+		case 'ic_sz':
+				echo "
+		  		<script>
+						alert('Gagal, silakan unggah id card dengan ukuran sesuai ketentuan!');
+						document.location.href = 'index.php?page=add-client';
+					</script>
+				";
+			break;
+		case 'ic_xt':
+				echo "
+		  		<script>
+						alert('Gagal, silakan unggah id card sesuai ekstensi!');
+						document.location.href = 'index.php?page=add-client';
+					</script>
+				";
+			break;
+		case 'pp_mt':
+				echo "
+					<script>
+						alert('Gagal, profile picture wajib diisi!');
+						document.location.href = 'index.php?page=add-client';
+					</script>
+				";
+			break;
+		case 'pp_sz':
+				echo "
+		  		<script>
+						alert('Gagal, silakan unggah profile picture dengan ukuran sesuai ketentuan!');
+						document.location.href = 'index.php?page=add-client';
+					</script>
+				";
+			break;
+		case 'pp_xt':
+				echo "
+		  		<script>
+						alert('Gagal, silakan unggah profile picture sesuai ekstensi!');
+						document.location.href = 'index.php?page=add-client';
+					</script>
+				";
+			break;
+		case 'bl_mt':
+				echo "
+					<script>
+						alert('Gagal, business lisence wajib diisi!');
+						document.location.href = 'index.php?page=add-client';
+					</script>
+				";
+			break;
+		case 'bl_sz':
+				echo "
+		  		<script>
+						alert('Gagal, silakan unggah business lisence dengan ukuran sesuai ketentuan!');
+						document.location.href = 'index.php?page=add-client';
+					</script>
+				";
+			break;
+		case 'bl_xt':
+				echo "
+		  		<script>
+						alert('Gagal, silakan unggah business lisence sesuai ekstensi!');
+						document.location.href = 'index.php?page=add-client';
+					</script>
+				";
+			break;
+	}
+}
+
+ ?>
+
 <div class="head">
 	<div class="tittle">
 		<p>Add New Client</p>
@@ -53,7 +135,8 @@
 
 <?php 
 
-function upload_ic(){
+// ###############################################
+	function upload_ic(){
 	$rand_ic=rand();
 	$ekstensi_ic=array('png', 'PNG', 'jpg', 'JPG', 'jpeg', 'JPEG');
 	$file_name_ic=$_FILES['ic']['name'];
@@ -64,40 +147,24 @@ function upload_ic(){
 	$target_ic='dist/img/client/ic/';
 
 	if ($error===4) {
-		echo "
-  		<script>
-				alert('Gagal, id card wajib diisi!');
-				document.location.href = 'index.php?page=add-client';
-			</script>
-		";
+		header("location:index.php?page=add-client&alert=ic_mt");
 	}
 
 	if(in_array($ext_ic, $ekstensi_ic)){
 		if ($size_ic>=5000000) {
-			echo "
-		  		<script>
-						alert('Gagal, silakan unggah id card dengan ukuran sesuai ketentuan!');
-						document.location.href = 'index.php?page=add-client';
-					</script>
-					"
-			;
-		}	
-	} else {
-		echo "
-		  		<script>
-						alert('Gagal, silakan unggah id card sesuai ekstensi!');
-						document.location.href = 'index.php?page=add-client';
-					</script>
-				"
-		;
-	}
-	$image_ic=$rand_ic.'_'.$file_name_ic;
-	move_uploaded_file($temp_ic, $target_ic.$image_ic);
+			header("location:index.php?page=add-client&alert=ic_sz");
+		} else {
+		$image_ic=$rand_ic.'_'.$file_name_ic;
+		move_uploaded_file($temp_ic, $target_ic.$image_ic);
 
-	return $image_ic;
+		return $image_ic;	
+		} 
+	}else {
+		header("location:index.php?page=add-client&alert=ic_xt");
+	}
 }
 
-function upload_pp(){
+	function upload_pp(){
 	$rand_pp=rand();
 	$ekstensi_pp=array('png', 'PNG', 'jpg', 'JPG', 'jpeg', 'JPEG');
 	$file_name_pp=$_FILES['pp']['name'];
@@ -108,40 +175,24 @@ function upload_pp(){
 	$target_pp='dist/img/client/pp/';
 
 	if ($error===4) {
-		echo "
-  		<script>
-				alert('Gagal, profile picture wajib diisi!');
-				document.location.href = 'index.php?page=add-client';
-			</script>
-		";
+		header("location:index.php?page=add-client&alert=pp_mt");
 	}
 
 	if(in_array($ext_pp, $ekstensi_pp)){
 		if ($size_pp>=5000000) {
-			echo "
-		  		<script>
-						alert('Gagal, silakan unggah profile picture dengan ukuran sesuai ketentuan!');
-						document.location.href = 'index.php?page=add-client';
-					</script>
-					"
-			;
-		}	
-	} else {
-		echo "
-		  		<script>
-						alert('Gagal, silakan unggah profile picture sesuai ekstensi!');
-						document.location.href = 'index.php?page=add-client';
-					</script>
-				"
-		;
-	}
-	$image_pp=$rand_pp.'_'.$file_name_pp;
-	move_uploaded_file($temp_pp, $target_pp.$image_pp);
+			header("location:index.php?page=add-client&alert=pp_sz");
+		} else {
+		$image_pp=$rand_pp.'_'.$file_name_pp;
+		move_uploaded_file($temp_pp, $target_pp.$image_pp);
 
-	return $image_pp;
+		return $image_pp;	
+		} 
+	}else {
+		header("location:index.php?page=add-client&alert=pp_xt");
+	}
 }
 
-function upload_bl(){
+	function upload_bl(){
 	$rand_bl=rand();
 	$ekstensi_bl=array('png', 'PNG', 'jpg', 'JPG', 'jpeg', 'JPEG');
 	$file_name_bl=$_FILES['bl']['name'];
@@ -152,40 +203,29 @@ function upload_bl(){
 	$target_bl='dist/img/client/bl/';
 
 	if ($error===4) {
-		echo "
-  		<script>
-				alert('Gagal, business license wajib diisi!');
-				document.location.href = 'index.php?page=add-client';
-			</script>
-		";
+		header("location:index.php?page=add-client&alert=bl_mt");
 	}
 
 	if(in_array($ext_bl, $ekstensi_bl)){
 		if ($size_bl>=5000000) {
-			echo "
-		  		<script>
-						alert('Gagal, silakan unggah business license dengan ukuran sesuai ketentuan!');
-						document.location.href = 'index.php?page=add-client';
-					</script>
-					"
-			;
-		}	
-	} else {
-		echo "
-		  		<script>
-						alert('Gagal, silakan unggah business license sesuai ekstensi!');
-						document.location.href = 'index.php?page=add-client';
-					</script>
-				"
-		;
-	}
-	$image_bl=$rand_bl.'_'.$file_name_bl;
-	move_uploaded_file($temp_bl, $target_bl.$image_bl);
+			header("location:index.php?page=add-client&alert=bl_sz");
+		} else {
+		$image_bl=$rand_bl.'_'.$file_name_bl;
+		move_uploaded_file($temp_bl, $target_bl.$image_bl);
 
-	return $image_bl;
+		return $image_bl;	
+		} 
+	}else {
+		header("location:index.php?page=add-client&alert=bl_xt");
+	}
 }
 
+
+	// ###############################################
+
+
 if (isset ($_POST['save'])){
+
 
 	$ic=upload_ic();
 	$pp=upload_pp();

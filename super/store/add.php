@@ -67,7 +67,7 @@ $query_cek=mysqli_query($koneksi, $sql_cek);
 if (isset ($_POST['save'])){
 
 	$rand=rand();
-	$ekstensi=array('png', 'jpg', 'jpeg');
+	$ekstensi=array('png', 'PNG', 'jpg', 'JPG', 'jpeg', 'JPEG');
 	$file_name=$_FILES['image']['name'];
 	$ukuran=$_FILES['image']['size'];
 	$temp=$_FILES['image']['tmp_name'];

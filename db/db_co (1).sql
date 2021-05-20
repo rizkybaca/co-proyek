@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 29 Apr 2021 pada 04.19
+-- Waktu pembuatan: 20 Bulan Mei 2021 pada 16.54
 -- Versi server: 10.4.17-MariaDB
 -- Versi PHP: 7.3.27
 
@@ -31,7 +31,7 @@ CREATE TABLE `client` (
   `id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(8) NOT NULL,
-  `name` varchar(50) NOT NULL,
+  `name_c` varchar(50) NOT NULL,
   `address` varchar(100) NOT NULL,
   `phone_number` varchar(13) NOT NULL,
   `email` varchar(50) NOT NULL,
@@ -39,6 +39,29 @@ CREATE TABLE `client` (
   `profile_picture` varchar(100) NOT NULL,
   `business_license` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `customer`
+--
+
+CREATE TABLE `customer` (
+  `id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(8) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `join_date` varchar(100) NOT NULL,
+  `email` varchar(20) NOT NULL,
+  `phone_number` varchar(13) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `customer`
+--
+
+INSERT INTO `customer` (`id`, `username`, `password`, `name`, `join_date`, `email`, `phone_number`) VALUES
+(7, 'afi', 'afi1!', 'afiva', '5 Januari 2012', 'afiv@gmail', '123141');
 
 -- --------------------------------------------------------
 
@@ -52,22 +75,6 @@ CREATE TABLE `detail_order` (
   `id_product` int(11) NOT NULL,
   `count` int(11) NOT NULL,
   `notes` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `end-user`
---
-
-CREATE TABLE `end-user` (
-  `id` int(11) NOT NULL,
-  `username` varchar(50) NOT NULL,
-  `password` varchar(8) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `join-date` varchar(100) NOT NULL,
-  `email` varchar(20) NOT NULL,
-  `phone_number` varchar(13) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -126,9 +133,10 @@ CREATE TABLE `store` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `address` varchar(100) NOT NULL,
-  `number_phone` varchar(13) NOT NULL,
-  `status` enum('active','inactive') NOT NULL,
-  `id_client` int(11) NOT NULL
+  `phone_number` varchar(13) NOT NULL,
+  `status` enum('active','deactive') NOT NULL,
+  `id_client` int(11) NOT NULL,
+  `image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -145,6 +153,13 @@ CREATE TABLE `super_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data untuk tabel `super_user`
+--
+
+INSERT INTO `super_user` (`id`, `username`, `password`, `name`) VALUES
+(1, 'rizky', 'rizky1!', 'rizky nur');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -155,18 +170,18 @@ ALTER TABLE `client`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeks untuk tabel `customer`
+--
+ALTER TABLE `customer`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `detail_order`
 --
 ALTER TABLE `detail_order`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_order` (`id_order`),
   ADD KEY `id_product` (`id_product`);
-
---
--- Indeks untuk tabel `end-user`
---
-ALTER TABLE `end-user`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `orders`
@@ -210,18 +225,18 @@ ALTER TABLE `super_user`
 -- AUTO_INCREMENT untuk tabel `client`
 --
 ALTER TABLE `client`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- AUTO_INCREMENT untuk tabel `customer`
+--
+ALTER TABLE `customer`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `detail_order`
 --
 ALTER TABLE `detail_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT untuk tabel `end-user`
---
-ALTER TABLE `end-user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -246,13 +261,13 @@ ALTER TABLE `servant`
 -- AUTO_INCREMENT untuk tabel `store`
 --
 ALTER TABLE `store`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT untuk tabel `super_user`
 --
 ALTER TABLE `super_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
@@ -270,7 +285,7 @@ ALTER TABLE `detail_order`
 --
 ALTER TABLE `orders`
   ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`id_cashier`) REFERENCES `servant` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `orders_ibfk_2` FOREIGN KEY (`id_end-user`) REFERENCES `end-user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `orders_ibfk_2` FOREIGN KEY (`id_end-user`) REFERENCES `customer` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ketidakleluasaan untuk tabel `products`
@@ -282,7 +297,7 @@ ALTER TABLE `products`
 -- Ketidakleluasaan untuk tabel `store`
 --
 ALTER TABLE `store`
-  ADD CONSTRAINT `store_ibfk_1` FOREIGN KEY (`id_client`) REFERENCES `client` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `store_ibfk_1` FOREIGN KEY (`id_client`) REFERENCES `client` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
