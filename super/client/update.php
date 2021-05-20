@@ -4,6 +4,10 @@ if (isset($_GET['kode'])) {
 	$query_cek = mysqli_query($koneksi, $sql_cek);
   $data_cek = mysqli_fetch_array($query_cek,MYSQLI_ASSOC);
 }
+
+$target_ic='dist/img/client/ic/';
+$target_pp='dist/img/client/pp/';
+$target_bl='dist/img/client/bl/';
  ?>
 <div class="head">
 	<div class="tittle">
@@ -42,30 +46,20 @@ if (isset($_GET['kode'])) {
 				<label for="email">E-Mail</label>
 				<input type="email" name="email" id="email" placeholder="type email here" value="<?= $data_cek['email']; ?>">
 			</div>
-<!-- 			<div class="col2">
-				<label for="id_card">Id Card</label>
-				<input type="file" name="id_card" id="id_card">
-			</div>
-			<div class="col2">
-				<label for="profile_picture">Profile Picture</label>
-				<input type="file" name="profile_picture" id="profile_picture">
-			</div>
-			<div class="col2">
-				<label for="business_license">Business License</label>
-				<input type="file" name="business_license" id="business_license">
-			</div> -->
-
 			<div class="col">
 				<label for="id_card">Id Card</label>
-				<input type="text" name="id_card" id="id_card" placeholder="type id card here" value="<?= $data_cek['id_card']; ?>">
+				<input type="file" name="ic" id="id_card">
+				<img width="100px" src="<?= $target_ic.$data_cek['id_card']; ?>">
 			</div>
 			<div class="col">
 				<label for="profile_picture">Profile Picture</label>
-				<input type="text" name="profile_picture" id="profile_picture" placeholder="type profile picture here" value="<?= $data_cek['profile_picture']; ?>">
+				<input type="file" name="pp" id="profile_picture">
+				<img width="100px" src="<?= $target_ic.$data_cek['profile_picture']; ?>">
 			</div>
 			<div class="col">
 				<label for="business_license">Business License</label>
-				<input type="text" name="business_license" id="business_license" placeholder="type business lisence here" value="<?= $data_cek['business_license']; ?>">
+				<input type="file" name="bl" id="business_license">
+				<img width="100px" src="<?= $target_ic.$data_cek['business_license']; ?>">
 			</div>
 
 		</div>
@@ -92,12 +86,6 @@ if (isset($_GET['kode'])) {
 <?php 
 
 if (isset ($_POST['save'])){
-//mulai proses simpan data
-	// if ($_POST['ini_level']=='Administrator'){
-	// 	$jenis="ADM";
-	// } else{
-	// 	$jenis="PAN";
-	// }
   $sql_ubah = "UPDATE client SET
    username='".$_POST['username']."',
    password='".$_POST['password']."',

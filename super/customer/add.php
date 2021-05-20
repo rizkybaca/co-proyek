@@ -41,12 +41,7 @@
 <?php 
 
 if (isset ($_POST['save'])){
-//mulai proses simpan data
-	// if ($_POST['ini_level']=='Administrator'){
-	// 	$jenis="ADM";
-	// } else{
-	// 	$jenis="PAN";
-	// }
+
   $sql_simpan = "INSERT INTO customer (username,password,name,join_date,email,phone_number) VALUES (
   '".$_POST['username']."',
   '".$_POST['password']."',

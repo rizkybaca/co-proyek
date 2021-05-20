@@ -4,6 +4,10 @@ if (isset($_GET['kode'])) {
 	$query_cek = mysqli_query($koneksi, $sql_cek);
   $data_cek = mysqli_fetch_array($query_cek,MYSQLI_ASSOC);
 }
+
+$target_ic='dist/img/client/ic/';
+$target_pp='dist/img/client/pp/';
+$target_bl='dist/img/client/bl/';
  ?>
 <div class="head">
 	<div class="tittle">
@@ -41,30 +45,17 @@ if (isset($_GET['kode'])) {
 				<label for="email">E-Mail</label>
 				<input readonly type="email" name="email" id="email" placeholder="type email here" value="<?= $data_cek['email']; ?>">
 			</div>
-<!-- 			<div class="col2">
-				<label for="id_card">Id Card</label>
-				<input type="file" name="id_card" id="id_card">
-			</div>
-			<div class="col2">
-				<label for="profile_picture">Profile Picture</label>
-				<input type="file" name="profile_picture" id="profile_picture">
-			</div>
-			<div class="col2">
-				<label for="business_license">Business License</label>
-				<input type="file" name="business_license" id="business_license">
-			</div> -->
-
 			<div class="col">
 				<label for="id_card">Id Card</label>
-				<input readonly type="text" name="id_card" id="id_card" placeholder="type id card here" value="<?= $data_cek['id_card']; ?>">
+				<img width="100px" src="<?= $target_ic.$data_cek['id_card']; ?>">
 			</div>
 			<div class="col">
 				<label for="profile_picture">Profile Picture</label>
-				<input readonly type="text" name="profile_picture" id="profile_picture" placeholder="type profile picture here" value="<?= $data_cek['profile_picture']; ?>">
+				<img width="100px" src="<?= $target_pp.$data_cek['profile_picture']; ?>">
 			</div>
 			<div class="col">
 				<label for="business_license">Business License</label>
-				<input readonly type="text" name="business_license" id="business_license" placeholder="type business lisence here" value="<?= $data_cek['business_license']; ?>">
+				<img width="100px" src="<?= $target_bl.$data_cek['business_license']; ?>">
 			</div>
 
 		</div>

@@ -81,7 +81,6 @@ if (isset ($_POST['save'])){
 						document.location.href = 'index.php?page=add-store';
 					</script>
 				";
-		header("location:index.php?page=add-store");
 	} else{
 		if ($ukuran<5000000) {
 			$image=$rand.'_'.$file_name;
