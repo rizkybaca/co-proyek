@@ -57,7 +57,7 @@ if (isset($_POST['login'])) {
 		echo "
   		<script>
 				alert('Login Berhasil!');
-				document.location.href = '../../index.php';
+				document.location.href = '../../index_u.php';
 			</script>
 		";
 	} else{

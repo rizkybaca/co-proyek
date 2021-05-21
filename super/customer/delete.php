@@ -10,14 +10,14 @@ if ($query_hapus) {
   echo "
 		<script>
 			alert('Hapus Data Berhasil!');
-			document.location.href = 'index.php?page=data-customer';
+			document.location.href = 'index_u.php?page=data-customer';
 		</script>
 		";
 }else{
   echo "
 		<script>
 			alert('Hapus Data Gagal!');
-			document.location.href = 'index.php?page=data-customer';
+			document.location.href = 'index_u.php?page=data-customer';
 		</script>
 	";
 }

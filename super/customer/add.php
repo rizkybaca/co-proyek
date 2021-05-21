@@ -56,14 +56,14 @@ if (isset ($_POST['save'])){
   	echo "
   		<script>
 				alert('Tambah Data Berhasil!');
-				document.location.href = 'index.php?page=data-customer';
+				document.location.href = 'index_u.php?page=data-customer';
 			</script>
 		";
   } else{
   	echo "
   		<script>
 				alert('Tambah Data Gagal!');
-				document.location.href = 'index.php?page=add-customer';
+				document.location.href = 'index_u.php?page=add-customer';
 			</script>
 		";
   }

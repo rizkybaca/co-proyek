@@ -5,7 +5,7 @@ if (isset($_GET['alert'])) {
 		echo "
 			  		<script>
 							alert('Ekstensi foto salah!');
-							document.location.href = 'index.php?page=data-store'
+							document.location.href = 'index.php_u?page=data-store'
 						</script>
 					"
 		;
@@ -13,7 +13,7 @@ if (isset($_GET['alert'])) {
 		echo "
 			  		<script>
 							alert('Ukuran foto terlalu besar!');
-							document.location.href = 'index.php?page=data-store'
+							document.location.href = 'index.php_u?page=data-store'
 						</script>
 					"
 		;

@@ -82,14 +82,14 @@ if (isset ($_POST['save'])){
   	echo "
   		<script>
 				alert('Edit Data Berhasil!');
-				document.location.href = 'index.php?page=data-customer';
+				document.location.href = 'index_u.php?page=data-customer';
 			</script>
 		";
   } else{
   	echo "
   		<script>
 				alert('Edit Data Gagal!');
-				document.location.href = 'index.php?page=edit-customer';
+				document.location.href = 'index_u.php?page=edit-customer';
 			</script>
 		";
   }

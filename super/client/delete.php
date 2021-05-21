@@ -29,14 +29,14 @@ if ($query_hapus) {
   echo "
 		<script>
 			alert('Hapus Data Berhasil!');
-			document.location.href = 'index.php?page=data-client';
+			document.location.href = 'index_u.php?page=data-client';
 		</script>
 		";
 }else{
   echo "
 		<script>
 			alert('Hapus Data Gagal!');
-			document.location.href = 'index.php?page=data-client';
+			document.location.href = 'index_u.php?page=data-client';
 		</script>
 	";
 }

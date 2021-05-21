@@ -17,14 +17,14 @@ if ($query_hapus) {
   echo "
 		<script>
 			alert('Hapus Data Berhasil!');
-			document.location.href = 'index.php?page=data-store';
+			document.location.href = 'index_u.php?page=data-store';
 		</script>
 		";
 }else{
   echo "
 		<script>
 			alert('Hapus Data Gagal!');
-			document.location.href = 'index.php?page=data-store';
+			document.location.href = 'index_u.php?page=data-store';
 		</script>
 	";
 }

@@ -86,7 +86,7 @@ if (isset ($_POST['save'])){
 
 	if (!empty($temp)) {
 		if (!in_array($ext, $ekstensi)) {
-			header("location:index.php?page=data-store&alert=ext");
+			header("location:index_u.php?page=data-store&alert=ext");
 		} elseif (in_array($ext, $ekstensi)) {
 			if ($ukuran<=5000000) {
 				
@@ -113,19 +113,19 @@ if (isset ($_POST['save'])){
 			  	echo "
 			  		<script>
 							alert('Edit Data Berhasil!');
-							document.location.href = 'index.php?page=data-store';
+							document.location.href = 'index_u.php?page=data-store';
 						</script>
 					";
 			  } else {
 			  	echo "
 			  		<script>
 							alert('Edit Data Gagal!');
-							document.location.href = 'index.php?page=data-store';
+							document.location.href = 'index_u.php?page=data-store';
 						</script>
 					";
 			  }
 			} elseif ($ukuran>5000000) {
-				header("location:index.php?page=data-store&alert=size");
+				header("location:index_u.php?page=data-store&alert=size");
 			}
 		}
 	} elseif (empty($temp)){
@@ -144,14 +144,14 @@ if (isset ($_POST['save'])){
 	  	echo "
 	  		<script>
 					alert('Edit Data Berhasil!');
-					document.location.href = 'index.php?page=data-store';
+					document.location.href = 'index_u.php?page=data-store';
 				</script>
 			";
 	  } else {
 	  	echo "
 	  		<script>
 					alert('Edit Data Gagal!');
-					document.location.href = 'index.php?page=data-store';
+					document.location.href = 'index_u.php?page=data-store';
 				</script>
 			";
 	  }

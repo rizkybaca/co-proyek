@@ -12,7 +12,7 @@ if (isset($_GET['alert'])) {
 				echo "
 		  		<script>
 						alert('Gagal, silakan unggah business lisence dengan ukuran sesuai ketentuan!');
-						document.location.href = 'index.php?page=data-client';
+						document.location.href = 'index_u.php?page=data-client';
 					</script>
 				";
 			break;
@@ -20,7 +20,7 @@ if (isset($_GET['alert'])) {
 				echo "
 		  		<script>
 						alert('Gagal, silakan unggah business lisence sesuai ekstensi!');
-						document.location.href = 'index.php?page=data-client';
+						document.location.href = 'index_u.php?page=data-client';
 					</script>
 				";
 			break;
@@ -106,7 +106,7 @@ if (isset ($_POST['save'])){
 
 	if (!empty($temp)) {
 		if (!in_array($ext, $ekstensi)) {
-			header("location:index.php?page=edit-client&alert=bl_xt");
+			header("location:index_u.php?page=edit-client&alert=bl_xt");
 		} elseif (in_array($ext, $ekstensi)) {
 			if ($ukuran<=5000000) {
 				
@@ -133,19 +133,19 @@ if (isset ($_POST['save'])){
 			  	echo "
 			  		<script>
 							alert('Edit Data Berhasil!');
-							document.location.href = 'index.php?page=data-client';
+							document.location.href = 'index_u.php?page=data-client';
 						</script>
 					";
 			  } else {
 			  	echo "
 			  		<script>
 							alert('Edit Data Gagaaaaaaaal!');
-							document.location.href = 'index.php?page=data-client';
+							document.location.href = 'index_u.php?page=data-client';
 						</script>
 					";
 			  }
 			} elseif ($ukuran>5000000) {
-				header("location:index.php?page=edit-client&alert=bl_sz");
+				header("location:index_u.php?page=edit-client&alert=bl_sz");
 			}
 		}
 	} elseif (empty($temp)){
@@ -164,14 +164,14 @@ if (isset ($_POST['save'])){
 	  	echo "
 	  		<script>
 					alert('Edit Data Berhasil!');
-					document.location.href = 'index.php?page=data-client';
+					document.location.href = 'index_u.php?page=data-client';
 				</script>
 			";
 	  } else {
 	  	echo "
 	  		<script>
 					alert('Edit Data Gagal bro!');
-					document.location.href = 'index.php?page=data-client';
+					document.location.href = 'index_u.php?page=data-client';
 				</script>
 			";
 	  }

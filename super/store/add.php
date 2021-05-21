@@ -78,7 +78,7 @@ if (isset ($_POST['save'])){
 		echo "
 		  		<script>
 						alert('Ekstensi foto salah!');
-						document.location.href = 'index.php?page=add-store';
+						document.location.href = 'index_u.php?page=add-store';
 					</script>
 				";
 	} else{
@@ -100,14 +100,14 @@ if (isset ($_POST['save'])){
 		  	echo "
 		  		<script>
 						alert('Tambah Data Berhasil!');
-						document.location.href = 'index.php?page=data-store';
+						document.location.href = 'index_u.php?page=data-store';
 					</script>
 				";
 		  } else{
 		  	echo "
 		  		<script>
 						alert('Tambah Data Gagal!');
-						document.location.href = 'index.php?page=add-store';
+						document.location.href = 'index_u.php?page=add-store';
 					</script>
 				";
 		  }
@@ -116,7 +116,7 @@ if (isset ($_POST['save'])){
 			echo "
 		  		<script>
 						alert('ukuran foto terlalu besar!');
-						document.location.href = 'index.php?page=add-store';
+						document.location.href = 'index_u.php?page=add-store';
 					</script>
 				";
 		}

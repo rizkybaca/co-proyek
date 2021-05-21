@@ -7,7 +7,7 @@ if (isset($_GET['alert'])) {
 				echo "
 					<script>
 						alert('Gagal, id card wajib diisi!');
-						document.location.href = 'index.php?page=add-client';
+						document.location.href = 'index_u.php?page=add-client';
 					</script>
 				";
 			break;
@@ -15,7 +15,7 @@ if (isset($_GET['alert'])) {
 				echo "
 		  		<script>
 						alert('Gagal, silakan unggah id card dengan ukuran sesuai ketentuan!');
-						document.location.href = 'index.php?page=add-client';
+						document.location.href = 'index_u.php?page=add-client';
 					</script>
 				";
 			break;
@@ -23,7 +23,7 @@ if (isset($_GET['alert'])) {
 				echo "
 		  		<script>
 						alert('Gagal, silakan unggah id card sesuai ekstensi!');
-						document.location.href = 'index.php?page=add-client';
+						document.location.href = 'index_u.php?page=add-client';
 					</script>
 				";
 			break;
@@ -31,7 +31,7 @@ if (isset($_GET['alert'])) {
 				echo "
 					<script>
 						alert('Gagal, profile picture wajib diisi!');
-						document.location.href = 'index.php?page=add-client';
+						document.location.href = 'index_u.php?page=add-client';
 					</script>
 				";
 			break;
@@ -39,7 +39,7 @@ if (isset($_GET['alert'])) {
 				echo "
 		  		<script>
 						alert('Gagal, silakan unggah profile picture dengan ukuran sesuai ketentuan!');
-						document.location.href = 'index.php?page=add-client';
+						document.location.href = 'index_u.php?page=add-client';
 					</script>
 				";
 			break;
@@ -47,7 +47,7 @@ if (isset($_GET['alert'])) {
 				echo "
 		  		<script>
 						alert('Gagal, silakan unggah profile picture sesuai ekstensi!');
-						document.location.href = 'index.php?page=add-client';
+						document.location.href = 'index_u.php?page=add-client';
 					</script>
 				";
 			break;
@@ -55,7 +55,7 @@ if (isset($_GET['alert'])) {
 				echo "
 					<script>
 						alert('Gagal, business lisence wajib diisi!');
-						document.location.href = 'index.php?page=add-client';
+						document.location.href = 'index_u.php?page=add-client';
 					</script>
 				";
 			break;
@@ -63,7 +63,7 @@ if (isset($_GET['alert'])) {
 				echo "
 		  		<script>
 						alert('Gagal, silakan unggah business lisence dengan ukuran sesuai ketentuan!');
-						document.location.href = 'index.php?page=add-client';
+						document.location.href = 'index_u.php?page=add-client';
 					</script>
 				";
 			break;
@@ -71,7 +71,7 @@ if (isset($_GET['alert'])) {
 				echo "
 		  		<script>
 						alert('Gagal, silakan unggah business lisence sesuai ekstensi!');
-						document.location.href = 'index.php?page=add-client';
+						document.location.href = 'index_u.php?page=add-client';
 					</script>
 				";
 			break;
@@ -147,12 +147,12 @@ if (isset($_GET['alert'])) {
 	$target_ic='dist/img/client/ic/';
 
 	if ($error===4) {
-		header("location:index.php?page=add-client&alert=ic_mt");
+		header("location:index_u.php?page=add-client&alert=ic_mt");
 	}
 
 	if(in_array($ext_ic, $ekstensi_ic)){
 		if ($size_ic>=5000000) {
-			header("location:index.php?page=add-client&alert=ic_sz");
+			header("location:index_u.php?page=add-client&alert=ic_sz");
 		} else {
 		$image_ic=$rand_ic.'_'.$file_name_ic;
 		move_uploaded_file($temp_ic, $target_ic.$image_ic);
@@ -160,7 +160,7 @@ if (isset($_GET['alert'])) {
 		return $image_ic;	
 		} 
 	}else {
-		header("location:index.php?page=add-client&alert=ic_xt");
+		header("location:index_u.php?page=add-client&alert=ic_xt");
 	}
 }
 
@@ -175,12 +175,12 @@ if (isset($_GET['alert'])) {
 	$target_pp='dist/img/client/pp/';
 
 	if ($error===4) {
-		header("location:index.php?page=add-client&alert=pp_mt");
+		header("location:index_u.php?page=add-client&alert=pp_mt");
 	}
 
 	if(in_array($ext_pp, $ekstensi_pp)){
 		if ($size_pp>=5000000) {
-			header("location:index.php?page=add-client&alert=pp_sz");
+			header("location:index_u.php?page=add-client&alert=pp_sz");
 		} else {
 		$image_pp=$rand_pp.'_'.$file_name_pp;
 		move_uploaded_file($temp_pp, $target_pp.$image_pp);
@@ -188,7 +188,7 @@ if (isset($_GET['alert'])) {
 		return $image_pp;	
 		} 
 	}else {
-		header("location:index.php?page=add-client&alert=pp_xt");
+		header("location:index_u.php?page=add-client&alert=pp_xt");
 	}
 }
 
@@ -203,12 +203,12 @@ if (isset($_GET['alert'])) {
 	$target_bl='dist/img/client/bl/';
 
 	if ($error===4) {
-		header("location:index.php?page=add-client&alert=bl_mt");
+		header("location:index_u.php?page=add-client&alert=bl_mt");
 	}
 
 	if(in_array($ext_bl, $ekstensi_bl)){
 		if ($size_bl>=5000000) {
-			header("location:index.php?page=add-client&alert=bl_sz");
+			header("location:index_u.php?page=add-client&alert=bl_sz");
 		} else {
 		$image_bl=$rand_bl.'_'.$file_name_bl;
 		move_uploaded_file($temp_bl, $target_bl.$image_bl);
@@ -216,7 +216,7 @@ if (isset($_GET['alert'])) {
 		return $image_bl;	
 		} 
 	}else {
-		header("location:index.php?page=add-client&alert=bl_xt");
+		header("location:index_u.php?page=add-client&alert=bl_xt");
 	}
 }
 
@@ -248,14 +248,14 @@ if (isset ($_POST['save'])){
   	echo "
   		<script>
 				alert('Tambah Data Berhasil!');
-				document.location.href = 'index.php?page=data-client';
+				document.location.href = 'index_u.php?page=data-client';
 			</script>
 		";
   } else{
   	echo "
   		<script>
 				alert('Tambah Data Gagal!');
-				document.location.href = 'index.php?page=add-client';
+				document.location.href = 'index_u.php?page=add-client';
 			</script>
 		";
   }
