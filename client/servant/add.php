@@ -1,3 +1,8 @@
+<?php 
+$sql_cek="SELECT * FROM store WHERE id_client='$data_id'"; //andi lau, anaaa
+$query_cek=mysqli_query($koneksi, $sql_cek);
+
+?>
 <div class="head">
 	<div class="tittle">
 		<p>Add New Servant</p>
@@ -21,6 +26,17 @@
 			<div class="col">
 				<label for="date">Join Date</label>
 				<input type="text" name="date" id="date" placeholder="type join date here" required>
+			</div>
+			<div class="col">
+				<label for="id_store_v">Store Name</label>
+				<select name="id_store_v" id="id_store_v" required>
+					<option>--choose store here--</option>
+					<?php while ($a=mysqli_fetch_array($query_cek)): ?>
+						<option value="<?= $a['id']; ?>">
+							<?= $a['name']; ?>
+						</option>						
+					<?php endwhile ?>
+				</select>
 			</div>			
 			<div class="col2">
 				<div class="tittle">
@@ -47,11 +63,12 @@
 
 if (isset ($_POST['save'])){
 
-  $sql_simpan = "INSERT INTO servant (username,password,name,join_date,role) VALUES (
+  $sql_simpan = "INSERT INTO servant (username,password,name,join_date,id_store_v,role) VALUES (
   '".$_POST['username']."',
   '".$_POST['password']."',
   '".$_POST['name']."',
   '".$_POST['date']."', 
+  '".$_POST['id_store_v']."',
   '".$_POST['role']."')";
   $query_simpan = mysqli_query($koneksi, $sql_simpan);
   mysqli_close($koneksi);

@@ -1,5 +1,5 @@
 <?php 
-$sql_cek="SELECT * FROM client"; //andi lau, anaaa
+$sql_cek="SELECT * FROM client";
 $query_cek=mysqli_query($koneksi, $sql_cek);
 
 ?>
@@ -82,7 +82,7 @@ if (isset ($_POST['save'])){
 					</script>
 				";
 	} else{
-		if ($ukuran<5000000) {
+		if ($ukuran<=5000000) {
 			$image=$rand.'_'.$file_name;
 			move_uploaded_file($temp, $target.$image);
 

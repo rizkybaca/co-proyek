@@ -507,6 +507,245 @@ color: #FFFFFF;
   align-items: flex-start;
 }
 
+.container .content .cont-add-product{
+  /* Auto Layout */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+/*  overflow: auto;*/
+}
+.container .content .cont-add-product form{
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+}
+.container .content .cont-add-product form .input{
+  /* Auto Layout */
+
+display: flex;
+flex-direction: column;
+align-items: stretch;
+padding: 0px;
+margin-bottom: 10px;
+}
+.container .content .cont-add-product form .input .col{
+display: flex;
+flex-direction: column;
+align-items: stretch;
+padding: 0px;
+margin: 10px;
+}
+.container .content .cont-add-product form .input .col label{
+  /* Auto Layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 10px 5px 10px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 27px;
+  /* identical to box height */
+
+  text-transform: capitalize;
+
+  color: #000000;
+}
+.container .content .cont-add-product form .input .col input{
+  /* Auto Layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 27px;
+  /* identical to box height */
+
+  text-transform: lowercase;
+}
+.container .content .cont-add-product form .input .col textarea{
+  /* Auto Layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 27px;
+  /* identical to box height */
+
+  text-transform: lowercase;
+}
+.container .content .cont-add-product form .input .col select{
+  /* Auto Layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 27px;
+  /* identical to box height */
+
+  text-transform: lowercase;
+}
+.container .content .cont-add-product form .input .col2{
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+justify-content: space-between;
+margin: 10px;
+width: 500px;
+}
+.container .content .cont-add-product form .input .col2 .tittle{
+   display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 10px;
+
+}
+.container .content .cont-add-product form .input .col2 .tittle p{
+    font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 27px;
+  /* identical to box height */
+
+  text-transform: capitalize;
+
+  color: rgba(0, 0, 0, 0.7);
+  margin: 0;
+}
+.container .content .cont-add-product form .input .col2 .radio{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 10px;
+}
+.container .content .cont-add-product form .input .col2 label{
+  /* Auto Layout */
+/* Auto Layout */
+
+display: flex;
+flex-direction: row;
+justify-content: flex-start;
+align-items: center;
+padding-left: 10px;
+  font-family: Poppins;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 27px;
+/* identical to box height */
+
+color: #000000;
+  /* identical to box height */
+
+  text-transform: capitalize;
+}
+.container .content .cont-add-product form .input .col2 input{
+  /* Auto Layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 10px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 27px;
+  color: #000000;
+  /* identical to box height */
+
+  text-transform: lowercase;
+}
+.container .content .cont-add-product form .button{
+  /* Auto Layout */
+
+display: flex;
+flex-direction: row;
+justify-content: flex-end;
+padding: 0 10px 0 0;
+margin-bottom: 50px;
+}
+.container .content .cont-add-product form .button a{
+  /* Auto Layout */
+
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 8px;
+width: 150px;
+height: 53px;
+border: 1px solid rgba(249, 26, 12, 0.7);
+box-sizing: border-box;
+border-radius: 4px;
+font-family: Poppins;
+font-style: normal;
+font-weight: normal;
+font-size: 22px;
+line-height: 33px;
+/* identical to box height */
+
+text-transform: capitalize;
+
+color: rgba(249, 26, 12, 0.7);
+margin-right: 20px;
+}
+.container .content .cont-add-product form .button input{
+  display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 8px;
+width: 150px;
+height: 53px;
+background: #047B6D;
+border-radius: 4px;
+font-family: Poppins;
+font-style: normal;
+font-weight: normal;
+font-size: 22px;
+line-height: 33px;
+/* identical to box height */
+
+text-transform: capitalize;
+
+color: #FFFFFF;
+}
+
 /*################ product ####################*/
 
 .container .content .cont-show-client{
@@ -806,6 +1045,26 @@ line-height: 27px;
 text-transform: lowercase;
 
 color: #000000;
+}
+
+.container .content .cont-add-servant form .input .col select{
+  /* Auto Layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 27px;
+  /* identical to box height */
+
+  text-transform: lowercase;
 }
 
 .container .content .cont-add-servant form .input .col .checkbox{

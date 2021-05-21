@@ -9,6 +9,8 @@ function active_radio_button($value,$input){
 	$result=$value==$input?'checked':'';
 	return $result;
 }
+$cek_sql="SELECT * FROM store WHERE id_client='$data_id'";
+$cek_query=mysqli_query($koneksi, $cek_sql);
  ?>
 <div class="head">
 	<div class="tittle">
@@ -39,6 +41,17 @@ function active_radio_button($value,$input){
 				<label for="date">Join Date</label>
 				<input type="text" name="date" id="date" placeholder="type join date here" value="<?= $data_cek['join_date']; ?>" required>
 			</div>
+			<div class="col">
+				<label for="id_store_v">Store Name</label>
+				<select name="id_store_v" id="id_store_v" required>
+					<option>--choose store here--</option>
+					<?php while ($a=mysqli_fetch_array($cek_query)): ?>
+						<option value="<?= $a['id']; ?>" <?= $data_cek['id_store_v']==$a['id']?'selected':''?>>
+							<?= $a['name']; ?>
+						</option>						
+					<?php endwhile ?>
+				</select>
+			</div>				
 			<div class="col2">
 				<div class="tittle">
 					<p>choose servant role here</p>
@@ -81,6 +94,7 @@ if (isset ($_POST['save'])){
    password='".$_POST['password']."',
    name='".$_POST['name']."',
    join_date='".$_POST['date']."',
+   id_store_v='".$_POST['id_store_v']."',
    role='".$_POST['role']."'
    WHERE id='".$_POST['id']."'"
    ;

@@ -1,6 +1,6 @@
 <?php 
 if (isset($_GET['kode'])) {
-	$sql_cek="SELECT * FROM servant WHERE id='".$_GET['kode']."'";
+	$sql_cek="SELECT v.id AS id_v, v.username, v.password, v.name AS name_v, v.join_date, v.role, v.id_store_v, s.name FROM servant AS v LEFT JOIN store AS s ON v.id_store_v=s.id WHERE v.id='".$_GET['kode']."'";
 	$query_cek = mysqli_query($koneksi, $sql_cek);
   $data_cek = mysqli_fetch_array($query_cek,MYSQLI_ASSOC);
 }
@@ -27,12 +27,16 @@ if (isset($_GET['kode'])) {
 			</div>
 			<div class="col">
 				<label for="name">Name</label>
-				<input readonly type="text" name="name" id="name" value="<?= $data_cek['name']; ?>">
+				<input readonly type="text" name="name" id="name" value="<?= $data_cek['name_v']; ?>">
 			</div>
-						<div class="col">
+			<div class="col">
 				<label for="date">Join Date</label>
 				<input readonly type="text" name="date" id="date" value="<?= $data_cek['join_date']; ?>" required>
 			</div>
+			<div class="col">
+				<label for="id_store_v">Store Name</label>
+				<input readonly type="text" name="id_store_v" id="id_store_v" value="<?= $data_cek['name']; ?>" required>
+			</div>			
 			<?php $rl=$data_cek['role']=='product_admin'?'Product Admin':'Cashier';?>
 			<div class="col">
 				<label for="role">Role</label>

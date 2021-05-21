@@ -1,6 +1,6 @@
 <?php 
 if (isset($_GET['kode'])) {
-	$sql_cek="SELECT s.id, s.id_client, s.image, s.name, s.address, s.phone_number, s.status, c.name_c FROM store as s LEFT JOIN client as c ON s.id_client=c.id WHERE s.id='".$_GET['kode']."'";
+	$sql_cek="SELECT * FROM store WHERE id='".$_GET['kode']."'";
 	$query_cek = mysqli_query($koneksi, $sql_cek);
   $data_cek = mysqli_fetch_array($query_cek, MYSQLI_ASSOC);
   $b=$data_cek['status'];

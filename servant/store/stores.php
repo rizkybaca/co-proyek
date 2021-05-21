@@ -1,5 +1,5 @@
 <?php 
-$b=$_SESSION["ses_id_c"];
+$b=$_SESSION["ses_id_v"];
 
 $target='dist/img/store/';
 $a=1;
@@ -21,7 +21,10 @@ $a=1;
 			<th>Client Name</th>
 		</tr>
 		<?php 
-		$sql_cek="SELECT s.id, s.id_client, s.image, s.name, s.address, s.phone_number, s.status, c.name_c FROM store as s LEFT JOIN client as c ON s.id_client=c.id WHERE s.id_client='$b'";
+		$sql_cek="SELECT s.id, s.id_client, s.image, s.name, s.address, s.phone_number, s.status, c.name_c FROM store as s 
+			LEFT JOIN client as c ON s.id_client=c.id 
+			LEFT JOIN servant as v ON s.id=v.id_store_v 
+			WHERE v.id='$b'";
 		$query_cek = mysqli_query($koneksi, $sql_cek);
 	  while($data_cek= mysqli_fetch_array($query_cek)) :?>
 		<tr>

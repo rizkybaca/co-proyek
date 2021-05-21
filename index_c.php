@@ -2,7 +2,7 @@
 // mulai session
 session_start();
 if (!isset($_SESSION["ses_username_c"])) {
-	header("location: ./super/user/login.php");
+	header("location: ./client/user/login.php");
 } else{
 	$data_id=$_SESSION["ses_id_c"];
 	$data_username=$_SESSION["ses_username_c"];
@@ -39,7 +39,7 @@ include './inc/koneksi.php';
 			<div class="navbar">
 				<div class="nav">
 					<div class="image"></div>
-					<a href="?page=data-store">Stores</a>
+					<a href="?page=data-store">Store</a>
 				</div>
 				<div class="nav">
 					<div class="image"></div>
@@ -96,15 +96,6 @@ include './inc/koneksi.php';
 				 			break;
 			 			case 'detail-product':
 				 			include './client/product/detail.php';
-				 			break;
-				 		case 'add-product':
-				 			include './client/product/add.php';
-				 			break;
-				 		case 'edit-product':
-				 			include './client/product/update.php';
-				 			break;
-				 		case 'del-product':
-				 			include './client/product/delete.php';
 				 			break;
 
 			 			case 'edit-user':

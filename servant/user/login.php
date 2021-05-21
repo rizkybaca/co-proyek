@@ -42,22 +42,25 @@ if (isset($_POST['login'])) {
 	$username=mysqli_real_escape_string($koneksi,$_POST['username']);
 	$password=mysqli_real_escape_string($koneksi,$_POST['password']);
 
-	$sql_login="SELECT * FROM client WHERE BINARY username='$username' AND password='$password'";
+	$sql_login="SELECT * FROM servant WHERE BINARY username='$username' AND password='$password'";
 	$query_login=mysqli_query($koneksi, $sql_login);
 	$data_login=mysqli_fetch_array($query_login, MYSQLI_ASSOC);
 	$jumlah_login=mysqli_num_rows($query_login);
 
 	if ($jumlah_login==1) {
 		session_start();
-		$_SESSION["ses_id_c"]=$data_login["id"];
-		$_SESSION["ses_username_c"]=$data_login["username"];
-		$_SESSION["ses_password_c"]=$data_login["password"];
-		$_SESSION["ses_name_c"]=$data_login["name_c"];
+		$_SESSION["ses_id_v"]=$data_login["id"];
+		$_SESSION["ses_username_v"]=$data_login["username"];
+		$_SESSION["ses_password_v"]=$data_login["password"];
+		$_SESSION["ses_name_v"]=$data_login["name"];
+		$_SESSION["ses_role_v"]=$data_login["role"];
+		$_SESSION["ses_role_v"]=$data_login["role"];
+		$_SESSION["ses_id_store_v"]=$data_login["id_store_v"];
 
 		echo "
   		<script>
 				alert('Login Berhasil!');
-				document.location.href = '../../index_c.php';
+				document.location.href = '../../index_v.php';
 			</script>
 		";
 	} else{
