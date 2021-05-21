@@ -1,16 +1,21 @@
 <?php 
 if (isset($_GET['kode'])) {
-	$sql_cek="SELECT * FROM customer WHERE id='".$_GET['kode']."'";
+	$sql_cek="SELECT * FROM servant WHERE id='".$_GET['kode']."'";
 	$query_cek = mysqli_query($koneksi, $sql_cek);
   $data_cek = mysqli_fetch_array($query_cek,MYSQLI_ASSOC);
+}
+$rl=$data_cek['role']=='product_admin'?'Product Admin':'Cashier';
+function active_radio_button($value,$input){
+	$result=$value==$input?'checked':'';
+	return $result;
 }
  ?>
 <div class="head">
 	<div class="tittle">
-		<p>Edit Customer</p>
+		<p>Edit Servant</p>
 	</div>
 </div>
-<div class="cont-add-customer">
+<div class="cont-add-servant">
 	<form action="" method="POST">
 		<input type="hidden" name="id" readonly value="<?= $data_cek['id']; ?>">
 		<div class="input">
@@ -30,21 +35,26 @@ if (isset($_GET['kode'])) {
 				<label for="name">Name</label>
 				<input type="text" name="name" id="name" placeholder="type name here" value="<?= $data_cek['name']; ?>">
 			</div>
-						<div class="col">
+			<div class="col">
 				<label for="date">Join Date</label>
 				<input type="text" name="date" id="date" placeholder="type join date here" value="<?= $data_cek['join_date']; ?>" required>
 			</div>
-			<div class="col">
-				<label for="email">E-Mail</label>
-				<input type="text" name="email" id="email" placeholder="type email here" value="<?= $data_cek['email']; ?>">
-			</div>
-			<div class="col">
-				<label for="contact">Phone Number</label>
-				<input type="text" name="phone_number" id="contact" placeholder="type number phone here" value="<?= $data_cek['phone_number']; ?>">
+			<div class="col2">
+				<div class="tittle">
+					<p>choose servant role here</p>
+				</div>
+				<div class="radio">
+					<input type="radio" name="role" value="product_admin" id="product_admin" <?= active_radio_button("Product Admin", $rl) ?>>
+					<label for="product_admin">Product Admin</label>
+				</div>
+				<div class="radio">
+					<input type="radio" name="role" value="cashier" id="cashier" <?= active_radio_button("Cashier", $rl) ?>>
+					<label for="cashier">Cashier</label>
+				</div>
 			</div>
 		</div>
 		<div class="button">
-			<a href="?page=data-customer">Cancel</a>
+			<a href="?page=data-servant">Cancel</a>
 			<input type="submit" name="save" value="Save">
 		</div>
 	</form>
@@ -66,13 +76,12 @@ if (isset($_GET['kode'])) {
 <?php 
 
 if (isset ($_POST['save'])){
-  $sql_ubah = "UPDATE customer SET
+  $sql_ubah = "UPDATE servant SET
    username='".$_POST['username']."',
    password='".$_POST['password']."',
    name='".$_POST['name']."',
    join_date='".$_POST['date']."',
-   email='".$_POST['email']."',
-   phone_number='".$_POST['phone_number']."'
+   role='".$_POST['role']."'
    WHERE id='".$_POST['id']."'"
    ;
   $query_ubah = mysqli_query($koneksi, $sql_ubah);
@@ -82,14 +91,14 @@ if (isset ($_POST['save'])){
   	echo "
   		<script>
 				alert('Edit Data Berhasil!');
-				document.location.href = 'index.php?page=data-customer';
+				document.location.href = 'index_c.php?page=data-servant';
 			</script>
 		";
   } else{
   	echo "
   		<script>
 				alert('Edit Data Gagal!');
-				document.location.href = 'index.php?page=edit-customer';
+				document.location.href = 'index_c.php?page=edit-servant';
 			</script>
 		";
   }
