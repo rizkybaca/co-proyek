@@ -1,0 +1,986 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+/* css reset */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+    font-family: 'Poppins', sans-serif;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* batas css reset */
+/* Style Landing Page */
+
+header img {
+    display: block;
+    width: 150px;
+    margin: 10px auto 0;
+}
+
+header p {
+    text-align: center;
+    padding: 0 20px 20px;
+    margin-top: -15px;
+    margin-bottom: 20px;
+}
+
+.tutorial {
+    width: 80%;
+    background-color: rgb(121, 217, 243);
+    margin: 0 auto;
+    text-align: center;
+    padding: 25px;
+}
+
+.tutorial h3 {
+    font-weight: 450;
+    margin-bottom: 50px;
+}
+
+.kolom-tombol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.kolom-tombol a {
+    width: 70px;
+    color: black;
+    background-color: rgb(146, 179, 241);
+    padding: 5px;
+    margin-top: 7px;
+    border-radius: 5px;
+}
+
+footer {
+    font-size: 0.8em;
+    width: 100%;
+    color: #555;
+    margin-bottom: 7px;
+    text-align: center;
+    letter-spacing: 2px;
+    position: absolute;
+    bottom: 0;
+}
+
+/* Batas Landing Page */
+
+/* Style halaman login */
+
+.img-login {
+    margin-top: 30px;
+}
+
+.kotak-login {
+    box-sizing: border-box;
+    margin: 40px auto;
+    width: 80%;
+    padding: 30px;
+    background-color: #98DED9;
+    text-align: center;
+}
+
+input[type=text] {
+    display: block;
+    width: 80%;
+    padding: 5px 10px;
+    margin: 10px auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    letter-spacing: 1px;
+
+}
+
+input[type=button] {
+    display: block;
+    margin: -5px auto 15px;
+    font-size: 1em;
+    color: rgb(69, 140, 201);
+    border: none;
+    border-radius: 7px;
+    padding: 5px 15px;
+    background-color: #C7FFD8;
+}
+
+.kotak-login a {
+    color: rgb(255, 255, 255);
+}
+
+/* batas style halaman login */
+
+/* style halaman signup */
+
+
+.container-signup {
+    box-sizing: border-box;
+    width: 90%;
+    background-color: rgb(184, 231, 255);
+    padding: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+}
+
+.container-signup h2 {
+    font-size: 2em;
+    font-weight: 550;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+input[type="text"] {
+    margin: 7px 0 0;
+    width: 90%;
+    border: none;
+}
+
+input[type="password"] {
+    width: 95%;
+    margin: 7px 0 15px;
+    height: 23px;
+    border: none;
+    border-radius: 5px;
+}
+
+.container-signup button {
+    margin: -5px 0 30px;
+    padding: 3px 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: #3bf57f;
+    color: #fff;
+    letter-spacing: 1.5px;
+}
+
+.container-signup p {
+    margin-bottom: 150px;
+}
+
+
+/* batas signup */
+/* Halaman home | Data Admin */
+
+.nav {
+    display: flex;
+    width: 100%;
+    background-color: #FFFEF7;
+}
+
+.nav h1 {
+    width: 100%;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 2px solid rgb(19, 19, 19, 0.2);
+}
+
+.list {
+    display: flex;
+    justify-content: center;
+    background-color: #047B6D;
+    width: 100%;
+    border-bottom: 1px solid rgb(19, 19, 19, 0.2);
+}
+
+.list li {
+    margin-top: 1px;
+    display: inline-block;
+    padding: 7px 0;
+}
+
+.list li a {
+    padding: 5px 10px;
+    color: #d8e0df;
+}
+
+.list li a:hover {
+    background-color: #3d948a;
+}
+
+.judul-data-mitra {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    font-size: 1.5em;
+    font-weight: 570;
+    text-align: center;
+}
+
+.tmbl-input {
+    background-color: #047B6D;
+    padding: 5px;
+    margin-left: 15px;
+    border-radius: 3px;
+    text-decoration: none;
+    color: #FFFEF7;
+}
+
+.main-log-su {
+    background-color: #FAF9F9;
+    height: 81vh;
+}
+
+.main-log-su h2 {
+    text-align: center;
+    font-size: 1.5em;
+    padding: 30px 0 60px;
+}
+
+.main-log-su .tmbl-input {
+    margin: 15px;
+    padding: 3px 8px;
+    color: #e4e4e4;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #047B6D;
+}
+
+.su table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 15px 0 0 15px;
+}
+
+.su th {
+    padding: 8px;
+    font-weight: 550;
+    text-align: left;
+}
+
+.su td {
+    text-align: left;
+    padding: 8px;
+}
+
+.su tr:nth-child(even) {
+    background-color: #e4e4e4;
+}
+
+.foot-su {
+    margin-bottom: 0;
+    text-align: center;
+    padding: 8px;
+    color: #727675;
+    background-color: #FFFEF7;
+}
+
+
+/* Batas halaman home | Data Admin */
+
+/* Style Home Enduser */
+
+.head-home-end {
+    display: flex;
+    background-color: #fdfdfd;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(194, 191, 191, 0.5);
+}
+
+.head-home-end .konten-head img {
+    margin: 0 0 0 100px;
+}
+
+.head-home-end p {
+    margin-top: 15px;
+    text-align: right;
+}
+
+.container-home {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.toko {
+    margin-top: 30px;
+}
+
+.toko a {
+    text-decoration: none;
+    color: black;
+}
+
+.toko p {
+    margin-top: 5px;
+    text-align: center;
+}
+
+
+#check {
+    display: none;
+}
+
+label #btn,
+label #cancel {
+    position: absolute;
+    cursor: pointer;
+}
+
+label #btn {
+    left: 20px;
+    top: 15px;
+    font-size: 25px;
+    color: rgb(25, 154, 139);
+    transition: all .5s;
+}
+
+label #cancel {
+    z-index: 1111;
+    left: -210px;
+    top: 15px;
+    font-size: 30px;
+    color: rgb(31, 138, 87);
+    transition: all .5s;
+}
+
+#check:checked~.sidemenu {
+    left: 0;
+    z-index: 111;
+}
+
+#check:checked~label #btn {
+    left: 210px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#check:checked~label #cancel {
+    left: 210px;
+}
+
+.sidemenu {
+    position: fixed;
+    left: -250px;
+    box-sizing: border-box;
+    width: 60%;
+    height: 100vh;
+    background-color: #55EFC4;
+    padding: 70px 0;
+    transition: all .5s ease;
+}
+
+.sidemenu input[type=text] {
+    width: 70%;
+    padding: 7px;
+    color: #625c5c;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+
+.sidemenu ul {
+    margin-top: 30px;
+    margin-left: 15px;
+}
+
+.sidemenu ul li {
+    padding: 10px;
+    border-bottom: 1.5px solid rgba(101, 99, 99, 0.4);
+}
+
+.sidemenu ul li a {
+    font-size: 1.1em;
+    color: rgb(229, 253, 249);
+    transition: all .5s;
+}
+
+ul li a:hover {
+    margin-left: 20px;
+}
+
+.sidemenu ul a i {
+    margin-right: 15px;
+}
+
+.logout {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    text-align: center;
+}
+
+.logout a {
+    color: rgb(177, 23, 23);
+    font-weight: 600;
+    padding: 3px 12px;
+    border-radius: 5px;
+    background-color: rgb(231, 224, 224);
+}
+
+/* batas home 2 enduser */
+
+/* Style Halaman Store */
+
+.store-head {
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #f3f3f3;
+    display: flex;
+    padding: 30px 20px;
+    justify-content: space-between;
+}
+
+.store-head i {
+    color: rgb(31, 58, 86);
+    font-size: 1.2em;
+}
+
+#arrow {
+    font-size: 1.5em;
+}
+
+.store-head h2 {
+    font-size: 2em;
+    font-weight: 600;
+}
+
+.nav-store {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    background-color: springgreen;
+}
+
+.nav-store li {
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+.nav-store li a {
+    color: rgb(255, 255, 255);
+}
+
+.container-store {
+    width: 95%;
+    margin: 50px auto;
+}
+
+.container-store section {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    padding: 15px;
+    margin: 30px auto;
+    background-color: rgb(235, 210, 210);
+}
+
+.container-store img {
+    position: relative;
+    top: -35px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.stok {
+    margin-top: -25px;
+}
+
+.container-store div {
+    text-align: center;
+    width: 40%;
+}
+
+.container-store h3 {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.jumlah {
+    letter-spacing: 5px;
+    margin-top: 15px;
+    padding: 3px 10px;
+    border-radius: 10px;
+    background-color: rgb(123, 247, 197);
+}
+
+.foot-store {
+    position: unset;
+    font-size: 0.8em;
+    width: 100%;
+    color: #555;
+    margin-bottom: 7px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+/* batas Store */
+
+/* Style Halaman Keranjang */
+
+.cart-head {
+    box-sizing: border-box;
+    width: 100%;
+    background-color: rgb(241, 241, 241);
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+
+.cart-head a {
+    position: absolute;
+    left: 20px;
+    color: black;
+}
+
+.cart-head h2 {
+    font-size: 3em;
+    font-weight: 600;
+}
+
+.nav-keranjang {
+    letter-spacing: 2px;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(80, 211, 255);
+}
+
+.container-cart {
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 20px auto;
+    width: 90%;
+    background-color: rgb(245, 245, 245);
+}
+
+.container-cart table {
+    border-collapse: collapse;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.container-cart table th {
+    font-size: 1.1em;
+    padding: 8px 25px 20px;
+    font-weight: 550;
+    text-align: left;
+    border-bottom: 2px solid rgba(56, 56, 56, 0.5);
+}
+
+.container-cart table td {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.container-cart table .total {
+    padding-top: 100px;
+}
+
+.container-cart tr:nth-child(even) {
+    background-color: #e4e4e4;
+
+}
+
+.container-cart .total {
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.container-cart .total tr {
+    border-top: 2px solid rgba(14, 9, 9, 0.4);
+}
+
+.container-cart button {
+    padding: 7px 20px;
+    border-radius: 7px;
+    border: none;
+    letter-spacing: 1px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(91, 197, 250);
+    margin: 0 auto 30px;
+    display: block;
+}
+
+/* Batas keranjang */
+
+/* Style Halaman Note */
+
+.note-head {
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+}
+
+.note-head img {
+    width: 150px;
+}
+
+.container-note {
+    text-align: center;
+    box-sizing: border-box;
+    padding: 30px;
+    line-height: 30px;
+    margin: 20px auto;
+    width: 90%;
+    background-color: rgb(245, 245, 245);
+}
+
+.container-note .note {
+    margin-top: 90px;
+    margin-bottom: 90px;
+}
+
+.main-note {
+    text-align: center;
+}
+
+.main-note a {
+    color: #000;
+}
+
+/* batas note */
+
+/* Tampilan Profil */
+
+.head-profil {
+    position: relative;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    background-color: rgb(131, 212, 235);
+}
+
+.head-profil a {
+    color: #000;
+    position: absolute;
+    left: 10px;
+}
+
+.head-profil h2 {
+    letter-spacing: 2px;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.konten-profil {
+    box-sizing: border-box;
+    width: 90%;
+    border-radius: 5px;
+    background-color: rgb(131, 212, 235);
+    margin: 40px auto 100px;
+    padding: 30px;
+    position: relative;
+}
+
+.konten-profil h3 {
+    text-align: center;
+    font-size: 1.1em;
+    margin: -10px 0 20px;
+}
+
+.konten-profil table {
+    width: 100%;
+}
+
+.konten-profil td {
+    padding: 5px;
+}
+
+.konten-profil button {
+    border-radius: 5px;
+    border: none;
+    padding: 3px 15px;
+    background-color: rgb(235, 236, 236);
+    position: absolute;
+    left: 160px;
+    bottom: -10px;
+}
+
+.note-profil {
+    margin-top: 200px;
+    text-align: center;
+    line-height: 25px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.konten-profil input[type="submit"] {
+    position: absolute;
+    border: none;
+    padding: 5px 10px;
+    left: 150px;
+    bottom: 15px;
+}
+
+/* Batas profil */
+
+/* Halaman History */
+
+.konten-history{
+    width: 80%;
+    margin: 30px auto;
+    line-height: 22px;
+}
+
+.konten-history .store {
+    text-align: center;
+    background-color: rgb(235, 235, 235);
+    padding: 5px;
+}
+
+.konten-history table{
+    width: 100%;
+}
+
+.konten-history tr {
+    border-bottom: 1px solid rgb(68, 67, 67);
+    margin-top: 5px;
+    background-color: rgb(235, 235, 235);
+}
+
+.konten-history td{
+    padding: 5px;
+}
+
+/* batas history */
+
+/* halaman Detail order now */
+
+.konten-order {
+    box-sizing: border-box;
+    background-color: rgb(241, 241, 241);
+    padding: 10px;
+    width: 90%;
+    margin: 30px auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.konten-order .time {
+    padding: 5px;
+    margin-top: 3px;
+    background-color: rgb(206, 206, 206);
+}
+
+.konten-order1 {
+    box-sizing: border-box;
+    background-color: rgb(241, 241, 241);
+    padding: 15px;
+    width: 90%;
+    margin: 30px auto;
+}
+
+
+.konten-order1 table {
+    border-collapse: collapse;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.konten-order1 table th {
+    padding: 0 25px 20px;
+    font-weight: 550;
+    text-align: left;
+    border-bottom: 2px solid rgba(56, 56, 56, 0.5);
+}
+
+.konten-order1 table td {
+    text-align: center;
+    padding: 15px 0;
+}
+
+.konten-order1 table .total {
+    padding-top: 100px;
+}
+
+.konten-order1 tr:nth-child(even) {
+    background-color: #e4e4e4;
+
+}
+
+/* batas detail order now */
+
+/* Tampilan Dekstop */
+@media (min-width: 576px) {
+    .container {
+        position: relative;
+        height: 95vh;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .img-login {
+        display: block;
+        width: 30%;
+        margin: 30px auto 0;
+    }
+
+    .kotak-login {
+        width: 30%;
+        z-index: 1;
+        margin-top: -40px;
+    }
+
+    .foot-login {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        color: #555;
+        bottom: 0;
+    }
+
+    /* halaman index */
+    .header-index img {
+        width: 250px;
+    }
+
+    /* batas index */
+
+    /* Halaman sign up */
+
+    .container-signup {
+
+        top: 20px;
+        bottom: 20px;
+        width: 450px;
+    }
+
+    /* batas signup */
+
+    /* halaman home enduser */
+
+    .sidemenu {
+        display: none;
+    }
+
+
+
+    /* batas home enduser */
+
+}
