@@ -1,11 +1,11 @@
 <?php 
-include './inc/koneksi.php';
+include '../../inc/koneksi.php';
  ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>login</title>
-	<link href="./dist/css/login.css" rel="stylesheet" />
+	<link href="../../dist/css/login.css" rel="stylesheet" />
 </head>
 <body>
 	<div class="container">
@@ -57,7 +57,7 @@ if (isset($_POST['login'])) {
 		echo "
   		<script>
 				alert('Login Berhasil!');
-				document.location.href = 'index.php';
+				document.location.href = '../../index.php';
 			</script>
 		";
 	} else{

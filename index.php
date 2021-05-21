@@ -2,7 +2,7 @@
 // mulai session
 session_start();
 if (!isset($_SESSION["ses_username"])) {
-	header("location: login.php");
+	header("location: ./super/user/login.php");
 } else{
 	$data_id=$_SESSION["ses_id"];
 	$data_username=$_SESSION["ses_username"];
@@ -57,7 +57,7 @@ include './inc/koneksi.php';
 			<div class="logout">
 				<div class="log">
 					<div class="image"></div>
-					<a href="./logout.php" onclick="return confirm('Apakah anda yakin ingin keluar?')">Logout</a>
+					<a href="./super/user/logout.php" onclick="return confirm('Apakah anda yakin ingin keluar?')">Logout</a>
 				</div>
 			</div>
 		</div>
