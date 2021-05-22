@@ -152,10 +152,9 @@ header p {
     margin-top: -15px;
     margin-bottom: 20px;
 }
-
 .tutorial {
     width: 80%;
-    background-color: rgb(121, 217, 243);
+/*    background-color: rgb(121, 217, 243);*/
     margin: 0 auto;
     text-align: center;
     padding: 25px;
@@ -164,6 +163,10 @@ header p {
 .tutorial h3 {
     font-weight: 450;
     margin-bottom: 50px;
+}
+.tutorial img{
+    width: 300px;
+    
 }
 
 .kolom-tombol {

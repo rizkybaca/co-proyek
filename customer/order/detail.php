@@ -1,3 +1,25 @@
+<?php 
+session_start();
+include '../../inc/koneksi.php';
+if (isset($_SESSION["ses_id"])) {
+  $b=$_SESSION["ses_id"];
+}
+
+if (isset($_GET['kode'])) {
+  $a=$_GET['kode'];
+}
+
+
+  $sql_cek="SELECT s.name 
+    FROM orders AS o
+    LEFT JOIN detail_order AS do ON do.id_order=o.id
+    LEFT JOIN products AS p ON p.id_p=do.id_product
+    LEFT JOIN store AS s ON s.id=p.id_store
+    WHERE o.id='$a'";
+  $query_cek = mysqli_query($koneksi, $sql_cek);
+  $data_cek= mysqli_fetch_array($query_cek,MYSQLI_ASSOC);
+  $total=0;
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +38,7 @@
   <main>
     <div class="konten-order">
       <div style="align-self: center">
-        <p>MCD</p>
+        <p><?= $data_cek['name']; ?></p>
       </div>
       <div>
         <p>Time Order</p>
@@ -30,27 +52,28 @@
           <th>Jumlah</th>
           <th>Harga</th>
         </tr>
+        <?php
+        $cek_sql="SELECT p.name_p, do.cont, p.price 
+        FROM orders AS o
+        RIGHT JOIN customer AS c ON o.id_customer=c.id
+        LEFT JOIN detail_order AS do ON do.id_order=o.id
+        LEFT JOIN products AS p ON p.id_p=do.id_product
+        LEFT JOIN store AS s ON s.id=p.id_store
+        WHERE o.status='bb' AND c.id='$b'";
+        $cek_query = mysqli_query($koneksi, $cek_sql);
+        while($cek_data= mysqli_fetch_array($cek_query,MYSQLI_ASSOC)) {?>
         <tr>
-          <td>Makanan 1</td>
-          <td>2</td>
-          <td>Rp. 20.000</td>
+          <td><?= $cek_data['name_p']; ?></td>
+          <td><?= $cek_data['cont']; ?></td>
+          <td>Rp. <?= $a=$cek_data['price'] * $cek_data['cont']; ?></td>
         </tr>
-        <tr>
-          <td>Minuman 1</td>
-          <td>2</td>
-          <td>Rp. 20.000</td>
-        </tr>
-        <tr>
-          <td>Minuman 1</td>
-          <td>2</td>
-          <td>Rp. 20.000</td>
-        </tr>
+        <?php $total += $a; } ?>
       </table>
       <table class="total">
         <tr>
           <td>Total</td>
           <td></td>
-          <td>Rp. 60.000</td>
+          <td>Rp. <?= $total; ?></td>
         </tr>
       </table>
     </div>

@@ -1,3 +1,11 @@
+<?php 
+session_start();
+include '../../inc/koneksi.php';
+if (isset($_SESSION["ses_id"])) {
+  $b=$_SESSION["ses_id"];
+}
+
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,22 +24,39 @@
     <main>
       <div class="konten-history">
         <p>Order Now :</p>
-        <p class="store">MCD</p>
-        <a href="./detail.php">Detail</a>
+        <?php 
+        $sql_cek="SELECT DISTINCT o.id, s.name 
+        FROM orders AS o
+        RIGHT JOIN customer AS c ON o.id_customer=c.id
+        LEFT JOIN detail_order AS do ON do.id_order=o.id
+        LEFT JOIN products AS p ON p.id_p=do.id_product
+        LEFT JOIN store AS s ON s.id=p.id_store
+        WHERE o.status='bb' AND c.id='$b'";
+        $query_cek = mysqli_query($koneksi, $sql_cek);
+        while($data_cek= mysqli_fetch_array($query_cek,MYSQLI_ASSOC)) :?>
+        <p class="store"><?= $data_cek['name']; ?></p>
+        <a href="./detail.php?kode=<?= $data_cek['id']; ?>">Detail</a>
+        <?php endwhile ?>
       </div>
       <div class="konten-history">
         <p>Daftar Riwayat</p>
         <table>
+          <?php 
+          $sql_cek="SELECT DISTINCT o.id, o.date_o, s.name 
+          FROM orders AS o
+          RIGHT JOIN customer AS c ON o.id_customer=c.id
+          LEFT JOIN detail_order AS do ON do.id_order=o.id
+          LEFT JOIN products AS p ON p.id_p=do.id_product
+          LEFT JOIN store AS s ON s.id=p.id_store
+          WHERE o.status='sb' OR o.status='ex' OR o.status='cc' AND c.id=$b";
+          $query_cek = mysqli_query($koneksi, $sql_cek);
+          while($data_cek= mysqli_fetch_array($query_cek,MYSQLI_ASSOC)) :?>
           <tr>
-            <td>KFC</td>
-            <td>1 Februari 2021</td>
-            <td><a href="#">Detail</a></td>
+            <td><?= $data_cek['name']; ?></td>
+            <td><?= $data_cek['date_o']; ?></td>
+            <td><a href="./detail.php?kode=<?= $data_cek['id']; ?>">Detail</a></td>
           </tr>
-          <tr>
-            <td>Starbuck</td>
-            <td>2 Februari 2021</td>
-            <td><a href="#">Detail</a></td>
-          </tr>
+          <?php endwhile ?>
         </table>
       </div>
     </main>

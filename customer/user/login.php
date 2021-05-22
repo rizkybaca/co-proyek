@@ -1,3 +1,11 @@
+<?php 
+session_start();
+if (isset($_SESSION["ses_name"])) {
+    header("location: ../store/stores.php");
+}
+// koneksi db
+include '../../inc/koneksi.php';
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,10 +22,10 @@
     </header>
     <main>
       <div class="kotak-login">
-        <form action="#">
-          <input type="text" placeholder="Username...">
-          <input type="text" placeholder="Password..."><br>
-          <a href="../store/stores.php"><input type="button" value="Log in"></a>
+        <form action="" method="POST">
+          <input type="text" placeholder="Username..." name="username" required>
+          <input type="password" placeholder="Password..." name="password" required>
+          <input type="submit" name="login" value="Log in">
         </form>
         <a href="./register.php">Sign up</a>
       </div>
@@ -28,3 +36,39 @@
   </div>
 </body>
 </html>
+
+<?php 
+
+if (isset($_POST['login'])) {
+  $username=mysqli_real_escape_string($koneksi,$_POST['username']);
+  $password=mysqli_real_escape_string($koneksi,$_POST['password']);
+
+  $sql_login="SELECT * FROM customer WHERE BINARY username='$username' AND password='$password'";
+  $query_login=mysqli_query($koneksi, $sql_login);
+  $data_login=mysqli_fetch_array($query_login, MYSQLI_ASSOC);
+  $jumlah_login=mysqli_num_rows($query_login);
+
+  if ($jumlah_login==1) {
+    session_start();
+    $_SESSION["ses_id"]=$data_login["id"];
+    $_SESSION["ses_username"]=$data_login["username"];
+    $_SESSION["ses_password"]=$data_login["password"];
+    $_SESSION["ses_name"]=$data_login["name"];
+
+    echo "
+      <script>
+        alert('Login Berhasil!');
+        document.location.href = '../store/stores.php';
+      </script>
+    ";
+  } else{
+    echo "
+      <script>
+        alert('Login Gagal!');
+        document.location.href = './login.php';
+      </script>
+    ";
+  }
+}
+
+?>

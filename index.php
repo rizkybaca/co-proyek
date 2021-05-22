@@ -1,3 +1,12 @@
+<?php 
+// mulai session
+session_start();
+if (isset($_SESSION["ses_username"])) {
+    header("location: ./customer/store/stores.php");
+}
+// koneksi db
+include './inc/koneksi.php';
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,8 +23,7 @@
   </header>
   <main>
     <div class="tutorial">
-      <h3>Tutorial Pemesanan</h3>
-      <img src="" alt="ilustrasi pemesanan">
+      <img src="./dist/img/brand/lp.png" alt="ilustrasi pemesanan">
     </div>
     <div class="kolom-tombol">
       <a href="./customer/user/login.php">login</a>
