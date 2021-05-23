@@ -1,3 +1,11 @@
+<?php
+session_start();
+include '../../inc/koneksi.php'; 
+    $sql_cek="SELECT *FROM customer WHERE id='".$_SESSION['ses_id']."'";
+    $query_cek = mysqli_query($koneksi, $sql_cek);
+  $data_cek = mysqli_fetch_array($query_cek,MYSQLI_ASSOC);
+
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,18 +27,18 @@
             <table>
                 <tr>
                     <td>Username</td>
-                    <td>tesi</td>
+                    <td><?=$data_cek['username'] ;?></td>
                 </tr>
                 <tr>
                     <td>Email</td>
-                    <td>tesi@gmail.com</td>
+                    <td><?=$data_cek['email'] ;?></td>
                 </tr>
                 <tr>
                     <td>No HP</td>
-                    <td>081234543</td>
+                    <td><?= $data_cek['phone_number']; ?></td>
                 </tr>
             </table>
-            <a href="./update.php"><button>Edit</button></a>
+            <a href="./setting.php?kode=<?= $data_cek['id']; ?>"><button>Edit</button></a>
         </div>
         <div class="note-profil">
             <p>Terima Kasih</p>

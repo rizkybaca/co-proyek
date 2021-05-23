@@ -47,7 +47,7 @@ $a=1;
       <img src="../../dist/img/brand/logo.png" alt="logo captain order">
     </div>
     <div class="konten-head">
-      <p>Hi<br>Username</p>
+      <p>Hi<br><?= $data_name; ?></p>
     </div>                   
   </header>
   <main>

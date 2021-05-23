@@ -1,9 +1,6 @@
 <?php 
 session_start();
 include '../../inc/koneksi.php';
-if (isset($_SESSION["ses_id"])) {
-  $b=$_SESSION["ses_id"];
-}
 
 if (isset($_GET['kode'])) {
   $a=$_GET['kode'];
@@ -15,7 +12,7 @@ if (isset($_GET['kode'])) {
     LEFT JOIN detail_order AS do ON do.id_order=o.id
     LEFT JOIN products AS p ON p.id_p=do.id_product
     LEFT JOIN store AS s ON s.id=p.id_store
-    WHERE o.id='$a'";
+    WHERE o.id=$a";
   $query_cek = mysqli_query($koneksi, $sql_cek);
   $data_cek= mysqli_fetch_array($query_cek,MYSQLI_ASSOC);
   $total=0;
@@ -59,7 +56,7 @@ if (isset($_GET['kode'])) {
         LEFT JOIN detail_order AS do ON do.id_order=o.id
         LEFT JOIN products AS p ON p.id_p=do.id_product
         LEFT JOIN store AS s ON s.id=p.id_store
-        WHERE o.status='bb' AND c.id='$b'";
+        WHERE o.id=$a";
         $cek_query = mysqli_query($koneksi, $cek_sql);
         while($cek_data= mysqli_fetch_array($cek_query,MYSQLI_ASSOC)) {?>
         <tr>

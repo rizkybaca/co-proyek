@@ -14,12 +14,13 @@ if ($query_hapus) {
 		</script>
 		";
 }else{
-  echo "
-		<script>
-			alert('Hapus Data Gagal!');
-			document.location.href = 'index_u.php?page=data-customer';
-		</script>
-	";
+	echo (mysqli_error($koneksi));
+ //  echo "
+	// 	<script>
+	// 		alert('Hapus Data Gagal!');
+	// 		document.location.href = 'index_u.php?page=data-customer';
+	// 	</script>
+	// ";
 }
 
 

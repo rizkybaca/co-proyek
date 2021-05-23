@@ -71,6 +71,10 @@ include './inc/koneksi.php';
 				</div>
 				<div class="nav">
 					<div class="image"></div>
+					<a href="?page=data-co">Captain Orders</a>
+				</div>				
+				<div class="nav">
+					<div class="image"></div>
 					<a href="?page=data-order">Orders</a>
 				</div>				
 				<div class="nav">
@@ -99,14 +103,15 @@ include './inc/koneksi.php';
 				 			include './servant/store/stores.php';
 				 			break;
 
+				 		case 'data-co':
+				 			include './servant/order/co.php';
+				 			break;
+
 				 		case 'data-order':
 				 			include './servant/order/orders.php';
 				 			break;
 			 			case 'detail-order':
 				 			include './servant/order/detail.php';
-				 			break;
-				 		case 'add-order':
-				 			include './servant/order/add.php';
 				 			break;
 				 		case 'edit-order':
 				 			include './servant/order/update.php';

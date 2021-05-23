@@ -49,7 +49,7 @@ if (isset($_POST['login'])) {
   $jumlah_login=mysqli_num_rows($query_login);
 
   if ($jumlah_login==1) {
-    session_start();
+    // session_start();
     $_SESSION["ses_id"]=$data_login["id"];
     $_SESSION["ses_username"]=$data_login["username"];
     $_SESSION["ses_password"]=$data_login["password"];

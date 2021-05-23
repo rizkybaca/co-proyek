@@ -20,9 +20,11 @@ $sql_simpan = "INSERT INTO orders (date_o,total,id_customer,status,id_cashier) V
   '$total',
   '$u',
   'bb',
-  4)";
-  $query_simpan = mysqli_query($koneksi, $sql_simpan);
-  
+  '')";
+  $query_simpann = mysqli_query($koneksi, $sql_simpan);
+if (!$query_simpann) {
+  echo mysqli_error($koneksi);
+}
   $id_order=mysqli_insert_id($koneksi);
 
   for ($i=0; $i < count($cart); $i++) { 
@@ -39,6 +41,8 @@ $sql_simpan = "INSERT INTO orders (date_o,total,id_customer,status,id_cashier) V
   }
 
 unset($_SESSION['cart']);
+
+
 
  ?>
 <!DOCTYPE html>

@@ -49,7 +49,7 @@ if (isset ($_POST['save'])){
   '".$_POST['username']."',
   '".$_POST['password']."',
   '".$_POST['name']."',
-  '".$_POST['date']."',
+  'ini tanggal',
   '".$_POST['email']."', 
   '".$_POST['phone_number']."')";
   $query_simpan = mysqli_query($koneksi, $sql_simpan);
