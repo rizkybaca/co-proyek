@@ -21,11 +21,12 @@ $a=1;
 			<th>Type</th>
 			<th>Price</th>
 			<th>Stocks</th>
+			<th>Status</th>
 			<th>Store Name</th>
 			<th>Actions</th>
 		</tr>
 		<?php 
-		$sql_cek="SELECT p.id_p, p.types, p.name_p, p.price, p.stocks, p.image, p.id_store, s.name FROM products as p 
+		$sql_cek="SELECT p.id_p, p.types, p.name_p, p.price, p.stocks, p.image, p.id_store,p.status, s.name FROM products as p 
 			LEFT JOIN store as s ON p.id_store=s.id";
 		$query_cek = mysqli_query($koneksi, $sql_cek);
 	  while($data_cek= mysqli_fetch_array($query_cek)) :?>
@@ -38,6 +39,7 @@ $a=1;
 			<td><?= $data_cek['types']; ?></td>
 			<td><?= $data_cek['price']; ?></td>
 			<td><?= $data_cek['stocks']; ?></td>
+			<td><?= $data_cek['status']; ?></td>
 			<td><?= $data_cek['name']; ?></td>
 			<td>
 				<a href="?page=edit-product&kode=<?=$data_cek['id_p']; ?>">Edit</a>

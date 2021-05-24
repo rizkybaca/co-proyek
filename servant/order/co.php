@@ -4,10 +4,14 @@ $a=1;
  ?>
 <div class="head">
 	<div class="tittle">
-		<p>On Order</p>
+		<p>Captain Order</p>
 	</div>
 </div>
 <div class="cont-show-customer">
+
+<!-- pending -->
+	<?php require_once './servant/order/pending.php'; ?>
+	
 	<table border="1" width="100%" style="border-collapse: collapse;">
 		<tr>
 			<th style="width: 50px;">No.</th>
@@ -26,7 +30,7 @@ $a=1;
         JOIN products AS p ON p.id_p=do.id_product
         JOIN store AS s ON s.id=p.id_store
         JOIN servant AS v ON v.id_store_v=s.id
-        WHERE o.status='bb' AND s.id=$b";
+        WHERE o.status='bb' AND o.req='rp' AND s.id=$b";
 		$query_cek = mysqli_query($koneksi, $sql_cek);
 	  while($data_cek= mysqli_fetch_array($query_cek,MYSQLI_ASSOC)):?>
 		<tr>

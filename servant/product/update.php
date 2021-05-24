@@ -4,8 +4,13 @@ if (isset($_GET['kode'])) {
 	$query_cek = mysqli_query($koneksi, $sql_cek);
   $data_cek = mysqli_fetch_array($query_cek, MYSQLI_ASSOC);
   $b=$data_cek['types'];
+  $s=$data_cek['status'];
 }
-function active_radio_button($value,$input){
+function active_radio_button1($value,$input){
+	$result=$value==$input?'checked':'';
+	return $result;
+}
+function active_radio_button2($value,$input){
 	$result=$value==$input?'checked':'';
 	return $result;
 }
@@ -42,16 +47,29 @@ $target='dist/img/product/';
 					<p>choose product type here</p>
 				</div>
 				<div class="radio">
-					<input type="radio" name="types" value="foods" id="foods" <?= active_radio_button("foods", $b) ?>>
+					<input type="radio" name="types" value="foods" id="foods" <?= active_radio_button1("foods", $b) ?>>
 					<label for="foods">Foods</label>
 				</div>
 				<div class="radio">
-					<input type="radio" name="types" value="drinks" id="drinks" <?= active_radio_button("drinks", $b) ?>>
+					<input type="radio" name="types" value="drinks" id="drinks" <?= active_radio_button1("drinks", $b) ?>>
 					<label for="drinks">Drinks</label>
 				</div>
 				<div class="radio">
-					<input type="radio" name="types" value="snacks" id="snacks" <?= active_radio_button("snacks", $b) ?>>
+					<input type="radio" name="types" value="snacks" id="snacks" <?= active_radio_button1("snacks", $b) ?>>
 					<label for="snacks">Snacks</label>
+				</div>
+			</div>
+			<div class="col2">
+				<div class="tittle">
+					<p>choose product status here</p>
+				</div>
+				<div class="radio">
+					<input type="radio" name="status" value="ready" id="ready" <?= active_radio_button2("ready", $s) ?>>
+					<label for="ready">Ready</label>
+				</div>
+				<div class="radio">
+					<input type="radio" name="status" value="empty" id="empty" <?= active_radio_button2("empty", $s) ?>>
+					<label for="empty">Empty</label>
 				</div>
 			</div>
 		</div>
@@ -89,7 +107,8 @@ if (isset ($_POST['save'])){
 				   name_p='".$_POST['name']."',
 				   price='".$_POST['price']."',
 				   stocks='".$_POST['stock']."',
-				   image='$image'   
+				   image='$image',
+				   status='".$_POST['status']."'   
 				   WHERE id_p='".$_POST['id']."'"
 				;
 			  $query_ubah = mysqli_query($koneksi, $sql_ubah);
@@ -119,7 +138,8 @@ if (isset ($_POST['save'])){
 		types='".$_POST['types']."',
 		name_p='".$_POST['name']."',
 		price='".$_POST['price']."',
-		stocks='".$_POST['stock']."' 
+		stocks='".$_POST['stock']."',
+		status='".$_POST['status']."' 
 		WHERE id_p='".$_POST['id']."'"
 		;
 		$query_ubah = mysqli_query($koneksi, $sql_ubah);

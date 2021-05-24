@@ -39,6 +39,20 @@
 					<label for="snacks">Snacks</label>
 				</div>
 			</div>
+		
+			<div class="col2">
+				<div class="tittle">
+					<p>choose product status here</p>
+				</div>
+				<div class="radio">
+					<input type="radio" name="status" value="ready" id="ready" required>
+					<label for="ready">Ready</label>
+				</div>
+				<div class="radio">
+					<input type="radio" name="status" value="empty" id="empty">
+					<label for="empty">Empty</label>
+				</div>
+			</div>
 		</div>
 		<div class="button">
 			<a href="?page=data-product">Cancel</a>
@@ -70,13 +84,14 @@ if (isset ($_POST['save'])){
 			$image=$rand.'_'.$file_name;
 			move_uploaded_file($temp, $target.$image);
 			$d=$data_id_store;
-			$sql_simpan = "INSERT INTO products (types,name_p,price,stocks,image,id_store) VALUES (
+			$sql_simpan = "INSERT INTO products (types,name_p,price,stocks,image,id_store,status) VALUES (
 			'".$_POST['types']."',
 			'".$_POST['name']."',
 			'".$_POST['price']."',
 			'".$_POST['stock']."',
 			'$image',
-			'$d')";
+			'$d',
+			'".$_POST['status']."')";
 		  $query_simpan = mysqli_query($koneksi, $sql_simpan);
 		  mysqli_close($koneksi);
 

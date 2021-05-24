@@ -1,14 +1,12 @@
-<?php
-$b=$data_id_store; 
-$a=1;
- ?>
-<div class="head">
-	<div class="tittle">
-		<p>Orders</p>
-	</div>
-</div>
-<div class="cont-show-customer">
-	<table border="1" width="100%" style="border-collapse: collapse;">
+<?php 
+$sql="SELECT * FROM orders WHERE req='pd'";
+$query=mysqli_query($koneksi, $sql);
+$data=mysqli_fetch_array($query,MYSQLI_ASSOC);
+$effect=mysqli_num_rows($query);
+
+if ($effect==1) :
+	 ?>
+<table border="1" width="100%" style="border-collapse: collapse;">
 		<tr>
 			<th style="width: 50px;">No.</th>
 			<th>Order Number</th>
@@ -26,7 +24,7 @@ $a=1;
         JOIN products AS p ON p.id_p=do.id_product
         JOIN store AS s ON s.id=p.id_store
         JOIN servant AS v ON v.id_store_v=s.id
-        WHERE o.status<>'bb' AND s.id=$b";
+        WHERE o.req='pd' AND s.id=$b";
 		$query_cek = mysqli_query($koneksi, $sql_cek);
 	  while($data_cek= mysqli_fetch_array($query_cek,MYSQLI_ASSOC)):?>
 		<tr>
@@ -37,11 +35,9 @@ $a=1;
 			<td><?= $data_cek['name']; ?></td>
 			<td><?= $data_cek['status']; ?></td>
 			<td>
-				<a href="?page=detail-order&kode=<?=$data_cek['id']; ?>">Detail</a>
-				<a href="?page=edit-order&kode=<?=$data_cek['id']; ?>">Update</a>
-				<a href="?page=del-order&kode=<?=$data_cek['id']; ?>" onclick="return confirm('Apakah anda yakin hapus data ini ?')">Delete</a>
+				<a href="?page=detail-pd&kode=<?=$data_cek['id']; ?>">Detail</a>
 			</td>
 		</tr>
 	<?php endwhile ?>
 	</table>
-</div>
+	<?php endif ?>

@@ -30,7 +30,8 @@ padding: 10px;
 
 .header .greet p{
   /* Hello, Admin */
-
+margin: 0;
+padding: 0;
 font-family: Poppins;
 font-style: normal;
 font-weight: normal;
@@ -77,12 +78,13 @@ top: 5px;
   background: #FFFFFF;
 }
 .header .brand .text p{
-
+margin: 0;
+padding: 0;
 font-family: Poppins;
 font-style: normal;
 font-weight: normal;
-font-size: 36px;
-line-height: 54px;
+font-size: 28px;
+/*line-height: 54px;*/
 /* identical to box height */
 color: #000000;
 }
@@ -100,13 +102,14 @@ color: #000000;
   align-items: stretch;
   justify-content: space-between;
   min-width: 275px;
+  width: 400px;
 }
 .container .aside .navbar{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 52px 67px 52px 52px;
+  padding: 52px 20px 52px 52px;
 }
 .container .aside .navbar .nav{
   /* Auto Layout */
@@ -145,7 +148,7 @@ color: #000000;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 52px 67px 52px 52px;
+  padding: 52px 20px 52px 52px;
 }
 .container .aside .logout .log{
   display: flex;
@@ -1227,6 +1230,9 @@ color: #FFFFFF;
   color: #000000;
 }
 
+.container .content .cont-show-customer table{
+  margin-bottom: 50px;
+}
 .container .content .cont-add-customer{
   /* Auto Layout */
 

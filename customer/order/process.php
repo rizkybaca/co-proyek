@@ -8,6 +8,8 @@ if (!isset($_SESSION['cart'])) {
   header('location:../store/stores.php');
 }
 
+
+
 $cart=unserialize(serialize($_SESSION['cart']));
 $total=0;
 
@@ -15,12 +17,15 @@ for ($i=0; $i < count($cart); $i++) {
   $total+=$cart[$i]['cont'] * $cart[$i]['price'];
 }
 
-$sql_simpan = "INSERT INTO orders (date_o,total,id_customer,status,id_cashier) VALUES (
+
+
+$sql_simpan = "INSERT INTO orders (date_o,total,id_customer,status,id_cashier,req) VALUES (
   'ini tanggal',
   '$total',
   '$u',
   'bb',
-  '')";
+  '',
+  'pd')";
   $query_simpann = mysqli_query($koneksi, $sql_simpan);
 if (!$query_simpann) {
   echo mysqli_error($koneksi);
@@ -31,12 +36,26 @@ if (!$query_simpann) {
     $id=$cart[$i]['id_p'];
     $cont=$cart[$i]['cont'];
 
+    $sql="SELECT * FROM products WHERE id_p='$id'";
+    $query=mysqli_query($koneksi, $sql);
+    $data=mysqli_fetch_array($query);
+
+    $sisa=$data['stocks']-$cont;
+
     $sql_simpan = "INSERT INTO detail_order (id_order,id_product,cont,notes) VALUES (
       '$id_order',
       '$id',
       '$cont',
       'ini order')";
+
+    $sql_ubah = "UPDATE products SET stocks='$sisa' WHERE id_p='$id'";
     $query_simpan = mysqli_query($koneksi, $sql_simpan);
+    $query_ubah = mysqli_query($koneksi, $sql_ubah);
+
+    if ($sisa==0) {
+      $sql_ubahh="UPDATE products SET status='empty' WHERE id_p='$id'";
+      $query_ubahh = mysqli_query($koneksi, $sql_ubah);
+    }
 
   }
 

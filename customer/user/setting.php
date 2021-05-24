@@ -1,6 +1,7 @@
 <?php 
 
 include '../../inc/koneksi.php';
+session_start();
 
 
   $sql_cek="SELECT * FROM customer WHERE id='".$_GET['kode']."'";

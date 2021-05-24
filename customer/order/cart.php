@@ -43,8 +43,8 @@ if ($index==-1) {
     'price'=> $cek_data['price'],
     'cont'=> $cont
   ];
-
 }
+
 }
 if (!empty($_SESSION['cart'])) {
 
