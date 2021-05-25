@@ -13,6 +13,14 @@ if (!isset($_SESSION["ses_username_v"])) {
 }
 // koneksi db
 include './inc/koneksi.php';
+ 
+ if (isset($_GET["page"])) {
+ 	$_SESSION["ses_dump"]=$_GET['page'];
+ } else {
+ 	$_SESSION["ses_dump"]="";
+ }
+
+
  ?>
 
 <!DOCTYPE html>
@@ -21,8 +29,20 @@ include './inc/koneksi.php';
 	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
 	<link href="./dist/css/main.css" rel="stylesheet" />
 	<title>Capt. Order</title>
+	<script>
+    function refreshpage() {
+      setTimeout(function() {
+        location.reload();
+      }, 2000);
+    }
+  </script>
 </head>
-<body>
+<?php 
+if ($_SESSION['ses_dump']==="data-co") {
+	echo '<body onload="refreshpage()">';
+} else {
+	echo '<body>';
+} ?>
 	<div class="header">
 		<div class="brand">
 			<div class="image">
@@ -207,7 +227,9 @@ include './inc/koneksi.php';
 				 			echo "<center><h1> ERROR !</h1></center>";
 				 			break;
 				 	}
-				 } 
+				 } else {
+				 	include './servant/store/stores.php';
+				 }
 			?>
 		</div>
 		<!-- end of content -->

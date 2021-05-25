@@ -139,7 +139,9 @@ include './inc/koneksi.php';
 				 			echo "<center><h1> ERROR !</h1></center>";
 				 			break;
 				 	}
-				 } 
+				 } else {
+				 	include './client/store/stores.php';
+				 }
 			?>
 		</div>
 		<!-- end of content -->

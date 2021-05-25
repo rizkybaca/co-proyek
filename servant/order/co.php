@@ -37,7 +37,7 @@ $a=1;
 			<td style="width: 50px;"><?= $a++; ?></td>
 			<td><?= $data_cek['id']; ?></td>
 			<td><?= $data_cek['date_o']; ?></td>
-			<td><?= $data_cek['total']; ?></td>
+			<td>Rp. <?= $data_cek['total']; ?></td>
 			<td><?= $data_cek['name']; ?></td>
 			<td><?= $data_cek['status']; ?></td>
 			<td>
