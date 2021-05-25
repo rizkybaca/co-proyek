@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 24 Bulan Mei 2021 pada 13.33
+-- Waktu pembuatan: 25 Bulan Mei 2021 pada 09.04
 -- Versi server: 10.4.17-MariaDB
 -- Versi PHP: 7.3.27
 
@@ -68,7 +68,7 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`id`, `username`, `password`, `name`, `join_date`, `email`, `phone_number`) VALUES
-(15, 'nana', 'nana1', 'nana nih', 'ini tanggal', 'nana@a', '35252');
+(16, 'lala', 'lala1', 'lala cuy', 'ini tanggal', 'lala@gmail.com', '43634634');
 
 -- --------------------------------------------------------
 
@@ -89,9 +89,8 @@ CREATE TABLE `detail_order` (
 --
 
 INSERT INTO `detail_order` (`id`, `id_order`, `id_product`, `cont`, `notes`) VALUES
-(29, 18, 9, 1, 'ini order'),
-(30, 19, 9, 5, 'ini order'),
-(31, 19, 10, 1, 'ini order');
+(34, 23, 12, 1, 'ini order'),
+(35, 24, 12, 2, 'ini order');
 
 -- --------------------------------------------------------
 
@@ -105,16 +104,17 @@ CREATE TABLE `orders` (
   `total` int(11) NOT NULL,
   `id_customer` int(11) NOT NULL,
   `status` enum('bb','sb','ex','cc') NOT NULL,
-  `id_cashier` int(11) NOT NULL
+  `id_cashier` int(11) NOT NULL,
+  `req` enum('pd','rp') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `orders`
 --
 
-INSERT INTO `orders` (`id`, `date_o`, `total`, `id_customer`, `status`, `id_cashier`) VALUES
-(18, 'ini tanggal', 12000, 15, 'sb', 7),
-(19, 'ini tanggal', 65000, 15, 'bb', 0);
+INSERT INTO `orders` (`id`, `date_o`, `total`, `id_customer`, `status`, `id_cashier`, `req`) VALUES
+(23, 'ini tanggal', 12000, 16, 'bb', 0, 'rp'),
+(24, 'ini tanggal', 24000, 16, 'cc', 0, 'rp');
 
 -- --------------------------------------------------------
 
@@ -129,17 +129,16 @@ CREATE TABLE `products` (
   `price` int(11) NOT NULL,
   `stocks` int(11) NOT NULL,
   `image` varchar(255) NOT NULL,
-  `id_store` int(11) NOT NULL
+  `id_store` int(11) NOT NULL,
+  `status` enum('ready','empty') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `products`
 --
 
-INSERT INTO `products` (`id_p`, `types`, `name_p`, `price`, `stocks`, `image`, `id_store`) VALUES
-(9, 'foods', 'nasi uduk', 12000, 100, '984585729_nasiuduk@.jpg', 22),
-(10, 'drinks', 'coca cola', 5000, 100, '1159428163_cocacola@.jpg', 22),
-(11, 'snacks', 'french fries', 12000, 100, '313324949_frenchfrise@.jpg', 22);
+INSERT INTO `products` (`id_p`, `types`, `name_p`, `price`, `stocks`, `image`, `id_store`, `status`) VALUES
+(12, 'snacks', 'french fries', 12000, 0, '1098116265_frenchfrise@.jpg', 22, 'ready');
 
 -- --------------------------------------------------------
 
@@ -281,25 +280,25 @@ ALTER TABLE `client`
 -- AUTO_INCREMENT untuk tabel `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT untuk tabel `detail_order`
 --
 ALTER TABLE `detail_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT untuk tabel `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT untuk tabel `products`
 --
 ALTER TABLE `products`
-  MODIFY `id_p` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_p` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT untuk tabel `servant`
