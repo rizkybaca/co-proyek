@@ -38,7 +38,7 @@ include './inc/koneksi.php';
   </script>
 </head>
 <?php 
-if ($_SESSION['ses_dump']==="data-co") {
+if ($_SESSION['ses_dump']==="data-co" || $_SESSION['ses_dump']==="data-co") {
 	echo '<body onload="refreshpage()">';
 } else {
 	echo '<body>';
@@ -228,7 +228,12 @@ if ($_SESSION['ses_dump']==="data-co") {
 				 			break;
 				 	}
 				 } else {
-				 	include './servant/store/stores.php';
+				 	if ($data_role=='cashier') {
+				 		include './servant/store/stores.php';
+				 	} elseif ($data_role=='product_admin') {
+				 		include './servant/product/products.php';
+				 	}
+				 	
 				 }
 			?>
 		</div>
