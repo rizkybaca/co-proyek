@@ -242,6 +242,26 @@ color: #000000;
   color: #FAF9F9;
   text-decoration: none;
 }
+
+.container .content table{
+  width: 100%;
+  border-collapse: collapse;
+}
+.container .content table th{
+  background: #ced4da;
+  text-align: left;
+  color: #495057;
+  padding: 10px;
+}
+.container .content table td{
+  padding: 10px;
+}
+.container .content table td a{
+  text-decoration: none;
+  color: black;
+}
+
+
 /*################################################################*/
 .container .content .cont-show-store{
    display: flex;
@@ -729,6 +749,7 @@ color: #FFFFFF;
   flex-direction: column;
   align-items: flex-start;
 }
+
 .container .content .cont-add-client{
   /* Auto Layout */
 

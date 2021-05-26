@@ -10,7 +10,7 @@ $a=1;
 	</div>
 </div>
 <div class="cont-show-product">
-	<table border="1" width="100%" style="border-collapse: collapse;">
+	<table>
 		<tr>
 			<th style="width: 50px;">No.</th>
 			<th>Product Image</th>

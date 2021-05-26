@@ -10,14 +10,7 @@ $a=1;
 <div class="cont-show-customer">
 
 <!-- pending -->
-	<?php 
-$sql="SELECT * FROM orders WHERE req='pd'";
-$query=mysqli_query($koneksi, $sql);
-$data=mysqli_fetch_array($query,MYSQLI_ASSOC);
-$effect=mysqli_num_rows($query);
-
-	 ?>
-<table border="1" width="100%" style="border-collapse: collapse;">
+<table>
 		<tr>
 			<th style="width: 50px;">No.</th>
 			<th>Order Number</th>
@@ -44,7 +37,19 @@ $effect=mysqli_num_rows($query);
 			<td><?= $data_cek['date_o']; ?></td>
 			<td>Rp. <?= $data_cek['total']; ?></td>
 			<td><?= $data_cek['name']; ?></td>
-			<td><?= $data_cek['status']; ?></td>
+			<?php 
+			if ($data_cek['status']=='bb') {
+				$a='Not yet paid';
+			} elseif ($data_cek['status']=='cc') {
+				$a='Canceled';
+			} elseif ($data_cek['status']=='ex') { 
+				$a='Expired';	
+			}  elseif ($data_cek['status']=='sb') { 
+				$a='Success';
+			}
+			
+			 ?>
+			<td><?= $a; ?></td>
 			<td>
 				<a href="?page=detail-pd&kode=<?=$data_cek['id']; ?>">Detail</a>
 			</td>

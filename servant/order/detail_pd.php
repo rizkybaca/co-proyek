@@ -22,7 +22,7 @@ $cek_data=mysqli_fetch_array($cek_query,MYSQLI_ASSOC);
 	</div>
 </div>
 <div class="cont-show-customer">
-	<table border="1" width="100%" style="border-collapse: collapse;">
+	<table>
 		<tr>
 			<th style="width: 50px;">No.</th>
 			<th>Product Name</th>
@@ -56,5 +56,5 @@ $cek_data=mysqli_fetch_array($cek_query,MYSQLI_ASSOC);
 			<a href="?page=dc-order&kode=<?=$b; ?>">Decline</a>
 		</tr>
 	</table>
-<a href="./index_v.php">Back</a>
+<a href="./index_v.php?data-co">Back</a>
 </div>

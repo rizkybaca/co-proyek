@@ -8,12 +8,14 @@ $a=1;
 	<div class="tittle">
 		<p>Products</p>
 	</div>
+	<?php if ($data_role == ('product_admin')):  ?>
 	<div class="button">
 		<a href="?page=add-product">Add Product</a>
-	</div>	
+	</div>
+	<?php endif ?>	
 </div>
 <div class="cont-show-product">
-	<table border="1" width="100%" style="border-collapse: collapse;">
+	<table>
 		<tr>
 			<th style="width: 50px;">No.</th>
 			<th>Product Image</th>

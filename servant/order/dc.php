@@ -14,14 +14,14 @@ if ($query) {
 		  	echo "
 		  		<script>
 						alert('Pesanan Berhasil Dibatalkan!');
-						document.location.href = 'index_v.php?page=data-co';
+						document.location.href = 'index_v.php?page=data-order';
 					</script>
 				";
 		  } else{
 		  	echo "
 		  		<script>
 						alert('Pesanan Gagal Dibatalkan!');
-						document.location.href = 'index_v.php?page=data-co';
+						document.location.href = 'index_v.php?page=data-order';
 					</script>
 				";
 		  }

@@ -44,7 +44,7 @@ function active_radio_button($value,$input){
 			</div>
 			</div>
 		<div class="button">
-			<a href="index_v.php">Cancel</a>
+			<a href="index_v.php?page=data-order">Cancel</a>
 			<input type="submit" name="save" value="Save">
 		</div>
 	</form>
@@ -65,14 +65,14 @@ if (isset ($_POST['save'])){
   	echo "
   		<script>
 				alert('Edit Data Berhasil!');
-				document.location.href = 'index_v.php';
+				document.location.href = 'index_v.php?page=data-order';
 			</script>
 		";
   } else{
   	echo "
   		<script>
 				alert('Edit Data Gagal!');
-				document.location.href = 'index_v.php';
+				document.location.href = 'index_v.php?page=data-order';
 			</script>
 		";
   }
