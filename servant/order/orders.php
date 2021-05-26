@@ -40,7 +40,6 @@ $a=1;
 			<td>
 				<a href="?page=detail-order&kode=<?=$data_cek['id']; ?>">Detail</a>
 				<a href="?page=edit-order&kode=<?=$data_cek['id']; ?>">Update</a>
-				<a href="?page=del-order&kode=<?=$data_cek['id']; ?>" onclick="return confirm('Apakah anda yakin hapus data ini ?')">Delete</a>
 			</td>
 		</tr>
 	<?php endwhile ?>
@@ -71,13 +70,12 @@ $a=1;
 			<td style="width: 50px;"><?= $a++; ?></td>
 			<td><?= $data_cek['id']; ?></td>
 			<td><?= $data_cek['date_o']; ?></td>
-			<td><?= $data_cek['total']; ?></td>
+			<td>Rp. <?= $data_cek['total']; ?></td>
 			<td><?= $data_cek['name']; ?></td>
 			<td><?= $data_cek['status']; ?></td>
 			<td>
 				<a href="?page=detail-order&kode=<?=$data_cek['id']; ?>">Detail</a>
 				<a href="?page=edit-order&kode=<?=$data_cek['id']; ?>">Update</a>
-				<a href="?page=del-order&kode=<?=$data_cek['id']; ?>" onclick="return confirm('Apakah anda yakin hapus data ini ?')">Delete</a>
 			</td>
 		</tr>
 	<?php endwhile ?>

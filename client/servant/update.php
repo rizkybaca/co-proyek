@@ -30,7 +30,7 @@ $cek_query=mysqli_query($koneksi, $cek_sql);
 				<input type="password" name="password" id="password" placeholder="type password here" value="<?= $data_cek['password']; ?>">
 				<div class="checkbox">
 				  <input type="checkbox" name="look-password" id="mybutton" onclick="change()">
-				  <label for="mybutton">lihat password</label>
+				  <label for="mybutton">check to see password</label>
 				</div>
 			</div>
 			<div class="col">

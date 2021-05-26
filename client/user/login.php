@@ -19,11 +19,11 @@ include '../../inc/koneksi.php';
 			<form action="" method="POST">
 				<div class="input">
 					<div class="col">
-						<label for="u">username</label>
+						<label for="u">Username</label>
 						<input id="u" type="text" name="username" placeholder="type username here" required>
 					</div>
 					<div class="col">
-						<label for="p">password</label>
+						<label for="p">Password</label>
 						<input id="p" type="password" name="password" placeholder="type password here" required>
 					</div>
 				</div>

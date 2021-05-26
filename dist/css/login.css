@@ -77,7 +77,7 @@ body{
 	line-height: 27px;
 	/* identical to box height */
 
-	text-transform: capitalize;
+
 
 	color: #000000;
 }
@@ -96,7 +96,6 @@ display: flex;
   line-height: 27px;
   /* identical to box height */
 
-  text-transform: lowercase;
 }
 .container .content form .button{
 display: flex;
@@ -123,7 +122,6 @@ font-size: 22px;
 line-height: 33px;
 /* identical to box height */
 
-text-transform: capitalize;
 
 color: #FFFFFF;
 }

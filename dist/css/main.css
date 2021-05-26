@@ -250,7 +250,6 @@ color: #000000;
   font-weight: normal;
   font-size: 18px;
   line-height: 27px;
-  text-transform: capitalize;
   color: #000000;
   padding: 10px;
   flex-direction: column;
@@ -302,8 +301,6 @@ margin: 10px;
   line-height: 27px;
   /* identical to box height */
 
-  text-transform: capitalize;
-
   color: #000000;
 }
 .container .content .cont-add-store form .input .col input{
@@ -322,8 +319,6 @@ margin: 10px;
   font-size: 18px;
   line-height: 27px;
   /* identical to box height */
-
-  text-transform: lowercase;
 }
 .container .content .cont-add-store form .input .col textarea{
   /* Auto Layout */
@@ -342,7 +337,6 @@ margin: 10px;
   line-height: 27px;
   /* identical to box height */
 
-  text-transform: lowercase;
 }
 .container .content .cont-add-store form .input .col select{
   /* Auto Layout */
@@ -360,8 +354,6 @@ margin: 10px;
   font-size: 18px;
   line-height: 27px;
   /* identical to box height */
-
-  text-transform: lowercase;
 }
 .container .content .cont-add-store form .input .col2{
 display: flex;
@@ -386,8 +378,6 @@ width: 500px;
   font-size: 18px;
   line-height: 27px;
   /* identical to box height */
-
-  text-transform: capitalize;
 
   color: rgba(0, 0, 0, 0.7);
   margin: 0;
@@ -417,8 +407,6 @@ line-height: 27px;
 
 color: #000000;
   /* identical to box height */
-
-  text-transform: capitalize;
 }
 .container .content .cont-add-store form .input .col2 input{
   /* Auto Layout */
@@ -436,8 +424,6 @@ color: #000000;
   line-height: 27px;
   color: #000000;
   /* identical to box height */
-
-  text-transform: lowercase;
 }
 .container .content .cont-add-store form .button{
   /* Auto Layout */
@@ -468,8 +454,6 @@ font-size: 22px;
 line-height: 33px;
 /* identical to box height */
 
-text-transform: capitalize;
-
 color: rgba(249, 26, 12, 0.7);
 margin-right: 20px;
 }
@@ -490,8 +474,6 @@ font-size: 22px;
 line-height: 33px;
 /* identical to box height */
 
-text-transform: capitalize;
-
 color: #FFFFFF;
 }
 
@@ -504,7 +486,6 @@ color: #FFFFFF;
   font-weight: normal;
   font-size: 18px;
   line-height: 27px;
-  text-transform: capitalize;
   color: #000000;
   padding: 10px;
   flex-direction: column;
@@ -557,7 +538,6 @@ margin: 10px;
   line-height: 27px;
   /* identical to box height */
 
-  text-transform: capitalize;
 
   color: #000000;
 }
@@ -577,8 +557,6 @@ margin: 10px;
   font-size: 18px;
   line-height: 27px;
   /* identical to box height */
-
-  text-transform: lowercase;
 }
 .container .content .cont-add-product form .input .col textarea{
   /* Auto Layout */
@@ -597,7 +575,6 @@ margin: 10px;
   line-height: 27px;
   /* identical to box height */
 
-  text-transform: lowercase;
 }
 .container .content .cont-add-product form .input .col select{
   /* Auto Layout */
@@ -615,8 +592,6 @@ margin: 10px;
   font-size: 18px;
   line-height: 27px;
   /* identical to box height */
-
-  text-transform: lowercase;
 }
 .container .content .cont-add-product form .input .col2{
 display: flex;
@@ -641,8 +616,6 @@ width: 500px;
   font-size: 18px;
   line-height: 27px;
   /* identical to box height */
-
-  text-transform: capitalize;
 
   color: rgba(0, 0, 0, 0.7);
   margin: 0;
@@ -672,8 +645,6 @@ line-height: 27px;
 
 color: #000000;
   /* identical to box height */
-
-  text-transform: capitalize;
 }
 .container .content .cont-add-product form .input .col2 input{
   /* Auto Layout */
@@ -691,8 +662,6 @@ color: #000000;
   line-height: 27px;
   color: #000000;
   /* identical to box height */
-
-  text-transform: lowercase;
 }
 .container .content .cont-add-product form .button{
   /* Auto Layout */
@@ -723,8 +692,6 @@ font-size: 22px;
 line-height: 33px;
 /* identical to box height */
 
-text-transform: capitalize;
-
 color: rgba(249, 26, 12, 0.7);
 margin-right: 20px;
 }
@@ -745,8 +712,6 @@ font-size: 22px;
 line-height: 33px;
 /* identical to box height */
 
-text-transform: capitalize;
-
 color: #FFFFFF;
 }
 
@@ -759,7 +724,6 @@ color: #FFFFFF;
   font-weight: normal;
   font-size: 18px;
   line-height: 27px;
-  text-transform: capitalize;
   color: #000000;
   padding: 10px;
   flex-direction: column;
@@ -792,6 +756,7 @@ padding: 0px;
 flex-direction: column;
 align-items: stretch;
 padding: 0px;
+margin: 10px;
 }
 .container .content .cont-add-client form .input .col label{
   /* Auto Layout */
@@ -806,8 +771,6 @@ font-weight: normal;
 font-size: 18px;
 line-height: 27px;
 /* identical to box height */
-
-text-transform: capitalize;
 
 color: #000000;
 }
@@ -828,8 +791,6 @@ font-size: 16px;
 /*line-height: 27px;*/
 /* identical to box height */
 
-text-transform: lowercase;
-
 color: #000000;
 }
 .container .content .cont-add-client form .input .col textarea{
@@ -848,8 +809,6 @@ font-weight: normal;
 font-size: 18px;
 line-height: 27px;
 /* identical to box height */
-
-text-transform: lowercase;
 
 color: #000000;
 }
@@ -877,8 +836,6 @@ font-size: 18px;
 line-height: 27px;
 /* identical to box height */
 
-text-transform: lowercase;
-
 color: rgba(0, 0, 0, 0.5);
 }
 .container .content .cont-add-client form .input .col2 input{
@@ -898,7 +855,6 @@ color: rgba(0, 0, 0, 0.5);
   color: #000000;
   /* identical to box height */
 
-  text-transform: lowercase;
 }
 
 .container .content .cont-add-client form .input .col .checkbox{
@@ -942,8 +898,6 @@ font-size: 22px;
 line-height: 33px;
 /* identical to box height */
 
-text-transform: capitalize;
-
 color: rgba(249, 26, 12, 0.7);
 margin-right: 20px;
 }
@@ -964,8 +918,6 @@ font-size: 22px;
 line-height: 33px;
 /* identical to box height */
 
-text-transform: capitalize;
-
 color: #FFFFFF;
 }
 
@@ -980,7 +932,6 @@ color: #FFFFFF;
   font-weight: normal;
   font-size: 18px;
   line-height: 27px;
-  text-transform: capitalize;
   color: #000000;
 }
 .container .content .cont-add-servant{
@@ -1010,6 +961,7 @@ padding: 0px;
 flex-direction: column;
 align-items: stretch;
 padding: 0px;
+margin: 10px;
 }
 .container .content .cont-add-servant form .input .col label{
   /* Auto Layout */
@@ -1025,7 +977,6 @@ font-size: 18px;
 line-height: 27px;
 /* identical to box height */
 
-text-transform: capitalize;
 
 color: #000000;
 }
@@ -1046,8 +997,6 @@ font-size: 18px;
 line-height: 27px;
 /* identical to box height */
 
-text-transform: lowercase;
-
 color: #000000;
 }
 
@@ -1067,8 +1016,6 @@ color: #000000;
   font-size: 18px;
   line-height: 27px;
   /* identical to box height */
-
-  text-transform: lowercase;
 }
 
 .container .content .cont-add-servant form .input .col .checkbox{
@@ -1106,8 +1053,6 @@ width: 500px;
   line-height: 27px;
   /* identical to box height */
 
-  text-transform: capitalize;
-
   color: rgba(0, 0, 0, 0.7);
   margin: 0;
 }
@@ -1136,8 +1081,6 @@ line-height: 27px;
 
 color: #000000;
   /* identical to box height */
-
-  text-transform: capitalize;
 }
 .container .content .cont-add-servant form .input .col2 input{
   /* Auto Layout */
@@ -1155,8 +1098,6 @@ color: #000000;
   line-height: 27px;
   color: #000000;
   /* identical to box height */
-
-  text-transform: lowercase;
 }
 
 .container .content .cont-add-servant form .button{
@@ -1189,8 +1130,6 @@ font-size: 22px;
 line-height: 33px;
 /* identical to box height */
 
-text-transform: capitalize;
-
 color: rgba(249, 26, 12, 0.7);
 margin-right: 20px;
 }
@@ -1211,8 +1150,6 @@ font-size: 22px;
 line-height: 33px;
 /* identical to box height */
 
-text-transform: capitalize;
-
 color: #FFFFFF;
 }
 /*############### servant #############*/
@@ -1226,7 +1163,6 @@ color: #FFFFFF;
   font-weight: normal;
   font-size: 18px;
   line-height: 27px;
-  text-transform: capitalize;
   color: #000000;
 }
 
@@ -1260,6 +1196,7 @@ padding: 0px;
 flex-direction: column;
 align-items: stretch;
 padding: 0px;
+margin: 10px;
 }
 .container .content .cont-add-customer form .input .col label{
   /* Auto Layout */
@@ -1274,8 +1211,6 @@ font-weight: normal;
 font-size: 18px;
 line-height: 27px;
 /* identical to box height */
-
-text-transform: capitalize;
 
 color: #000000;
 }
@@ -1295,8 +1230,6 @@ font-weight: normal;
 font-size: 18px;
 line-height: 27px;
 /* identical to box height */
-
-text-transform: lowercase;
 
 color: #000000;
 }
@@ -1342,8 +1275,6 @@ font-size: 22px;
 line-height: 33px;
 /* identical to box height */
 
-text-transform: capitalize;
-
 color: rgba(249, 26, 12, 0.7);
 margin-right: 20px;
 }
@@ -1364,7 +1295,6 @@ font-size: 22px;
 line-height: 33px;
 /* identical to box height */
 
-text-transform: capitalize;
 
 color: #FFFFFF;
 }
@@ -1399,6 +1329,7 @@ padding: 0px;
 flex-direction: column;
 align-items: stretch;
 padding: 0px;
+margin: 10px;
 }
 .container .content .cont-setting form .input .col label{
   /* Auto Layout */
@@ -1413,8 +1344,6 @@ font-weight: normal;
 font-size: 18px;
 line-height: 27px;
 /* identical to box height */
-
-text-transform: capitalize;
 
 color: #000000;
 }
@@ -1435,8 +1364,6 @@ font-size: 18px;
 line-height: 27px;
 /* identical to box height */
 
-text-transform: lowercase;
-
 color: #000000;
 }
 
@@ -1456,8 +1383,6 @@ font-weight: normal;
 font-size: 18px;
 line-height: 27px;
 /* identical to box height */
-
-text-transform: lowercase;
 
 color: #000000;
 }
@@ -1503,8 +1428,6 @@ font-size: 22px;
 line-height: 33px;
 /* identical to box height */
 
-text-transform: capitalize;
-
 color: rgba(249, 26, 12, 0.7);
 margin-right: 20px;
 }
@@ -1524,8 +1447,6 @@ font-weight: normal;
 font-size: 22px;
 line-height: 33px;
 /* identical to box height */
-
-text-transform: capitalize;
 
 color: #FFFFFF;
 }

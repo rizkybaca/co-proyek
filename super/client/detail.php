@@ -26,7 +26,7 @@ $target_bl='dist/img/client/bl/';
 				<input type="password" name="password" id="password" placeholder="type password here" value="<?= $data_cek['password']; ?>" readonly>
 				<div class="checkbox">
 				  <input type="checkbox" name="look-password" id="mybutton" onclick="change()">
-				  <label for="mybutton">lihat password</label>
+				  <label for="mybutton">check to see password</label>
 				</div>
 			</div>
 			<div class="col">
