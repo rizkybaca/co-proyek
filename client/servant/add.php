@@ -63,6 +63,19 @@ $query_cek=mysqli_query($koneksi, $sql_cek);
 
 if (isset ($_POST['save'])){
 
+	$sql_u="SELECT username FROM servant";
+	$query_u=mysqli_query($koneksi, $sql_u);
+	$data_u=mysqli_fetch_array($query_u);
+
+	if ($data_u['username']===$_POST['username']) {
+		echo "
+  		<script>
+				alert('Username sudah ada!');
+				document.location.href = 'index_u.php?page=add-servant';
+			</script>
+		";
+	} else {
+
   $sql_simpan = "INSERT INTO servant (username,password,name,join_date,id_store_v,role) VALUES (
   '".$_POST['username']."',
   '".$_POST['password']."',
@@ -88,4 +101,5 @@ if (isset ($_POST['save'])){
 			</script>
 		";
   }
+}
 }

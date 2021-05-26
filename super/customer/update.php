@@ -66,6 +66,16 @@ if (isset($_GET['kode'])) {
 <?php 
 
 if (isset ($_POST['save'])){
+
+	if ($data_u['username']===$_POST['username']) {
+		echo "
+  		<script>
+				alert('Username sudah ada!');
+				document.location.href = 'index_u.php?page=add-client';
+			</script>
+		";
+	} else {
+
   $sql_ubah = "UPDATE customer SET
    username='".$_POST['username']."',
    password='".$_POST['password']."',
@@ -93,4 +103,5 @@ if (isset ($_POST['save'])){
 			</script>
 		";
   }
+}
 }

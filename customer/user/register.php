@@ -45,6 +45,19 @@ include '../../inc/koneksi.php'; ?>
 
 if (isset ($_POST['save'])){
 
+  $sql_u="SELECT username FROM customer";
+  $query_u=mysqli_query($koneksi, $sql_u);
+  $data_u=mysqli_fetch_array($query_u);
+
+  if ($data_u['username']===$_POST['username']) {
+    echo "
+      <script>
+        alert('Username sudah ada!');
+        document.location.href = './register.php';
+      </script>
+    ";
+  } else {
+
   $sql_simpan = "INSERT INTO customer (username,password,name,join_date,email,phone_number) VALUES (
   '".$_POST['username']."',
   '".$_POST['password']."',
@@ -71,4 +84,4 @@ if (isset ($_POST['save'])){
     ";
   }
 }
- ?>
+}

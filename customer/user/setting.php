@@ -32,7 +32,7 @@ session_start();
         <label for="name">Name :</label><br>
         <input type="text" id="name" name="name" value="<?= $data_cek['name']; ?>" required><br>
         <label for="username">Username :</label><br>
-        <input type="text" id="username" name="username" value="<?= $data_cek['username']; ?>" required><br>
+        <input type="text" readonly id="username" name="username" value="<?= $data_cek['username']; ?>" required><br>
         <label for="password">Password :</label><br>
         <input type="password" id="password" name="password" value="<?= $data_cek['password']; ?>" required><br>
         <input type="checkbox" name="look-password" id="mybutton" onclick="change()"><br>

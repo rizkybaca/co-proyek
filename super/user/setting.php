@@ -31,7 +31,7 @@
 			</div>
 		</div>
 		<div class="button">
-			<a href="?page=data-client">Cancel</a>
+			<a href="?page=data-store">Cancel</a>
 			<input type="submit" name="save" value="Save">
 		</div>
 	</form>
@@ -66,7 +66,7 @@ if (isset ($_POST['save'])){
   	echo "
   		<script>
 				alert('Tambah Data Berhasil!');
-				document.location.href = 'index.php';
+				document.location.href = 'index_u.php';
 			</script>
 		";
   } else{

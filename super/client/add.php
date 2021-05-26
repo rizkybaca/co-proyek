@@ -231,6 +231,19 @@ if (isset ($_POST['save'])){
 	$pp=upload_pp();
 	$bl=upload_bl();
 
+	$sql_u="SELECT username FROM client";
+	$query_u=mysqli_query($koneksi, $sql_u);
+	$data_u=mysqli_fetch_array($query_u);
+
+	if ($data_u['username']===$_POST['username']) {
+		echo "
+  		<script>
+				alert('Username sudah ada!');
+				document.location.href = 'index_u.php?page=add-client';
+			</script>
+		";
+	} else {
+		
   $sql_simpan = "INSERT INTO client (username,password,name_c,address,phone_number,email,id_card,profile_picture,business_license) VALUES (
   '".$_POST['username']."',
   '".$_POST['password']."',
@@ -259,4 +272,5 @@ if (isset ($_POST['save'])){
 			</script>
 		";
   }
+}
 }

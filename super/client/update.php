@@ -39,7 +39,7 @@ $target_bl='dist/img/client/bl/';
 		<div class="input">
 			<div class="col">
 				<label for="username">Username</label>
-				<input type="text" name="username" id="username" placeholder="type username here" value="<?= $data_cek['username']; ?>">
+				<input type="text" readonly name="username" id="username" placeholder="type username here" value="<?= $data_cek['username']; ?>">
 			</div>
 			<div class="col">
 				<label for="password">Password</label>
