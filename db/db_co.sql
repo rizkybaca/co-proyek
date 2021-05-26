@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 25 Bulan Mei 2021 pada 09.04
+-- Waktu pembuatan: 27 Bulan Mei 2021 pada 00.05
 -- Versi server: 10.4.17-MariaDB
 -- Versi PHP: 7.3.27
 
@@ -45,7 +45,7 @@ CREATE TABLE `client` (
 --
 
 INSERT INTO `client` (`id`, `username`, `password`, `name_c`, `address`, `phone_number`, `email`, `id_card`, `profile_picture`, `business_license`) VALUES
-(32, 'mama', 'mama1', 'mama', 'segsdg', '436', 'xdgbsd@1', '827649583_bami.jpg', '243672154_MBAK.jpeg', '418684420_alip.jpg');
+(34, 'mama', 'mama1', 'Mama', 'Jauh bat', '46342423', 'rhrdh@1', '1594134295_bami.jpg', '1205824614_bami.jpg', '1335036471_bami.jpg');
 
 -- --------------------------------------------------------
 
@@ -63,13 +63,6 @@ CREATE TABLE `customer` (
   `phone_number` varchar(13) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `customer`
---
-
-INSERT INTO `customer` (`id`, `username`, `password`, `name`, `join_date`, `email`, `phone_number`) VALUES
-(16, 'lala', 'lala1', 'lala cuy', 'ini tanggal', 'lala@gmail.com', '43634634');
-
 -- --------------------------------------------------------
 
 --
@@ -83,14 +76,6 @@ CREATE TABLE `detail_order` (
   `cont` int(11) NOT NULL,
   `notes` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `detail_order`
---
-
-INSERT INTO `detail_order` (`id`, `id_order`, `id_product`, `cont`, `notes`) VALUES
-(34, 23, 12, 1, 'ini order'),
-(35, 24, 12, 2, 'ini order');
 
 -- --------------------------------------------------------
 
@@ -107,14 +92,6 @@ CREATE TABLE `orders` (
   `id_cashier` int(11) NOT NULL,
   `req` enum('pd','rp') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `orders`
---
-
-INSERT INTO `orders` (`id`, `date_o`, `total`, `id_customer`, `status`, `id_cashier`, `req`) VALUES
-(23, 'ini tanggal', 12000, 16, 'bb', 0, 'rp'),
-(24, 'ini tanggal', 24000, 16, 'cc', 0, 'rp');
 
 -- --------------------------------------------------------
 
@@ -133,13 +110,6 @@ CREATE TABLE `products` (
   `status` enum('ready','empty') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `products`
---
-
-INSERT INTO `products` (`id_p`, `types`, `name_p`, `price`, `stocks`, `image`, `id_store`, `status`) VALUES
-(12, 'snacks', 'french fries', 12000, 0, '1098116265_frenchfrise@.jpg', 22, 'ready');
-
 -- --------------------------------------------------------
 
 --
@@ -156,14 +126,6 @@ CREATE TABLE `servant` (
   `id_store_v` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `servant`
---
-
-INSERT INTO `servant` (`id`, `username`, `password`, `name`, `join_date`, `role`, `id_store_v`) VALUES
-(6, 'fafa', 'fafa1', 'fafa aja lah', 'segsd', 'product_admin', 22),
-(7, 'kaka', 'kaka1', 'kaka', 'drfhdrg', 'cashier', 22);
-
 -- --------------------------------------------------------
 
 --
@@ -179,13 +141,6 @@ CREATE TABLE `store` (
   `id_client` int(11) NOT NULL,
   `image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `store`
---
-
-INSERT INTO `store` (`id`, `name`, `address`, `phone_number`, `status`, `id_client`, `image`) VALUES
-(22, 'wang', 'fafa', '4634', 'active', 32, '1945494528_mcd@.jpg');
 
 -- --------------------------------------------------------
 
@@ -205,7 +160,7 @@ CREATE TABLE `super_user` (
 --
 
 INSERT INTO `super_user` (`id`, `username`, `password`, `name`) VALUES
-(1, 'rizky', 'rizky1!', 'rizky nur');
+(1, 'rizky', 'rizky1!', 'Rizky Nur nih');
 
 --
 -- Indexes for dumped tables
@@ -274,7 +229,7 @@ ALTER TABLE `super_user`
 -- AUTO_INCREMENT untuk tabel `client`
 --
 ALTER TABLE `client`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT untuk tabel `customer`
@@ -286,13 +241,13 @@ ALTER TABLE `customer`
 -- AUTO_INCREMENT untuk tabel `detail_order`
 --
 ALTER TABLE `detail_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
 
 --
 -- AUTO_INCREMENT untuk tabel `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
 
 --
 -- AUTO_INCREMENT untuk tabel `products`
