@@ -4,7 +4,7 @@ if (isset($_GET['kode'])) {
 	$query_cek = mysqli_query($koneksi, $sql_cek);
   $data_cek = mysqli_fetch_array($query_cek,MYSQLI_ASSOC);
 }
-
+$tgl=date("Y-m-d H:i:s");
 if (isset($_GET['alert'])) {
 	$alert=$_GET['alert'];
 	switch ($alert) {

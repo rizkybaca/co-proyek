@@ -19,10 +19,6 @@
 				<input type="text" name="name" id="name" placeholder="type name here" required>
 			</div>
 			<div class="col">
-				<label for="date">Join Date</label>
-				<input type="text" name="date" id="date" placeholder="type join date here" required>
-			</div>
-			<div class="col">
 				<label for="email">E-Mail</label>
 				<input type="email" name="email" id="email" placeholder="type email here" required>
 			</div>
@@ -39,7 +35,7 @@
 </div>
 
 <?php 
-
+$tgl=date("Y-m-d H:i:s");
 if (isset ($_POST['save'])){
 
 	$sql_u="SELECT username FROM customer";
@@ -59,7 +55,7 @@ if (isset ($_POST['save'])){
   '".$_POST['username']."',
   '".$_POST['password']."',
   '".$_POST['name']."',
-  '".$_POST['date']."',
+  '$tgl',
   '".$_POST['email']."', 
   '".$_POST['phone_number']."')";
   $query_simpan = mysqli_query($koneksi, $sql_simpan);

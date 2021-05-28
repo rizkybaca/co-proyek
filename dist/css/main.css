@@ -102,7 +102,7 @@ color: #000000;
   align-items: stretch;
   justify-content: space-between;
   min-width: 275px;
-  width: 400px;
+  width: 300px;
 }
 .container .aside .navbar{
   display: flex;
@@ -189,6 +189,7 @@ color: #000000;
   width: 100vw;
 /*  overflow: auto;*/
 }
+
 /*##################################################*/
 .container .content .head{
   /* Auto Layout */
@@ -1189,6 +1190,10 @@ color: #FFFFFF;
 
 .container .content .cont-show-customer table{
   margin-bottom: 50px;
+}
+.container .content .cont-show-customer a{
+  text-decoration: none;
+  color: black;
 }
 .container .content .cont-add-customer{
   /* Auto Layout */

@@ -134,7 +134,7 @@ if (isset($_GET['alert'])) {
 </div>
 
 <?php 
-
+$tgl=date("Y-m-d H:i:s");
 // ###############################################
 	function upload_ic(){
 	$rand_ic=rand();
@@ -244,13 +244,14 @@ if (isset ($_POST['save'])){
 		";
 	} else {
 		
-  $sql_simpan = "INSERT INTO client (username,password,name_c,address,phone_number,email,id_card,profile_picture,business_license) VALUES (
+  $sql_simpan = "INSERT INTO client (username,password,name_c,address,phone_number,email,join_date,id_card,profile_picture,business_license) VALUES (
   '".$_POST['username']."',
   '".$_POST['password']."',
   '".$_POST['name']."',
   '".$_POST['address']."',
   '".$_POST['phone_number']."',
   '".$_POST['email']."',
+  '$tgl',
   '$ic',
   '$pp',
   '$bl')";

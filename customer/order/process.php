@@ -1,4 +1,5 @@
 <?php 
+$tgl=date("Y-m-d H:i:s");
 session_start();
 include '../../inc/koneksi.php';
 $u=$_SESSION["ses_id"];
@@ -17,7 +18,7 @@ for ($i=0; $i < count($cart); $i++) {
 
 
 $sql_simpan = "INSERT INTO orders (date_o,total,id_customer,status,id_cashier,req) VALUES (
-  'ini tanggal',
+  '$tgl',
   '$total',
   '$u',
   'bb',

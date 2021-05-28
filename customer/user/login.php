@@ -13,12 +13,12 @@ include '../../inc/koneksi.php';
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Captain Order | Login User</title>
-  <link rel="stylesheet" href="../../dist/css/style.css">
+  <link rel="stylesheet" href="../../dist/css/ln.css">
 </head>
 <body>
   <div class="container">
     <header>
-      <img class="img-login" src="../../dist/img/brand/logo.png" alt="logo Captain Order">
+      <img src="../../dist/img/brand/logo.png" alt="logo Captain Order">
     </header>
     <main>
       <div class="kotak-login">

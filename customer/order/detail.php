@@ -7,7 +7,7 @@ if (isset($_GET['kode'])) {
 }
 
 
-  $sql_cek="SELECT s.name 
+  $sql_cek="SELECT s.name, o.date_o
     FROM orders AS o
     LEFT JOIN detail_order AS do ON do.id_order=o.id
     LEFT JOIN products AS p ON p.id_p=do.id_product
@@ -39,7 +39,7 @@ if (isset($_GET['kode'])) {
       </div>
       <div>
         <p>Time Order</p>
-        <p class="time">02 : 30 PM</p>
+        <p class="time"><?= $data_cek['date_o']; ?></p>
       </div>
     </div>
     <div class="konten-order1">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 27 Bulan Mei 2021 pada 00.05
+-- Waktu pembuatan: 28 Bulan Mei 2021 pada 14.34
 -- Versi server: 10.4.17-MariaDB
 -- Versi PHP: 7.3.27
 
@@ -35,6 +35,7 @@ CREATE TABLE `client` (
   `address` varchar(100) NOT NULL,
   `phone_number` varchar(13) NOT NULL,
   `email` varchar(50) NOT NULL,
+  `join_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `id_card` varchar(255) NOT NULL,
   `profile_picture` varchar(255) NOT NULL,
   `business_license` varchar(255) NOT NULL
@@ -44,8 +45,9 @@ CREATE TABLE `client` (
 -- Dumping data untuk tabel `client`
 --
 
-INSERT INTO `client` (`id`, `username`, `password`, `name_c`, `address`, `phone_number`, `email`, `id_card`, `profile_picture`, `business_license`) VALUES
-(34, 'mama', 'mama1', 'Mama', 'Jauh bat', '46342423', 'rhrdh@1', '1594134295_bami.jpg', '1205824614_bami.jpg', '1335036471_bami.jpg');
+INSERT INTO `client` (`id`, `username`, `password`, `name_c`, `address`, `phone_number`, `email`, `join_date`, `id_card`, `profile_picture`, `business_license`) VALUES
+(35, 'wawa', 'wawa1', 'Wang Yanti', 'Jl. Gejayan', '342134124', 'srgs@a', '2021-05-26 22:50:58', '491564446_MBAK.jpeg', '1860528316_MBAK.jpeg', '283404967_MBAK.jpeg'),
+(36, 'sasa', 'sasa1', 'Sasa bukan Bumbu', 'Jl. Magelang', '0984420', 'akunsasa@yahoo.co.id', '2021-05-26 22:53:14', '546427925_alip.jpg', '1959501154_alip.jpg', '982498480_alip.jpg');
 
 -- --------------------------------------------------------
 
@@ -58,10 +60,17 @@ CREATE TABLE `customer` (
   `username` varchar(50) NOT NULL,
   `password` varchar(8) NOT NULL,
   `name` varchar(50) NOT NULL,
-  `join_date` varchar(100) NOT NULL,
+  `join_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `email` varchar(20) NOT NULL,
   `phone_number` varchar(13) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `customer`
+--
+
+INSERT INTO `customer` (`id`, `username`, `password`, `name`, `join_date`, `email`, `phone_number`) VALUES
+(17, 'nana', 'nana1', 'Fatonah', '2021-05-26 23:01:07', 'nana@yahoo.ac.id', '1324934');
 
 -- --------------------------------------------------------
 
@@ -77,6 +86,15 @@ CREATE TABLE `detail_order` (
   `notes` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `detail_order`
+--
+
+INSERT INTO `detail_order` (`id`, `id_order`, `id_product`, `cont`, `notes`) VALUES
+(112, 100, 13, 11, 'ini order'),
+(113, 100, 14, 5, 'ini order'),
+(114, 101, 16, 1, 'ini order');
+
 -- --------------------------------------------------------
 
 --
@@ -85,13 +103,21 @@ CREATE TABLE `detail_order` (
 
 CREATE TABLE `orders` (
   `id` int(11) NOT NULL,
-  `date_o` varchar(100) NOT NULL,
+  `date_o` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `total` int(11) NOT NULL,
   `id_customer` int(11) NOT NULL,
   `status` enum('bb','sb','ex','cc') NOT NULL,
   `id_cashier` int(11) NOT NULL,
   `req` enum('pd','rp') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `orders`
+--
+
+INSERT INTO `orders` (`id`, `date_o`, `total`, `id_customer`, `status`, `id_cashier`, `req`) VALUES
+(100, '2021-05-26 23:44:46', 170000, 17, 'cc', 0, 'rp'),
+(101, '2021-05-27 00:30:55', 15000, 17, 'ex', 9, 'rp');
 
 -- --------------------------------------------------------
 
@@ -110,6 +136,16 @@ CREATE TABLE `products` (
   `status` enum('ready','empty') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `products`
+--
+
+INSERT INTO `products` (`id_p`, `types`, `name_p`, `price`, `stocks`, `image`, `id_store`, `status`) VALUES
+(13, 'foods', 'Nasi Uduk', 10000, 75, '1149205618_nasiuduk@.jpg', 23, 'ready'),
+(14, 'foods', 'Pamer 7', 12000, 92, '1190199591_pamer7@.jpg', 23, 'ready'),
+(15, 'foods', 'Panas 1', 8000, 100, '1773246860_panas1@.jpg', 23, 'ready'),
+(16, 'foods', 'Panas Spesial Medium', 15000, 99, '1157864661_panasspesialmedium@.jpg', 23, 'ready');
+
 -- --------------------------------------------------------
 
 --
@@ -121,10 +157,18 @@ CREATE TABLE `servant` (
   `username` varchar(50) NOT NULL,
   `password` varchar(8) NOT NULL,
   `name` varchar(50) NOT NULL,
-  `join_date` varchar(100) NOT NULL,
+  `join_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `role` enum('product_admin','cashier') NOT NULL,
   `id_store_v` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `servant`
+--
+
+INSERT INTO `servant` (`id`, `username`, `password`, `name`, `join_date`, `role`, `id_store_v`) VALUES
+(8, 'fafa', 'fafa1', 'Farah anaknya pak mail', '2021-05-26 22:56:23', 'product_admin', 23),
+(9, 'kaka', 'kaka1', 'Kiko bin kaka', '2021-05-26 22:57:11', 'cashier', 23);
 
 -- --------------------------------------------------------
 
@@ -139,8 +183,18 @@ CREATE TABLE `store` (
   `phone_number` varchar(13) NOT NULL,
   `status` enum('active','deactive') NOT NULL,
   `id_client` int(11) NOT NULL,
-  `image` varchar(255) NOT NULL
+  `image` varchar(255) NOT NULL,
+  `date_c` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `store`
+--
+
+INSERT INTO `store` (`id`, `name`, `address`, `phone_number`, `status`, `id_client`, `image`, `date_c`) VALUES
+(23, 'Mc Donalds', 'Jl. Prof. Soepomo', '12241124', 'active', 35, '575210651_mcd@.jpg', '2021-05-26 22:51:50'),
+(24, 'Kentucky Fried Chicken', 'Jl. Glagahsari', '46342341', 'active', 35, '427553699_kfc@.jpg', '2021-05-26 22:54:38'),
+(25, 'Starbucks', 'Jl. Veteran', '6567475411', 'active', 36, '1414398155_starbucks@.jpg', '2021-05-26 22:55:14');
 
 -- --------------------------------------------------------
 
@@ -229,43 +283,43 @@ ALTER TABLE `super_user`
 -- AUTO_INCREMENT untuk tabel `client`
 --
 ALTER TABLE `client`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT untuk tabel `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT untuk tabel `detail_order`
 --
 ALTER TABLE `detail_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=115;
 
 --
 -- AUTO_INCREMENT untuk tabel `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 
 --
 -- AUTO_INCREMENT untuk tabel `products`
 --
 ALTER TABLE `products`
-  MODIFY `id_p` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_p` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT untuk tabel `servant`
 --
 ALTER TABLE `servant`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT untuk tabel `store`
 --
 ALTER TABLE `store`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT untuk tabel `super_user`

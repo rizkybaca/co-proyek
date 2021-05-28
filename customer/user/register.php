@@ -42,7 +42,7 @@ include '../../inc/koneksi.php'; ?>
 </html>
 
 <?php 
-
+$tgl=date("Y-m-d H:i:s");
 if (isset ($_POST['save'])){
 
   $sql_u="SELECT username FROM customer";
@@ -62,7 +62,7 @@ if (isset ($_POST['save'])){
   '".$_POST['username']."',
   '".$_POST['password']."',
   '".$_POST['name']."',
-  'ini tanggal',
+  '$tgl',
   '".$_POST['email']."', 
   '".$_POST['phone_number']."')";
   $query_simpan = mysqli_query($koneksi, $sql_simpan);

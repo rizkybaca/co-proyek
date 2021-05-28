@@ -1,6 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
+/* Variabel */
+
+:root {
+    --text-color: #616E7E;
+    --bg-tombol: #047B6D; 
+    --bg-color: #FAF9F9;
+    --head-color:#00B894;
+}
+
+/* batas variabel */
 /* css reset */
+*{
+    box-sizing: border-box;
+}
 html,
 body,
 div,
@@ -138,19 +151,21 @@ a {
 }
 
 /* batas css reset */
+
 /* Style Landing Page */
 
-header img {
+.header-index img {
     display: block;
     width: 150px;
     margin: 10px auto 0;
 }
 
-header p {
+.header-index p {
+    font-weight: bolder;
+    color: var(--text-color);
     text-align: center;
     padding: 0 20px 20px;
-    margin-top: -15px;
-    margin-bottom: 20px;
+    margin: -15px 0 0;
 }
 .tutorial {
     width: 80%;
@@ -170,21 +185,30 @@ header p {
 }
 
 .kolom-tombol {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80%;
-    margin: 30px auto;
+    width: 100%;
+    margin: 20px auto;
     text-align: center;
 }
 
 .kolom-tombol a {
     width: 70px;
-    color: black;
-    background-color: rgb(146, 179, 241);
-    padding: 5px;
+    color: #fff;
+    background-color: var(--bg-tombol);
+    padding: 5px 15px;
     margin-top: 7px;
     border-radius: 5px;
+    letter-spacing: 1.5px;
+}
+
+.up {
+    width: 100%;
+    text-align: center;
+}
+
+.up a {
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: #00B894;
 }
 
 footer {
@@ -202,93 +226,116 @@ footer {
 
 /* Style halaman login */
 
-.img-login {
-    margin-top: 30px;
+.container header {
+    width: 100%;
+}
+
+.container header img {
+    display: block;
+    width: 40%;
+    margin: 30px auto 0;
 }
 
 .kotak-login {
     box-sizing: border-box;
-    margin: 40px auto;
+    margin: 25px auto;
     width: 80%;
     padding: 30px;
-    background-color: #98DED9;
+    text-align: left;
+}
+
+.kotak-login label {
+    color: var(--text-color);
+}
+
+.kotak-login input[type="text"], input[type="password"], input[type="email"] {
+    background-color: #85EDD0;
+    width: 100%;
+    height: 27px;
+    border: none;
+    margin-top: 7px;
+    margin-bottom: 15px;
+    padding: 7px;
+    border-radius: 5px;
+    color: var(--text-color);
+}
+
+.kotak-login input[type=submit] {
+    display: block;
+    margin: 10px auto;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    background-color: var(--bg-tombol);
+}
+
+.kotak-login div {
     text-align: center;
 }
 
-input[type=text] {
-    display: block;
-    width: 80%;
-    padding: 5px 10px;
-    margin: 10px auto;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    letter-spacing: 1px;
-
-}
-
-input[type=button] {
-    display: block;
-    margin: -5px auto 15px;
-    font-size: 1em;
-    color: rgb(69, 140, 201);
-    border: none;
-    border-radius: 7px;
-    padding: 5px 15px;
-    background-color: #C7FFD8;
-}
-
 .kotak-login a {
-    color: rgb(255, 255, 255);
+    font-weight: bold;
+    color: #00B894;
 }
 
 /* batas style halaman login */
 
 /* style halaman signup */
 
+body{
+    background-color: var(--bg-color);
+}
+
+.body-signup h2 {
+    margin: 50px 0 30px;
+    font-size: 2em;
+    color: var(--head-color);
+    font-weight: bold;
+    text-align: center;
+}
 
 .container-signup {
     box-sizing: border-box;
-    width: 90%;
-    background-color: rgb(184, 231, 255);
+    width: 85%;
+    margin: 0 auto;
     padding: 30px;
-    position: absolute;
-    bottom: 0;
-    left: 20px;
 }
 
-.container-signup h2 {
-    font-size: 2em;
-    font-weight: 550;
-    text-align: center;
-    margin-bottom: 50px;
+.container-signup label{
+    color: var(--text-color);
+    font-weight: bold;
 }
 
-input[type="text"] {
-    margin: 7px 0 0;
-    width: 90%;
+.container-signup input[type="text"], input[type="password"], input[type="email"] {
+    background-color: #85EDD0;
+    width: 100%;
+    height: 27px;
     border: none;
-}
-
-input[type="password"] {
-    width: 95%;
-    margin: 7px 0 15px;
-    height: 23px;
-    border: none;
+    margin-top: 7px;
+    margin-bottom: 15px;
+    padding: 7px;
     border-radius: 5px;
+    color: var(--text-color);
 }
 
 .container-signup button {
-    margin: -5px 0 30px;
+    margin: 10px 0 30px;
     padding: 3px 12px;
     border: none;
     border-radius: 4px;
-    background-color: #3bf57f;
+    background-color: var(--bg-tombol);
     color: #fff;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
 }
 
-.container-signup p {
-    margin-bottom: 150px;
+.body-signup p {
+    text-align: center;
+    color: var(--text-color);
+}
+
+.body-signup p span a {
+    color: #000;
 }
 
 
@@ -412,11 +459,14 @@ input[type="password"] {
 }
 
 .head-home-end .konten-head img {
-    margin: 0 0 0 100px;
+    width: 40%;
+    margin: 0 0 0 145px;
 }
 
 .head-home-end p {
+    width: 100px;
     margin-top: 15px;
+    margin-right: 15px;
     text-align: right;
 }
 
@@ -494,12 +544,13 @@ label #cancel {
 }
 
 .sidemenu input[type=text] {
-    width: 70%;
+    width: 80%;
     padding: 7px;
     color: #625c5c;
     text-align: center;
-    margin: 0 auto;
+    margin: 0 25px;
     border-radius: 20px;
+    border: none;
 }
 
 .sidemenu ul {
@@ -554,6 +605,11 @@ ul li a:hover {
     justify-content: space-between;
 }
 
+.store-head .tes{
+    margin: 0 auto;
+    position: absolute;
+}
+
 .store-head i {
     color: rgb(31, 58, 86);
     font-size: 1.2em;
@@ -572,7 +628,7 @@ ul li a:hover {
     display: flex;
     width: 100%;
     justify-content: space-evenly;
-    background-color: springgreen;
+    background-color: var(--head-color);
 }
 
 .nav-store li {
@@ -631,7 +687,8 @@ ul li a:hover {
 }
 
 .foot-store {
-    position: unset;
+    position: absolute;
+    bottom: 0;
     font-size: 0.8em;
     width: 100%;
     color: #555;

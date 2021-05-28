@@ -99,7 +99,6 @@ $a=1;
 			<td><?= $stat; ?></td>
 			<td>
 				<a href="?page=detail-order&kode=<?=$cek_data['id']; ?>">Detail</a>
-				<a href="?page=edit-order&kode=<?=$cek_data['id']; ?>">Update</a>
 			</td>
 		</tr>
 	<?php endwhile ?>

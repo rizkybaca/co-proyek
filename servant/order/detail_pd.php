@@ -56,5 +56,5 @@ $cek_data=mysqli_fetch_array($cek_query,MYSQLI_ASSOC);
 			<a href="?page=dc-order&kode=<?=$b; ?>">Decline</a>
 		</tr>
 	</table>
-<a href="./index_v.php?data-co">Back</a>
+<a href="./index_v.php?page=data-co">Back</a>
 </div>

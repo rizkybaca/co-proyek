@@ -21,7 +21,7 @@ $id=$_SESSION['ini_order'];
     function refreshpage() {
       setTimeout(function() {
         location.reload();
-      }, 2000);
+      }, 800);
     }
   </script>
 </head>
@@ -37,7 +37,7 @@ $id=$_SESSION['ini_order'];
       <p>Estimasi waktu pesanan anda :</p>
       <p>15 menit setelah anda mendapatkan pesan ini</p>
       <p class="note">nomor pesanan <br> <?= $id; ?> </p>
-      <p>*Pesanan anda akan hilang jika anda belum sampai dalam 15 menit</p>
+      <a href="cc.php">Cancel</a>
     </div>
     <?php 
     $p="SELECT * FROM orders WHERE id='$id'";

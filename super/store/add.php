@@ -26,7 +26,7 @@ $query_cek=mysqli_query($koneksi, $sql_cek);
 			<div class="col">
 				<label for="id_client">Client Name</label>
 				<select name="id_client" id="id_client" required>
-					<option>--pilih client dibawah ini--</option>
+					<option>--choose client name here--</option>
 					<?php while ($a=mysqli_fetch_array($query_cek)): ?>
 						<option value="<?= $a['id']; ?>">
 							<?= $a['name_c']; ?>
@@ -63,7 +63,7 @@ $query_cek=mysqli_query($koneksi, $sql_cek);
 <?php
 
 
-
+$tgl=date("Y-m-d H:i:s");
 if (isset ($_POST['save'])){
 
 	$rand=rand();
@@ -86,13 +86,14 @@ if (isset ($_POST['save'])){
 			$image=$rand.'_'.$file_name;
 			move_uploaded_file($temp, $target.$image);
 
-			 $sql_simpan = "INSERT INTO store (name,address,phone_number,status,id_client,image) VALUES (
+			 $sql_simpan = "INSERT INTO store (name,address,phone_number,status,id_client,image,date_c) VALUES (
 		  '".$_POST['name']."',
 		  '".$_POST['address']."',
 		  '".$_POST['phone_number']."',
 		  '".$_POST['status']."',
 		  '".$_POST['id_client']."',
-			'$image')";
+			'$image',
+			'$tgl')";
 		  $query_simpan = mysqli_query($koneksi, $sql_simpan);
 		  mysqli_close($koneksi);
 

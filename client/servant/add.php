@@ -24,10 +24,6 @@ $query_cek=mysqli_query($koneksi, $sql_cek);
 				<input type="text" name="name" id="name" placeholder="type name here" required>
 			</div>
 			<div class="col">
-				<label for="date">Join Date</label>
-				<input type="text" name="date" id="date" placeholder="type join date here" required>
-			</div>
-			<div class="col">
 				<label for="id_store_v">Store Name</label>
 				<select name="id_store_v" id="id_store_v" required>
 					<option>--choose store here--</option>
@@ -60,7 +56,7 @@ $query_cek=mysqli_query($koneksi, $sql_cek);
 </div>
 
 <?php 
-
+$tgl=date("Y-m-d H:i:s");
 if (isset ($_POST['save'])){
 
 	$sql_u="SELECT username FROM servant";
@@ -80,7 +76,7 @@ if (isset ($_POST['save'])){
   '".$_POST['username']."',
   '".$_POST['password']."',
   '".$_POST['name']."',
-  '".$_POST['date']."', 
+  '$tgl', 
   '".$_POST['id_store_v']."',
   '".$_POST['role']."')";
   $query_simpan = mysqli_query($koneksi, $sql_simpan);

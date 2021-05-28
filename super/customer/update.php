@@ -30,10 +30,6 @@ if (isset($_GET['kode'])) {
 				<label for="name">Name</label>
 				<input type="text" name="name" id="name" placeholder="type name here" value="<?= $data_cek['name']; ?>">
 			</div>
-						<div class="col">
-				<label for="date">Join Date</label>
-				<input type="text" name="date" id="date" placeholder="type join date here" value="<?= $data_cek['join_date']; ?>" required>
-			</div>
 			<div class="col">
 				<label for="email">E-Mail</label>
 				<input type="text" name="email" id="email" placeholder="type email here" value="<?= $data_cek['email']; ?>">
@@ -80,7 +76,6 @@ if (isset ($_POST['save'])){
    username='".$_POST['username']."',
    password='".$_POST['password']."',
    name='".$_POST['name']."',
-   join_date='".$_POST['date']."',
    email='".$_POST['email']."',
    phone_number='".$_POST['phone_number']."'
    WHERE id='".$_POST['id']."'"
