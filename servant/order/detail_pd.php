@@ -21,7 +21,7 @@ $cek_data=mysqli_fetch_array($cek_query,MYSQLI_ASSOC);
 		<p><?=$cek_data['name']; ?></p>
 	</div>
 </div>
-<div class="cont-show-customer">
+<div class="cont-show-order-detail">
 	<table>
 		<tr>
 			<th style="width: 50px;">No.</th>
@@ -52,9 +52,11 @@ $cek_data=mysqli_fetch_array($cek_query,MYSQLI_ASSOC);
 		<tr>
 			<th>Total</th>
 			<td>Rp. <?= $cek_data['total']; ?></td>
-			<a href="?page=acc-order&kode=<?=$b; ?>">Acc</a>
-			<a href="?page=dc-order&kode=<?=$b; ?>">Decline</a>
 		</tr>
 	</table>
-<a href="./index_v.php?page=data-co">Back</a>
+	<div class="act">
+		<a id="back" href="./index_v.php?page=data-co">Back</a>
+		<a id="dc" href="?page=dc-order&kode=<?=$b; ?>">Decline</a>
+		<a id="acc" href="?page=acc-order&kode=<?=$b; ?>">Acc</a>
+	</div>
 </div>

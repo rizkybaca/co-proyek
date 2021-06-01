@@ -4,13 +4,16 @@ include '../../inc/koneksi.php';
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<title>login</title>
 	<link href="../../dist/css/login.css" rel="stylesheet" />
 </head>
 <body>
 	<div class="container">
 		<div class="brand">
-			<div class="image"></div>
+			<div class="image">
+				<img src="../../dist/img/brand/logo.png">
+			</div>
 			<div class="tittle">
 				<p>Captain Order</p>
 			</div>

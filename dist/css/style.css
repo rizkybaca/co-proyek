@@ -456,36 +456,60 @@ body{
     background-color: #fdfdfd;
     justify-content: space-between;
     border-bottom: 1px solid rgba(194, 191, 191, 0.5);
+    margin-bottom: 20px;
+}
+
+.head-home-end .konten-head{
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 10px 0;
 }
 
 .head-home-end .konten-head img {
-    width: 40%;
+    padding-top: 10px;
+    width: 50px;
     margin: 0 0 0 145px;
 }
 
 .head-home-end p {
     width: 100px;
-    margin-top: 15px;
-    margin-right: 15px;
     text-align: right;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    color: #047B6D;
 }
 
 .container-home {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .toko {
     margin-top: 30px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    min-width: 150px;
+    margin: 10px;
 }
 
 .toko a {
     text-decoration: none;
+    flex-direction: column;
     color: black;
+    display: flex;
+    align-items: center;
 }
 
 .toko p {
     margin-top: 5px;
+    display: flex;
+    flex-wrap: wrap;
     text-align: center;
 }
 
@@ -533,6 +557,64 @@ label #cancel {
 }
 
 .sidemenu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: -999px;
+    box-sizing: border-box;
+    width: 60%;
+    height: 100vh;
+    background-color: #55EFC4;
+    transition: all .5s ease;
+}
+
+.sidemenu ul {
+    margin-top: 30px;
+    margin-left: 15px;
+}
+
+.sidemenu ul li {
+    padding: 10px;
+    border-bottom: 1.5px solid rgba(101, 99, 99, 0.4);
+}
+
+.sidemenu ul li a {
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    color: #1b4332;
+    transition: all .5s;
+}
+.sidemenu ul li a p{
+    padding: 0 0 0 8px;
+    margin: 0;
+    width: auto;
+}
+
+ul li a:hover {
+    margin-left: 20px;
+}
+
+.sidemenu ul a i {
+    margin-right: 15px;
+}
+
+.logout {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    text-align: center;
+}
+
+.logout a {
+    color: rgb(177, 23, 23);
+    font-weight: 600;
+    padding: 3px 12px;
+    border-radius: 5px;
+    background-color: rgb(231, 224, 224);
+}
+
+/*.sidemenu {
     position: fixed;
     left: -250px;
     box-sizing: border-box;
@@ -590,7 +672,7 @@ ul li a:hover {
     padding: 3px 12px;
     border-radius: 5px;
     background-color: rgb(231, 224, 224);
-}
+}*/
 
 /* batas home 2 enduser */
 

@@ -1,0 +1,205 @@
+/* css reset */
+*{
+  box-sizing: border-box;
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body{
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+}
+.header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  border-bottom: 1px solid rgba(194, 191, 191, 0.5);
+}
+.header .greet{
+/* Auto Layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 10px;
+}
+
+.header .greet p{
+margin: 0;
+padding: 0;
+font-family: Poppins;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+text-align: right;
+color: #047B6D;
+}
+.header .brand{
+  /* Auto Layout */
+display: flex;
+flex-direction: co;
+justify-content: center;
+align-items: center;
+padding: 0px 0px 0px 20px;
+background: #FFFFFF;
+
+}
+.header .brand .image{
+  display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+
+position: static;
+width: 60px;
+height: 60px;
+left: 20px;
+top: 5px;
+}
+
+.header #check{
+  display: none;
+}
+.header #btn, .header #cancel{
+  position: absolute;
+  cursor: pointer;
+}
+
+.header #btn{
+  left: 20px;
+  font-size: 25px;
+  color: rgb(25, 154, 139);
+  transition: all .5s;
+}
+.header #cancel{
+  z-index: 1111;
+  left: -210px;
+  font-size: 30px;
+  color: rgb(31, 138, 87);
+  transition: all .5s;
+}
+.header #check:checked~aside {
+  display: flex;
+  z-index: 111;
+}
+.header #check:checked~label #btn {
+  left: 210px;
+  opacity: 0;
+  pointer-events: none;
+}
+.header #check:checked~label #cancel {
+  left: 210px;
+}
+aside{
+  display: none;
+  position: fixed;
+  width: 70vw;
+  height: 100vh;
+  box-sizing: border-box;
+  background-color: #55EFC4;
+  transition: all .5s ease
+}

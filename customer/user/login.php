@@ -13,31 +13,43 @@ include '../../inc/koneksi.php';
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Captain Order | Login User</title>
-  <link rel="stylesheet" href="../../dist/css/ln.css">
+  <link rel="stylesheet" href="../../dist/css/login.css">
 </head>
 <body>
+
+<!-- container admin -->
   <div class="container">
-    <header>
-      <img src="../../dist/img/brand/logo.png" alt="logo Captain Order">
-    </header>
-    <main>
-      <div class="kotak-login">
-        <form action="" method="POST">
-          <input type="text" placeholder="Username..." name="username" required>
-          <input type="password" placeholder="Password..." name="password" required>
-          <input type="submit" name="login" value="Log in">
-        </form>
-        <a href="./register.php">Sign up</a>
+    <div class="brand">
+      <div class="image">
+        <img src="../../dist/img/brand/logo.png">
       </div>
-    </main>
-    <footer>
-      <p>Copyright 2021 | by COTeam</p>
-    </footer>
+      <div class="tittle">
+        <p>Captain Order</p>
+      </div>
+    </div>
+    <div class="content">
+      <form action="" method="POST">
+        <div class="input">
+          <div class="col">
+            <label for="u">Username</label>
+            <input id="u" type="text" name="username" placeholder="type username here" required>
+          </div>
+          <div class="col">
+            <label for="p">Password</label>
+            <input id="p" type="password" name="password" placeholder="type password here" required>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" name="login" value="Login">
+        </div>
+      </form>
+    </div>
   </div>
+<!--  finish container admin -->
 </body>
 </html>
 
-<?php 
+<?php
 
 if (isset($_POST['login'])) {
   $username=mysqli_real_escape_string($koneksi,$_POST['username']);

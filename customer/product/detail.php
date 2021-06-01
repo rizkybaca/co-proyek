@@ -44,9 +44,7 @@ $query_cek = mysqli_query($koneksi, $sql_cek);
 		          <h3><?=$data_cek['name_p']; ?></h3>
 		          <p>Rp. <?=$data_cek['price']; ?></p>
 		          <input style="width: 106px" type="number" name="cont" value="1" min="1" max="<?= $data_cek['stocks']; ?>">
-		          <button type="submit" name="submit">
-		          	<i class="fa fa-shopping-cart"></i>
-		          </button>
+		          <button type="submit" name="submit">Add to cart</button>
 		        </div>
         	</form>
         <?php endwhile ?>	

@@ -46,7 +46,7 @@ if ($_SESSION['ses_dump']==="data-co" || $_SESSION['ses_dump']==="data-co") {
 	<div class="header">
 		<div class="brand">
 			<div class="image">
-
+				<img src="./dist/img/brand/logo.png">
 			</div>
 			<div class="text">
 				<p>Captain Order</p>

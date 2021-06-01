@@ -15,14 +15,16 @@ body{
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
-  width: 50vw;
 }
 .container .brand{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px 10px 0px 0px;
+}
+.container .brand .image img{
+  padding-top: 10px;
+  max-height: 80px;
 }
 .container .brand .tittle{
   display: flex;
@@ -36,14 +38,13 @@ body{
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
-  line-height: 36px;
   color: #047B6D;
 }
 .container .content{
-	  display: flex;
+  flex-grow: 1;
+	display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 50px;
 }
 .container .content form{
   display: flex;
@@ -72,8 +73,7 @@ body{
 	font-family: Poppins;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 18px;
-	line-height: 27px;
+	font-size: 14px;
 	/* identical to box height */
 
 
@@ -91,8 +91,7 @@ display: flex;
   font-family: Poppins;
   font-style: normal;
   font-weight: normal;
-  font-size: 18px;
-  line-height: 27px;
+  font-size: 14px;
   /* identical to box height */
 
 }
@@ -110,17 +109,33 @@ flex-direction: row;
 justify-content: center;
 align-items: center;
 padding: 8px;
-width: 150px;
+width: 125px;
 height: 53px;
 background: #047B6D;
 border-radius: 4px;
 font-family: Poppins;
 font-style: normal;
 font-weight: normal;
-font-size: 22px;
-line-height: 33px;
+font-size: 18px;
 /* identical to box height */
 
 
 color: #FFFFFF;
+}
+
+/*tampilan desktop*/
+@media (min-width: 800px){
+  .container {
+    width: 50vw;
+  }
+  .container .content form .input .col label {
+    font-size: 18px;
+  }
+  .container .content form .input .col input {
+    font-size: 18px;
+  }
+  .container .content form .button input {
+    font-size: 22px;
+    width: 150px;
+  }
 }

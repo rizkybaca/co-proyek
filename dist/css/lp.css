@@ -105,8 +105,8 @@ header .header-index{
   align-items: stretch;
 }
 header img{
-  width: 150px;
-  margin-top: 10px;    
+  width: 80px;
+  padding-top: 10px;    
 }
 header p{
   font-family: Poppins;
@@ -116,11 +116,13 @@ header p{
   /* identical to box height */
 
   color: #047B6D;
-  margin-bottom: 20px;
+/*  margin-bottom: 20px;*/
 }
 main{
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
 }
 main .tutorial{
   display: flex;
@@ -177,6 +179,8 @@ footer{
   align-content: stretch;
 }
 footer p{
+  padding: 0;
+  margin: 0;
   font-family: Poppins;
   font-style: normal;
   font-weight: normal;

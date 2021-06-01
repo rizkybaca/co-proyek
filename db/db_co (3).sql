@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 28 Bulan Mei 2021 pada 14.34
+-- Waktu pembuatan: 01 Jun 2021 pada 15.05
 -- Versi server: 10.4.17-MariaDB
 -- Versi PHP: 7.3.27
 
@@ -93,7 +93,17 @@ CREATE TABLE `detail_order` (
 INSERT INTO `detail_order` (`id`, `id_order`, `id_product`, `cont`, `notes`) VALUES
 (112, 100, 13, 11, 'ini order'),
 (113, 100, 14, 5, 'ini order'),
-(114, 101, 16, 1, 'ini order');
+(114, 101, 16, 1, 'ini order'),
+(115, 102, 13, 1, 'ini order'),
+(116, 103, 13, 1, 'ini order'),
+(117, 104, 15, 1, 'ini order'),
+(118, 105, 15, 1, 'ini order'),
+(119, 107, 15, 1, 'ini order'),
+(120, 108, 13, 50, 'ini order'),
+(121, 109, 13, 4, 'ini order'),
+(122, 109, 15, 8, 'ini order'),
+(123, 110, 13, 5, 'ini order'),
+(124, 110, 14, 7, 'ini order');
 
 -- --------------------------------------------------------
 
@@ -117,7 +127,16 @@ CREATE TABLE `orders` (
 
 INSERT INTO `orders` (`id`, `date_o`, `total`, `id_customer`, `status`, `id_cashier`, `req`) VALUES
 (100, '2021-05-26 23:44:46', 170000, 17, 'cc', 0, 'rp'),
-(101, '2021-05-27 00:30:55', 15000, 17, 'ex', 9, 'rp');
+(101, '2021-05-27 00:30:55', 15000, 17, 'ex', 9, 'rp'),
+(102, '2021-05-28 14:15:34', 10000, 17, 'cc', 0, 'rp'),
+(103, '2021-06-01 02:16:48', 10000, 17, 'sb', 9, 'rp'),
+(104, '2021-06-01 00:56:54', 8000, 17, 'cc', 0, 'rp'),
+(105, '2021-06-01 01:19:10', 8000, 17, 'cc', 0, 'rp'),
+(106, '2021-06-01 01:24:49', 0, 17, 'cc', 0, 'rp'),
+(107, '2021-06-01 02:16:54', 8000, 17, 'sb', 9, 'rp'),
+(108, '2021-06-01 02:17:00', 500000, 17, 'sb', 9, 'rp'),
+(109, '2021-06-01 11:47:40', 104000, 17, 'bb', 0, 'rp'),
+(110, '2021-06-01 07:59:24', 134000, 17, 'bb', 0, 'pd');
 
 -- --------------------------------------------------------
 
@@ -141,9 +160,9 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id_p`, `types`, `name_p`, `price`, `stocks`, `image`, `id_store`, `status`) VALUES
-(13, 'foods', 'Nasi Uduk', 10000, 75, '1149205618_nasiuduk@.jpg', 23, 'ready'),
-(14, 'foods', 'Pamer 7', 12000, 92, '1190199591_pamer7@.jpg', 23, 'ready'),
-(15, 'foods', 'Panas 1', 8000, 100, '1773246860_panas1@.jpg', 23, 'ready'),
+(13, 'foods', 'Nasi Uduk', 10000, 14, '1149205618_nasiuduk@.jpg', 23, 'ready'),
+(14, 'foods', 'Pamer 7', 12000, 85, '1190199591_pamer7@.jpg', 23, 'ready'),
+(15, 'foods', 'Panas 1', 8000, 89, '1773246860_panas1@.jpg', 23, 'ready'),
 (16, 'foods', 'Panas Spesial Medium', 15000, 99, '1157864661_panasspesialmedium@.jpg', 23, 'ready');
 
 -- --------------------------------------------------------
@@ -295,13 +314,13 @@ ALTER TABLE `customer`
 -- AUTO_INCREMENT untuk tabel `detail_order`
 --
 ALTER TABLE `detail_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=115;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=125;
 
 --
 -- AUTO_INCREMENT untuk tabel `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
 
 --
 -- AUTO_INCREMENT untuk tabel `products`

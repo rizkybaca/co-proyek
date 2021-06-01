@@ -25,7 +25,7 @@ $id=$_SESSION['ini_order'];
     }
   </script>
 </head>
-<body   onload="refreshpage()">
+<body onload="refreshpage()">
   <header class="note-head">
     <img src="../../dist/img/brand/logo.png" alt="logo captain order">
   </header>
@@ -37,7 +37,6 @@ $id=$_SESSION['ini_order'];
       <p>Estimasi waktu pesanan anda :</p>
       <p>15 menit setelah anda mendapatkan pesan ini</p>
       <p class="note">nomor pesanan <br> <?= $id; ?> </p>
-      <a href="cc.php">Cancel</a>
     </div>
     <?php 
     $p="SELECT * FROM orders WHERE id='$id'";
@@ -45,8 +44,10 @@ $id=$_SESSION['ini_order'];
     $ppp=mysqli_fetch_array($pp);
     if ($ppp['req']=='pd') { ?>
       <p>tunggu resto</p>
+      <a href="cc.php">Cancel</a>
     <?php } elseif ($ppp['req']=='rp' && $ppp['status']=='cc') { ?>
       <p>mohon maaf, resto tidak bisa proses orderan</p>
+      <?php unset($_SESSION['cart']); ?>
       <a href="../store/stores.php"><i class="fas fa-home"></i></a>
     <?php } elseif ($ppp['req']=='rp' && $ppp['status']=='bb') { ?>
       <p>resto telah merespon, silakan membayar pesanan di kasir</p>

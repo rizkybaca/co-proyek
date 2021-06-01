@@ -46,7 +46,7 @@ if ($index==-1) {
 }
 
 }
-if (!empty($_SESSION['cart'])) {
+// if (!empty($_SESSION['cart'])) {
 
  ?>
 <!DOCTYPE html>
@@ -112,5 +112,5 @@ if (!empty($_SESSION['cart'])) {
 
 <?php 
 
-}
+// }
  ?>
