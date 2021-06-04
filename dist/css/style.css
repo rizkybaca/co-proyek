@@ -460,7 +460,6 @@ body{
 }
 
 .head-home-end .konten-head{
-    width: 200px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -468,9 +467,9 @@ body{
 }
 
 .head-home-end .konten-head img {
-    padding-top: 10px;
-    width: 50px;
-    margin: 0 0 0 145px;
+    padding: 5px;
+    width: 70px;
+    margin-left: 110px;
 }
 
 .head-home-end p {
@@ -507,6 +506,7 @@ body{
 }
 
 .toko p {
+    color: var(--text-color);
     margin-top: 5px;
     display: flex;
     flex-wrap: wrap;
@@ -702,8 +702,10 @@ ul li a:hover {
 }
 
 .store-head h2 {
+    position: relative;
     font-size: 2em;
     font-weight: 600;
+    text-align: center;
 }
 
 .nav-store {
@@ -725,6 +727,7 @@ ul li a:hover {
 .container-store {
     width: 95%;
     margin: 50px auto;
+    color: var(--text-color);
 }
 
 .container-store section {
@@ -757,24 +760,27 @@ ul li a:hover {
 .container-store h3 {
     font-size: 1.1em;
     font-weight: 600;
+    margin-top: 10px;
     margin-bottom: 15px;
 }
 
-.jumlah {
-    letter-spacing: 5px;
-    margin-top: 15px;
-    padding: 3px 10px;
-    border-radius: 10px;
-    background-color: rgb(123, 247, 197);
+.container-store p {
+    margin-bottom: 15px;
 }
 
+.container-store section div a {
+    padding: 0 5px;
+    background-color: #f7a440;
+    margin-top: 50px;
+    color: #000;
+}
+
+
 .foot-store {
-    position: absolute;
-    bottom: 0;
+    position: relative;
     font-size: 0.8em;
     width: 100%;
     color: #555;
-    margin-bottom: 7px;
     text-align: center;
     letter-spacing: 2px;
 }

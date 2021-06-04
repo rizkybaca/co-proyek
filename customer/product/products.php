@@ -73,12 +73,12 @@ $a=1;
       <section>
         <div>
           <img src="<?= $target.$data_cek['image']; ?>" alt="foto nasi uduk">
-          <p class="stok">tersedia @<?=$data_cek['stocks']; ?></p>
+          <p class="stok">Available @<?=$data_cek['stocks']; ?></p>
         </div>
         <div>
           <h3><?=$data_cek['name_p']; ?></h3>
           <p>Rp. <?=$data_cek['price']; ?></p>
-          <a href="./detail.php?kode=<?= $data_cek['id_p']; ?>">Tambah Data</a>
+          <a href="./detail.php?kode=<?= $data_cek['id_p']; ?>">add to chart</a>
         </div>
       </section>
     <?php endwhile ?>
