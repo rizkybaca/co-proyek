@@ -17,6 +17,7 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Captain Order | Profil</title>
   <link rel="stylesheet" href="../../dist/css/style.css">
+  <link rel="shortcut icon" href="../../dist/icon/logo.png">
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>

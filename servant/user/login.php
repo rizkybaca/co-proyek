@@ -7,6 +7,7 @@ include '../../inc/koneksi.php';
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<title>login</title>
 	<link href="../../dist/css/login.css" rel="stylesheet" />
+	<link href="../../dist/icon/logo.png" rel="shortcut icon"/>
 </head>
 <body>
 	<div class="container">

@@ -17,7 +17,8 @@ include './inc/koneksi.php';
 <html>
 <head>
 	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
-	<link href="./dist/css/main.css" rel="stylesheet" />
+	<link href="./dist/css/main.css" rel="stylesheet"/>
+	<link href="./dist/icon/logo.png" rel="shortcut icon"/>
 	<title>Capt. Order</title>
 </head>
 <body>

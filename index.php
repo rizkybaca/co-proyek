@@ -15,6 +15,8 @@ include './inc/koneksi.php';
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Captain Order | Landing Page</title>
   <link rel="stylesheet" href="dist/css/lp.css">
+  <link rel="shortcut icon" href="dist/icon/logo.png">
+
 </head> 
 <body>
   <header class="header-index">

@@ -21,6 +21,7 @@ $query_cek = mysqli_query($koneksi, $sql_cek);
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Captain Order | History</title>
 	<link rel="stylesheet" href="../../dist/css/style.css">
+	<link rel="shortcut icon" href="../../dist/icon/logo.png">
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>

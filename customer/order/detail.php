@@ -25,11 +25,17 @@ if (isset($_GET['kode'])) {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Captain Order | History</title>
 	<link rel="stylesheet" href="../../dist/css/style.css">
+  <link rel="shortcut icon" href="../../dist/icon/logo.png">
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
   <header class="head-profil">
-    <a href="./orders.php"><i class="fas fa-long-arrow-alt-left" id="arrow"></i></a>
+    <a href="./orders.php">
+      <svg id="arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 12H5" stroke="#047B6D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 19L5 12L12 5" stroke="#047B6D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
     <h2>Order Now</h2>
   </header>
   <main>
@@ -37,10 +43,16 @@ if (isset($_GET['kode'])) {
       <div style="align-self: center">
         <p><?= $data_cek['name']; ?></p>
       </div>
+      <div class="many">
       <div>
         <p>Time Order</p>
         <p class="time"><?= $data_cek['date_o']; ?></p>
       </div>
+      <div>
+        <p>Nomor Pesanan</p>
+        <p class="time"><?= $a; ?></p>
+      </div>
+    </div>
     </div>
     <div class="konten-order1">
       <table>

@@ -14,6 +14,7 @@ include '../../inc/koneksi.php';
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Captain Order | Login User</title>
   <link rel="stylesheet" href="../../dist/css/login.css">
+  <link rel="shortcut icon" href="../../dist/icon/logo.png">
 </head>
 <body>
 

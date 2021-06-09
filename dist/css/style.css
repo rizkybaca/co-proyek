@@ -810,7 +810,7 @@ ul li a:hover {
 }
 
 .cart-head h2 {
-    font-size: 3em;
+    font-size: 2em;
     font-weight: 600;
 }
 
@@ -1048,6 +1048,10 @@ ul li a:hover {
     display: flex;
     justify-content: space-around;
 }
+.konten-order .many{
+    display: flex;
+    flex-direction: column;
+}
 
 .konten-order .time {
     padding: 5px;
@@ -1073,7 +1077,7 @@ ul li a:hover {
 .konten-order1 table th {
     padding: 0 25px 20px;
     font-weight: 550;
-    text-align: left;
+    text-align: center;
     border-bottom: 2px solid rgba(56, 56, 56, 0.5);
 }
 
