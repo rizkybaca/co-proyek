@@ -36,22 +36,12 @@ $sql_simpan = "INSERT INTO orders (date_o,total,id_customer,status,id_cashier,re
     $query=mysqli_query($koneksi, $sql);
     $data=mysqli_fetch_array($query);
 
-    $sisa=$data['stocks']-$cont;
-
     $sql_simpann = "INSERT INTO detail_order (id_order,id_product,cont,notes) VALUES (
       '$id_order',
       '$id',
       '$cont',
       'ini order')";
-
-    $sql_ubah = "UPDATE products SET stocks='$sisa' WHERE id_p='$id'";
     $query_simpann = mysqli_query($koneksi, $sql_simpann);
-    $query_ubah = mysqli_query($koneksi, $sql_ubah);
-
-    if ($sisa==0) {
-      $sql_ubahh="UPDATE products SET status='empty' WHERE id_p='$id'";
-      $query_ubahh = mysqli_query($koneksi, $sql_ubahh);
-    }
 
   }
 
