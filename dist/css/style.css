@@ -727,7 +727,6 @@ ul li a:hover {
 .container-store {
     width: 95%;
     margin: 50px auto;
-    color: var(--text-color);
 }
 
 .container-store section {
@@ -749,6 +748,7 @@ ul li a:hover {
 }
 
 .stok {
+    color: var(--text-color);
     margin-top: -25px;
 }
 
@@ -788,6 +788,10 @@ ul li a:hover {
 /* batas Store */
 
 /* Style Halaman Keranjang */
+.mian-cart{
+    width: 100%;
+}
+
 
 .cart-head {
     box-sizing: border-box;
@@ -822,14 +826,22 @@ ul li a:hover {
 .container-cart {
     box-sizing: border-box;
     padding: 10px;
-    margin: 20px auto;
-    width: 90%;
+    margin: 20px 0;
+    width: 100%;
     background-color: rgb(245, 245, 245);
 }
 
+#hg {
+    min-width: 110px;
+    text-align: right;
+    padding-right: 20px;
+}
+#no {
+    max-width: 80px;
+}
 .container-cart table {
     border-collapse: collapse;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -837,7 +849,7 @@ ul li a:hover {
     font-size: 1.1em;
     padding: 8px 25px 20px;
     font-weight: 550;
-    text-align: left;
+    text-align: center;
     border-bottom: 2px solid rgba(56, 56, 56, 0.5);
 }
 
@@ -883,33 +895,40 @@ ul li a:hover {
     box-sizing: border-box;
     width: 100%;
     text-align: center;
+    background-color: var(--bg-color);
 }
 
 .note-head img {
-    width: 150px;
+    width: 100px;
+    margin: 15px 0;
 }
 
 .container-note {
     text-align: center;
     box-sizing: border-box;
-    padding: 30px;
+    padding: 10px;
     line-height: 30px;
-    margin: 20px auto;
-    width: 90%;
+    margin: 30px auto 0;
+    width: 80%;
     background-color: rgb(245, 245, 245);
 }
 
 .container-note .note {
-    margin-top: 90px;
-    margin-bottom: 90px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .main-note {
+    width: 100%;
     text-align: center;
 }
 
 .main-note a {
     color: #000;
+}
+
+.main-note p {
+    margin-bottom: 10px;
 }
 
 /* batas note */
@@ -1073,6 +1092,47 @@ ul li a:hover {
 }
 
 /* batas detail order now */
+
+
+/*Style halaman detail*/
+
+.main-detail {
+    margin-top: 30px;
+}
+
+.konten-detail {
+    text-align: center;
+    padding: 15px;
+    width: 80%;
+    margin: 0 auto;
+    background-color: rgb(235, 210, 210);
+    border-radius: 5px;
+}
+
+.konten-detail section{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.konten-detail section div img {
+    position: relative;
+    top: -35px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.konten-detail div h3 {
+    font-size: 1.2em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+
+
+/*batas detail*/
 
 /* Tampilan Dekstop */
 @media (min-width: 576px) {

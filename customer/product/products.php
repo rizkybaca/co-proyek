@@ -44,7 +44,7 @@ $a=1;
     <div>
       <h2><?= $cek_data['name']; ?></h2>
     </div>
-    <?php if (isset($_SESSION['cart'])) : ?>
+
     <div>
       <a href="../order/cart.php?kode=<?=$b; ?>">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -54,35 +54,39 @@ $a=1;
         </svg>
       </a>
     </div>
-  <?php endif ?>
+
   </header>
   <div class="nav-store">
     <ul>
-      <li><a href="">Foods</a></li>
-      <li><a href="">Drinks</a></li>
-      <li><a href="">Snacks</a></li>
+      <li><a href="?page=foods">Foods</a></li>
+      <li><a href="?page=drinks">Drinks</a></li>
+      <li><a href="?page=snacks">Snacks</a></li>
     </ul>
   </div>
   <main>
-    <div class="container-store">
-      <!-- start products -->
     <?php 
-    $sql_cek="SELECT p.id_p,p.types,p.name_p,p.price,p.stocks,p.image,p.id_store FROM products AS p JOIN store AS s ON p.id_store=s.id WHERE s.id='$b'";
-    $query_cek = mysqli_query($koneksi, $sql_cek);
-    while($data_cek= mysqli_fetch_array($query_cek)) :?>    
-      <section>
-        <div>
-          <img src="<?= $target.$data_cek['image']; ?>" alt="foto nasi uduk">
-          <p class="stok">Available @<?=$data_cek['stocks']; ?></p>
-        </div>
-        <div>
-          <h3><?=$data_cek['name_p']; ?></h3>
-          <p>Rp. <?=$data_cek['price']; ?></p>
-          <a href="./detail.php?kode=<?= $data_cek['id_p']; ?>">add to chart</a>
-        </div>
-      </section>
-    <?php endwhile ?>
-    </div>
+      if (isset($_GET['page'])) {
+        $hal=$_GET['page'];
+        switch ($hal) {
+          case 'foods':
+            include './foods.php';
+            break;
+          case 'drinks':
+            include './drinks.php';
+            break;
+          case 'snacks':
+            include './snacks.php';
+            break;
+
+          default:
+            echo "<center><h1> ERROR !</h1></center>";
+            break;
+        }
+      } else{
+        include './foods.php';
+      }
+
+     ?>
   </main>
   <footer class="foot-store">
     <p>Copyright 2021 | by COTeam</p>

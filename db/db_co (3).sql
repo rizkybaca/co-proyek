@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 03 Jun 2021 pada 14.05
+-- Waktu pembuatan: 08 Jun 2021 pada 12.18
 -- Versi server: 10.4.17-MariaDB
 -- Versi PHP: 7.3.27
 
@@ -91,19 +91,16 @@ CREATE TABLE `detail_order` (
 --
 
 INSERT INTO `detail_order` (`id`, `id_order`, `id_product`, `cont`, `notes`) VALUES
-(112, 100, 13, 11, 'ini order'),
-(113, 100, 14, 5, 'ini order'),
-(114, 101, 16, 1, 'ini order'),
-(115, 102, 13, 1, 'ini order'),
-(116, 103, 13, 1, 'ini order'),
-(117, 104, 15, 1, 'ini order'),
-(118, 105, 15, 1, 'ini order'),
-(119, 107, 15, 1, 'ini order'),
-(120, 108, 13, 50, 'ini order'),
-(121, 109, 13, 4, 'ini order'),
-(122, 109, 15, 8, 'ini order'),
-(123, 110, 13, 5, 'ini order'),
-(124, 110, 14, 7, 'ini order');
+(125, 111, 13, 1, 'ini order'),
+(126, 112, 13, 1, 'ini order'),
+(127, 113, 13, 1, 'ini order'),
+(128, 113, 14, 80, 'ini order'),
+(129, 114, 13, 1, 'ini order'),
+(130, 115, 13, 1, 'ini order'),
+(131, 116, 13, 1, 'ini order'),
+(132, 117, 13, 1, 'ini order'),
+(133, 118, 13, 4, 'ini order'),
+(134, 118, 16, 40, 'ini order');
 
 -- --------------------------------------------------------
 
@@ -126,17 +123,14 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `date_o`, `total`, `id_customer`, `status`, `id_cashier`, `req`) VALUES
-(100, '2021-05-26 23:44:46', 170000, 17, 'cc', 0, 'rp'),
-(101, '2021-05-27 00:30:55', 15000, 17, 'ex', 9, 'rp'),
-(102, '2021-05-28 14:15:34', 10000, 17, 'cc', 0, 'rp'),
-(103, '2021-06-01 02:16:48', 10000, 17, 'sb', 9, 'rp'),
-(104, '2021-06-01 00:56:54', 8000, 17, 'cc', 0, 'rp'),
-(105, '2021-06-01 01:19:10', 8000, 17, 'cc', 0, 'rp'),
-(106, '2021-06-01 01:24:49', 0, 17, 'cc', 0, 'rp'),
-(107, '2021-06-01 02:16:54', 8000, 17, 'sb', 9, 'rp'),
-(108, '2021-06-01 02:17:00', 500000, 17, 'sb', 9, 'rp'),
-(109, '2021-06-01 11:47:40', 104000, 17, 'bb', 0, 'rp'),
-(110, '2021-06-01 13:06:37', 134000, 17, 'cc', 0, 'rp');
+(111, '2021-06-04 06:26:39', 10000, 17, 'cc', 0, 'rp'),
+(112, '2021-06-04 06:30:10', 10000, 17, 'cc', 0, 'rp'),
+(113, '2021-06-04 08:21:28', 970000, 17, 'cc', 0, 'rp'),
+(114, '2021-06-08 09:57:42', 10000, 17, 'sb', 9, 'rp'),
+(115, '2021-06-08 09:20:17', 10000, 17, 'bb', 0, 'rp'),
+(116, '2021-06-08 09:41:02', 10000, 17, 'cc', 0, 'rp'),
+(117, '2021-06-08 09:41:26', 10000, 17, 'cc', 0, 'rp'),
+(118, '2021-06-08 09:57:09', 640000, 17, 'bb', 0, 'rp');
 
 -- --------------------------------------------------------
 
@@ -160,10 +154,16 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id_p`, `types`, `name_p`, `price`, `stocks`, `image`, `id_store`, `status`) VALUES
-(13, 'foods', 'Nasi Uduk', 10000, 14, '1149205618_nasiuduk@.jpg', 23, 'ready'),
-(14, 'foods', 'Pamer 7', 12000, 85, '1190199591_pamer7@.jpg', 23, 'ready'),
+(13, 'foods', 'Nasi Uduk', 10000, 3, '1149205618_nasiuduk@.jpg', 23, 'ready'),
+(14, 'foods', 'Pamer 7', 12000, 5, '1190199591_pamer7@.jpg', 23, 'ready'),
 (15, 'foods', 'Panas 1', 8000, 89, '1773246860_panas1@.jpg', 23, 'ready'),
-(16, 'foods', 'Panas Spesial Medium', 15000, 99, '1157864661_panasspesialmedium@.jpg', 23, 'ready');
+(16, 'foods', 'Panas Spesial Medium', 15000, 59, '1157864661_panasspesialmedium@.jpg', 23, 'ready'),
+(17, 'drinks', 'Coca Cola', 4000, 100, '1097132851_cocacola@.jpg', 23, 'ready'),
+(18, 'drinks', 'Fanta Float', 5000, 100, '1498345950_fantafloat@.jpg', 23, 'ready'),
+(19, 'drinks', 'Fruit Tea Lemon', 5000, 100, '1247945811_fruittealemon@.jpg', 23, 'ready'),
+(20, 'drinks', 'Ice Coffee Float', 5000, 100, '541228839_icecoffeefloat@.jpg', 23, 'ready'),
+(21, 'snacks', 'Chicken Fingers', 3000, 100, '1581274538_chickenfingers@.jpg', 23, 'ready'),
+(22, 'snacks', 'French Fries', 5000, 100, '1288260920_frenchfrise@.jpg', 23, 'ready');
 
 -- --------------------------------------------------------
 
@@ -314,19 +314,19 @@ ALTER TABLE `customer`
 -- AUTO_INCREMENT untuk tabel `detail_order`
 --
 ALTER TABLE `detail_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=125;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
 
 --
 -- AUTO_INCREMENT untuk tabel `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
 
 --
 -- AUTO_INCREMENT untuk tabel `products`
 --
 ALTER TABLE `products`
-  MODIFY `id_p` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_p` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT untuk tabel `servant`

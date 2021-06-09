@@ -33,27 +33,27 @@ $query_cek = mysqli_query($koneksi, $sql_cek);
     </a>
     <h2>Order Now</h2>
   </header>
-  <main>
-    <div class="konten-order">
-      <div style="align-self: center">
-        <?php 
-        while ($data_cek = mysqli_fetch_array($query_cek,MYSQLI_ASSOC)):?>
+  <main class="main-detail" >
+    <div class="konten-detail">
+      <?php 
+      while ($data_cek = mysqli_fetch_array($query_cek,MYSQLI_ASSOC)):?>
 
-        	<form method="POST" action="../order/cart.php">
-        		<input type="hidden" name="id" value="<?= $data_cek['id_p']; ?>">
-        		<div>
+      	<form method="POST" action="../order/cart.php">
+      		<input type="hidden" name="id" value="<?= $data_cek['id_p']; ?>">
+      		<section>
+	      		<div>
 		          <img src="<?= $target.$data_cek['image']; ?>" alt="foto nasi uduk">
 		          <p class="stok">tersedia @<?=$data_cek['stocks']; ?></p>
 		        </div>
 		        <div>
 		          <h3><?=$data_cek['name_p']; ?></h3>
 		          <p>Rp. <?=$data_cek['price']; ?></p>
-		          <input style="width: 106px" type="number" name="cont" value="1" min="1" max="<?= $data_cek['stocks']; ?>">
-		          <button type="submit" name="submit">Add to cart</button>
 		        </div>
-        	</form>
-        <?php endwhile ?>	
-      </div>
+      		</section>
+      		 <input style="width: 106px" type="number" name="cont" value="1" min="1" max="<?= $data_cek['stocks']; ?>">
+		          <button type="submit" name="submit">Add to cart</button>
+      	</form>
+      <?php endwhile ?>	
     </div>
   </main>
 </body>

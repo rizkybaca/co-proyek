@@ -6,6 +6,12 @@ if (!isset($_SESSION['ini_order'])) {
 	header("location: ../../index.php");
 }
 $id=$_SESSION['ini_order'];
+if(isset($_SESSION['cart'])){
+  $_SESSION["ses_dump"] = 1;
+} else{
+  $_SESSION["ses_dump"] = "";
+}
+
  ?>
 
 <!DOCTYPE html>
@@ -25,7 +31,12 @@ $id=$_SESSION['ini_order'];
     }
   </script>
 </head>
-<body onload="refreshpage()">
+<?php if ($_SESSION['ses_dump']===1) {
+  echo '<body onload="refreshpage()">';
+} else {
+  echo '<body>';  
+} ?>
+
   <header class="note-head">
     <img src="../../dist/img/brand/logo.png" alt="logo captain order">
   </header>
@@ -37,7 +48,6 @@ $id=$_SESSION['ini_order'];
       <p>Estimasi waktu pesanan anda :</p>
       <p>15 menit setelah anda mendapatkan pesan ini</p>
       <p class="note">nomor pesanan <br> <?= $id; ?> </p>
-    </div>
     <?php 
     $p="SELECT * FROM orders WHERE id='$id'";
     $pp=mysqli_query($koneksi, $p);
@@ -49,11 +59,12 @@ $id=$_SESSION['ini_order'];
       <p>mohon maaf, resto tidak bisa proses orderan</p>
       <?php unset($_SESSION['cart']); ?>
       <a href="../store/stores.php"><i class="fas fa-home"></i></a>
-    <?php } elseif ($ppp['req']=='rp' && $ppp['status']=='bb') { ?>
+    <?php } elseif ($ppp['req']=='rp' && $ppp['status']=='bb') {?>
       <p>resto telah merespon, silakan membayar pesanan di kasir</p>
       <?php unset($_SESSION['cart']); ?>
       <a href="../store/stores.php"><i class="fas fa-home"></i></a>
-  <?php } ?>
+    <?php } ?>
+    </div>
   </main>
 </body>
 </html>

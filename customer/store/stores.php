@@ -11,7 +11,14 @@ if (!isset($_SESSION["ses_username"])) {
 }
 // koneksi db
 include '../../inc/koneksi.php';
-
+if (isset($_SESSION['cart'])) {
+  echo "
+      <script>
+        alert('Keranjang Anda dikosongkan!');
+      </script>
+    ";
+    unset($_SESSION['cart']);
+}
 $target='../../dist/img/store/';
 $a=1;
  ?>
